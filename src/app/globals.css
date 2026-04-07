@@ -1,0 +1,63 @@
+@import "@fontsource/belleza";
+@import "@fontsource/montserrat/400.css";
+@import "@fontsource/montserrat/500.css";
+@import "@fontsource/montserrat/600.css";
+@import "@fontsource/montserrat/700.css";
+@import "tailwindcss";
+
+:root {
+  --background: #071124;
+  --foreground: #e2e8f0;
+  --brand-accent: #c7e3fb;
+  --brand-accent-strong: #9cccf2;
+  --brand-deep: #0b1f57;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Montserrat", "Segoe UI", Arial, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+  background-image:
+    radial-gradient(circle at top, rgba(156, 204, 242, 0.22), transparent 32%),
+    radial-gradient(circle at 85% 10%, rgba(25, 60, 140, 0.32), transparent 36%),
+    linear-gradient(180deg, rgba(12, 24, 56, 0.88), #071124 34%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(199, 227, 251, 0.32);
+  color: #f8fafc;
+}
+
+.page-section {
+  @apply mx-auto w-full max-w-7xl px-6 py-20 lg:px-8;
+}
+
+.glass-panel {
+  @apply rounded-3xl border border-white/10 bg-white/4 shadow-xl shadow-slate-950/18 backdrop-blur-sm;
+}
+
+.font-display {
+  font-family: "Belleza", "Montserrat", "Segoe UI", Arial, sans-serif;
+  letter-spacing: 0.01em;
+}
