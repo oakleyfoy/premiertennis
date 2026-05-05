@@ -27,34 +27,34 @@ const playHighlights = [
 
 export default function PlayPage() {
   return (
-    <section className="relative overflow-hidden bg-[#f3f8fc] py-16 text-slate-900 sm:py-20">
+    <section className="relative overflow-hidden bg-[#F7F5F0] py-16 text-[#111827] sm:py-20">
       <div className="absolute inset-0">
         <Image
           src="/assets/hero-court.jpeg"
           alt="Premier Tennis League court background"
           fill
           priority
-          className="object-cover opacity-24"
+          className="object-cover opacity-[0.11]"
         />
-        <div className="absolute inset-0 bg-white/78" />
+        <div className="absolute inset-0 bg-[#F7F5F0]/91" />
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-8">
         <div className="text-center">
-          <p className="font-display text-[2.7rem] leading-none tracking-[0.02em] text-[#0b1f57] uppercase sm:text-[3.6rem]">
+          <p className="font-display text-[2.5rem] leading-none tracking-[0.02em] text-[#111827] uppercase sm:text-[3.15rem]">
             PLAY
           </p>
-          <h1 className="mt-5 text-[1.35rem] font-semibold leading-tight text-slate-500 sm:text-[1.55rem]">
+          <h1 className="mt-5 text-[1.25rem] font-medium leading-snug text-[#1F2933]/78 sm:text-[1.45rem]">
             Structured Team Tennis. Weekly Matches. Real Standings
           </h1>
         </div>
 
         <div className="mt-16 space-y-12">
-          <section className="rounded-[1.7rem] bg-white px-8 py-8 text-center shadow-[0_20px_50px_rgba(15,23,42,0.14)] ring-1 ring-slate-200/70">
-            <h2 className="font-display text-[1.85rem] leading-tight text-[#121826] sm:text-[2.1rem]">
+          <section className="ptl-rule-card text-center">
+            <h2 className="font-display text-[1.85rem] leading-tight text-[#111827] sm:text-[2.1rem]">
               How Play Works
             </h2>
-            <p className="mx-auto mt-4 max-w-4xl text-lg leading-8 text-slate-600">
+            <p className="mx-auto mt-4 max-w-4xl text-lg leading-8 text-[#1F2933]/85">
               Premier Tennis League is a structured, team-based tennis league
               built on results, not ratings. Teams form, play the schedule,
               follow the standings, and earn movement through performance.
@@ -65,12 +65,12 @@ export default function PlayPage() {
             {playHighlights.map((item) => (
               <section
                 key={item.title}
-                className="rounded-[1.7rem] bg-white px-8 py-8 text-center shadow-[0_20px_50px_rgba(15,23,42,0.14)] ring-1 ring-slate-200/70"
+                className="ptl-rule-card text-center"
               >
-                <h2 className="font-display text-[1.75rem] leading-tight text-[#121826] sm:text-[1.95rem]">
+                <h2 className="font-display text-[1.75rem] leading-tight text-[#111827] sm:text-[1.95rem]">
                   {item.title}
                 </h2>
-                <p className="mt-4 text-lg leading-8 text-slate-600">
+                <p className="mt-4 text-lg leading-8 text-[#1F2933]/85">
                   {item.description}
                 </p>
               </section>
@@ -81,20 +81,20 @@ export default function PlayPage() {
             {howItWorks.map((item) => (
               <section
                 key={item.step}
-                className="rounded-[1.7rem] bg-white px-7 py-7 text-center shadow-[0_20px_50px_rgba(15,23,42,0.14)] ring-1 ring-slate-200/70"
+                className="ptl-rule-card text-center"
               >
-                <h2 className="font-display text-[1.45rem] leading-tight text-[#121826]">
+                <h2 className="font-display text-[1.45rem] leading-tight text-[#111827]">
                   {item.title}
                 </h2>
-                <p className="mt-3 text-base leading-7 text-slate-600">
+                <p className="mt-3 text-base leading-7 text-[#1F2933]/85">
                   {item.description}
                 </p>
               </section>
             ))}
           </div>
 
-          <section className="rounded-[1.7rem] bg-white px-8 py-8 text-center shadow-[0_20px_50px_rgba(15,23,42,0.14)] ring-1 ring-slate-200/70">
-            <h2 className="font-display text-[2rem] leading-tight text-[#121826] sm:text-[2.25rem]">
+          <section className="ptl-rule-card text-center">
+            <h2 className="font-display text-[2rem] leading-tight text-[#111827] sm:text-[2.25rem]">
               Play with your team. Earn your place.
             </h2>
           </section>
@@ -102,7 +102,7 @@ export default function PlayPage() {
           <section className="pt-2 text-center">
             <Link
               href="/contact"
-              className="inline-flex rounded-full border border-[#8ec5f2] bg-[#8ec5f2] px-8 py-3.5 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(142,197,242,0.25)] transition hover:bg-[#9fd0f7]"
+              className="btn-ptl-primary px-8 py-3"
             >
               Start a Team
             </Link>

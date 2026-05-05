@@ -29,58 +29,57 @@ function MailIcon() {
 
 export function SiteHeader() {
   return (
-    <header className="fixed inset-x-0 top-0 z-40">
-      <div className="border-b border-white/8 bg-[#1b1b1b]/72 backdrop-blur-sm">
-        <div className="mx-auto flex w-full max-w-7xl items-center gap-6 px-6 py-2 text-xs font-medium text-[#9cccf2] lg:px-8">
-          <a
-            href={`tel:${contactDetails.phone}`}
-            className="inline-flex items-center gap-2 transition hover:text-white"
-          >
-            <PhoneIcon />
-            <span>{contactDetails.phone}</span>
-          </a>
-          <a
-            href={`mailto:${contactDetails.email}`}
-            className="inline-flex items-center gap-2 transition hover:text-white"
-          >
-            <MailIcon />
-            <span>{contactDetails.email}</span>
-          </a>
-        </div>
-      </div>
-
-      <div className="border-b border-white/10 bg-slate-950/52 backdrop-blur-sm">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-6 py-3 lg:px-8">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[#111827]/96 backdrop-blur-md">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-5 py-2.5 lg:gap-6 lg:px-8">
+        <div className="flex min-w-0 items-center gap-3 lg:gap-5">
           <Link href="/" className="flex shrink-0 items-center">
             <Image
               src="/assets/ptl-crest-transparent.png"
               alt="Premier Tennis League logo"
               width={96}
               height={96}
-              className="h-20 w-auto lg:h-24"
+              className="h-14 w-auto opacity-95 lg:h-[4.25rem]"
               priority
             />
           </Link>
-
-          <nav className="hidden flex-1 items-center justify-center gap-9 lg:flex">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-[15px] font-semibold text-white transition hover:text-[#c7e3fb]"
+          <div className="hidden min-w-0 lg:block">
+            <div className="flex items-center gap-6 text-[11px] font-medium uppercase tracking-[0.14em] text-white/58">
+              <a
+                href={`tel:${contactDetails.phone}`}
+                className="inline-flex items-center gap-2 transition hover:text-[#C8A96A]"
               >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          <Link
-            href="/contact"
-            className="shrink-0 rounded-full border border-white/35 bg-[#8ec5f2] px-6 py-2.5 text-[15px] font-semibold text-white shadow-[0_6px_18px_rgba(142,197,242,0.25)] transition hover:bg-[#9fd0f7]"
-          >
-            Start a Team
-          </Link>
+                <PhoneIcon />
+                <span>{contactDetails.phone}</span>
+              </a>
+              <a
+                href={`mailto:${contactDetails.email}`}
+                className="inline-flex max-w-[220px] items-center gap-2 truncate transition hover:text-[#93D0FF] xl:max-w-none"
+              >
+                <MailIcon />
+                <span className="truncate">{contactDetails.email}</span>
+              </a>
+            </div>
+          </div>
         </div>
+
+        <nav className="relative z-10 hidden flex-1 items-center justify-center gap-8 lg:flex xl:gap-10">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-[14px] font-medium text-white/88 transition hover:text-[#C8A96A]"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        <Link
+          href="/contact"
+          className="inline-flex shrink-0 items-center justify-center rounded-xl bg-white px-5 py-2 text-[13px] font-semibold text-[#111827] shadow-[0_2px_12px_rgba(0,0,0,0.15)] transition hover:bg-[#F7F5F0]"
+        >
+          Start a Team
+        </Link>
       </div>
     </header>
   );

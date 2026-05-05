@@ -17,7 +17,7 @@ export function SiteShell({ children }: SiteShellProps) {
   return (
     <div className="relative flex min-h-full flex-col">
       {isDarkHeaderComparison ? <SiteHeader /> : <SiteHeaderWhite />}
-      <main className="flex-1 pt-[118px] lg:pt-[126px]">{children}</main>
+      <main className="flex-1 pt-[88px] lg:pt-[96px]">{children}</main>
       <SiteFooter />
     </div>
   );

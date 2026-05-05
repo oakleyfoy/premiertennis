@@ -1,22 +1,29 @@
-@import "@fontsource/belleza";
-@import "@fontsource/montserrat/400.css";
-@import "@fontsource/montserrat/500.css";
-@import "@fontsource/montserrat/600.css";
-@import "@fontsource/montserrat/700.css";
+@import "@fontsource/cormorant-garamond/500.css";
+@import "@fontsource/cormorant-garamond/600.css";
+@import "@fontsource/cormorant-garamond/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
 @import "tailwindcss";
 
 :root {
-  --background: #071124;
-  --foreground: #e2e8f0;
-  --brand-accent: #c7e3fb;
-  --brand-accent-strong: #9cccf2;
-  --brand-deep: #0b1f57;
+  --ptl-ink: #111827;
+  --ptl-slate: #1f2933;
+  --ptl-warm: #f7f5f0;
+  --ptl-white: #ffffff;
+  --ptl-border: #e5e1d8;
+  --ptl-gold: #c8a96a;
+  --ptl-blue-accent: #93d0ff;
+  --background: var(--ptl-warm);
+  --foreground: var(--ptl-ink);
+  --brand-accent: var(--ptl-blue-accent);
+  --brand-deep: var(--ptl-ink);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Montserrat", "Segoe UI", Arial, sans-serif;
+  --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
@@ -30,13 +37,15 @@ html {
 
 body {
   margin: 0;
-  background: var(--background);
-  color: var(--foreground);
-  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
-  background-image:
-    radial-gradient(circle at top, rgba(156, 204, 242, 0.22), transparent 32%),
-    radial-gradient(circle at 85% 10%, rgba(25, 60, 140, 0.32), transparent 36%),
-    linear-gradient(180deg, rgba(12, 24, 56, 0.88), #071124 34%);
+  background: var(--ptl-warm);
+  color: var(--ptl-ink);
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background-image: linear-gradient(
+    180deg,
+    #faf9f6 0%,
+    var(--ptl-warm) 18%,
+    #f2efe8 100%
+  );
 }
 
 a {
@@ -45,19 +54,61 @@ a {
 }
 
 ::selection {
-  background: rgba(199, 227, 251, 0.32);
-  color: #f8fafc;
+  background: rgba(200, 169, 106, 0.28);
+  color: var(--ptl-ink);
 }
 
 .page-section {
   @apply mx-auto w-full max-w-7xl px-6 py-20 lg:px-8;
 }
 
-.glass-panel {
-  @apply rounded-3xl border border-white/10 bg-white/4 shadow-xl shadow-slate-950/18 backdrop-blur-sm;
+/* Premium white / ivory cards */
+.ptl-rule-card {
+  @apply rounded-[1.25rem] border border-[#E5E1D8] bg-white px-6 py-7 shadow-[0_2px_24px_rgba(17,24,39,0.05)] sm:px-8 sm:py-8 lg:rounded-[1.375rem];
 }
 
-.font-display {
-  font-family: "Belleza", "Montserrat", "Segoe UI", Arial, sans-serif;
+.ptl-page-bleed {
+  @apply relative overflow-hidden bg-[#F7F5F0] py-14 text-[#111827] sm:py-20;
+}
+
+.ptl-page-bleed::before {
+  content: "";
+  @apply pointer-events-none absolute inset-0 bg-gradient-to-b from-white/40 to-transparent;
+}
+
+/* Legacy glass: light premium panels (partners, etc.) */
+.glass-panel {
+  @apply rounded-[1.25rem] border border-[#E5E1D8] bg-white/90 shadow-[0_2px_24px_rgba(17,24,39,0.05)] backdrop-blur-sm lg:rounded-[1.375rem];
+}
+
+.font-display,
+.font-heading {
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-weight: 600;
   letter-spacing: 0.01em;
+}
+
+/* Buttons */
+.btn-ptl-primary {
+  @apply inline-flex min-h-11 items-center justify-center rounded-xl bg-[#111827] px-6 py-2.5 text-center text-sm font-semibold text-white shadow-[0_2px_12px_rgba(17,24,39,0.12)] transition hover:bg-[#1F2933] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111827];
+}
+
+.btn-ptl-secondary {
+  @apply inline-flex min-h-11 items-center justify-center rounded-xl border border-[#111827]/22 bg-white px-6 py-2.5 text-center text-sm font-semibold text-[#111827] transition hover:border-[#111827]/35 hover:bg-[#F7F5F0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111827];
+}
+
+.btn-ptl-hero-primary {
+  @apply inline-flex min-h-10 items-center justify-center rounded-xl bg-[#111827] px-7 py-2.5 text-center text-sm font-semibold text-white shadow-[0_2px_16px_rgba(0,0,0,0.2)] transition hover:bg-[#1F2933];
+}
+
+.btn-ptl-hero-secondary {
+  @apply inline-flex min-h-10 items-center justify-center rounded-xl border border-white/45 bg-white/10 px-7 py-2.5 text-center text-sm font-semibold text-white backdrop-blur-sm transition hover:border-white/60 hover:bg-white/16;
+}
+
+.ptl-eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A];
+}
+
+.ptl-divider {
+  @apply mx-auto h-px max-w-md bg-gradient-to-r from-transparent via-[#C8A96A]/45 to-transparent;
 }

@@ -18,54 +18,54 @@ const contactReasons = [
 
 export default function ContactPage() {
   return (
-    <section className="relative overflow-hidden bg-[#f3f8fc] py-16 text-slate-900 sm:py-20">
+    <section className="relative overflow-hidden bg-[#F7F5F0] py-16 text-[#111827] sm:py-20">
       <div className="absolute inset-0">
         <Image
           src="/assets/hero-court.jpeg"
           alt="Premier Tennis League court background"
           fill
           priority
-          className="object-cover opacity-24"
+          className="object-cover opacity-[0.11]"
         />
-        <div className="absolute inset-0 bg-white/78" />
+        <div className="absolute inset-0 bg-[#F7F5F0]/91" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch">
+      <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch lg:gap-12">
           <div className="flex h-full flex-col gap-8">
             <div>
-              <p className="font-display text-[2.7rem] leading-none tracking-[0.02em] text-[#0b1f57] uppercase sm:text-[3.6rem]">
+              <p className="font-display text-[2.5rem] leading-none tracking-[0.02em] text-[#111827] uppercase sm:text-[3.15rem]">
                 CONTACT
               </p>
-              <h1 className="mt-5 max-w-2xl text-[1.35rem] font-semibold leading-tight text-slate-500 sm:text-[1.55rem]">
+              <h1 className="mt-5 max-w-2xl text-[1.25rem] font-medium leading-snug text-[#1F2933]/78 sm:text-[1.45rem]">
                 Reach out if you want to follow the launch or bring PTL to your market.
               </h1>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
+              <p className="mt-6 max-w-xl text-lg leading-8 text-[#1F2933]/85">
                 The league is still in its pre-launch phase. If you are interested
                 as a captain, player, partner, or facility, this is the place to
                 start the conversation.
               </p>
             </div>
 
-            <section className="rounded-[1.7rem] bg-white px-8 py-8 shadow-[0_20px_50px_rgba(15,23,42,0.14)] ring-1 ring-slate-200/70">
-              <p className="text-sm font-semibold tracking-[0.22em] text-[#0b1f57] uppercase">
+            <section className="ptl-rule-card">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
                 Get in touch directly
               </p>
               <div className="mt-6 space-y-5">
                 <div>
-                  <p className="text-sm text-slate-500">Email</p>
+                  <p className="text-sm text-[#1F2933]/55">Email</p>
                   <a
                     href={`mailto:${contactDetails.email}`}
-                    className="mt-1 block text-xl font-semibold text-[#121826] transition hover:text-[#0b1f57]"
+                    className="mt-1 block text-xl font-semibold text-[#111827] transition hover:text-[#C8A96A]"
                   >
                     {contactDetails.email}
                   </a>
                 </div>
                 <div>
-                  <p className="text-sm text-slate-500">Phone</p>
+                  <p className="text-sm text-[#1F2933]/55">Phone</p>
                   <a
                     href={`tel:${contactDetails.phone}`}
-                    className="mt-1 block text-xl font-semibold text-[#121826] transition hover:text-[#0b1f57]"
+                    className="mt-1 block text-xl font-semibold text-[#111827] transition hover:text-[#93D0FF]"
                   >
                     {contactDetails.phone}
                   </a>
@@ -73,13 +73,13 @@ export default function ContactPage() {
               </div>
             </section>
 
-            <section className="mt-auto rounded-[1.7rem] bg-white px-8 py-8 shadow-[0_20px_50px_rgba(15,23,42,0.14)] ring-1 ring-slate-200/70">
-              <p className="text-sm font-semibold tracking-[0.22em] text-[#0b1f57] uppercase">
+            <section className="mt-auto ptl-rule-card">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
                 Common reasons to contact PTL
               </p>
               <div className="mt-5 space-y-3">
                 {contactReasons.map((reason) => (
-                  <p key={reason} className="text-lg leading-8 text-slate-600">
+                  <p key={reason} className="text-lg leading-8 text-[#1F2933]/85">
                     {reason}
                   </p>
                 ))}
@@ -87,15 +87,15 @@ export default function ContactPage() {
             </section>
           </div>
 
-          <section className="rounded-[1.7rem] bg-white px-8 py-8 shadow-[0_20px_50px_rgba(15,23,42,0.14)] ring-1 ring-slate-200/70 lg:px-10 lg:py-10">
+          <section className="ptl-rule-card lg:px-10 lg:py-10">
             <div className="max-w-2xl">
-              <p className="text-sm font-semibold tracking-[0.22em] text-[#0b1f57] uppercase">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
                 Interest form
               </p>
-              <h2 className="mt-4 font-display text-3xl leading-tight text-[#121826] sm:text-4xl">
+              <h2 className="mt-4 font-display text-3xl leading-tight text-[#111827] sm:text-4xl">
                 Submit your interest and keep your team or market on PTL&apos;s radar.
               </h2>
-              <p className="mt-4 text-base leading-8 text-slate-600">
+              <p className="mt-4 text-base leading-8 text-[#1F2933]/85">
                 Tell PTL a little about your interest, your city, or the kind of
                 team or partnership you want to build.
               </p>

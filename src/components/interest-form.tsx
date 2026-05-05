@@ -81,7 +81,7 @@ export function InterestForm() {
             required
             value={form.name}
             onChange={(event) => updateField("name", event.target.value)}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-[#121826] outline-none transition placeholder:text-slate-400 focus:border-[#8ec5f2]"
+            className="w-full rounded-xl border border-[#E5E1D8] bg-white px-4 py-3 text-[#111827] outline-none transition placeholder:text-slate-400 focus:border-[#C8A96A] focus:ring-1 focus:ring-[#C8A96A]/35"
             placeholder="Your name"
           />
         </label>
@@ -93,7 +93,7 @@ export function InterestForm() {
             type="email"
             value={form.email}
             onChange={(event) => updateField("email", event.target.value)}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-[#121826] outline-none transition placeholder:text-slate-400 focus:border-[#8ec5f2]"
+            className="w-full rounded-xl border border-[#E5E1D8] bg-white px-4 py-3 text-[#111827] outline-none transition placeholder:text-slate-400 focus:border-[#C8A96A] focus:ring-1 focus:ring-[#C8A96A]/35"
             placeholder="you@example.com"
           />
         </label>
@@ -103,7 +103,7 @@ export function InterestForm() {
           <input
             value={form.phone}
             onChange={(event) => updateField("phone", event.target.value)}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-[#121826] outline-none transition placeholder:text-slate-400 focus:border-[#8ec5f2]"
+            className="w-full rounded-xl border border-[#E5E1D8] bg-white px-4 py-3 text-[#111827] outline-none transition placeholder:text-slate-400 focus:border-[#C8A96A] focus:ring-1 focus:ring-[#C8A96A]/35"
             placeholder="Optional"
           />
         </label>
@@ -113,7 +113,7 @@ export function InterestForm() {
           <input
             value={form.city}
             onChange={(event) => updateField("city", event.target.value)}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-[#121826] outline-none transition placeholder:text-slate-400 focus:border-[#8ec5f2]"
+            className="w-full rounded-xl border border-[#E5E1D8] bg-white px-4 py-3 text-[#111827] outline-none transition placeholder:text-slate-400 focus:border-[#C8A96A] focus:ring-1 focus:ring-[#C8A96A]/35"
             placeholder="Where are you based?"
           />
         </label>
@@ -123,7 +123,7 @@ export function InterestForm() {
           <select
             value={form.role}
             onChange={(event) => updateField("role", event.target.value)}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-[#121826] outline-none transition focus:border-[#8ec5f2]"
+            className="w-full rounded-xl border border-[#E5E1D8] bg-white px-4 py-3 text-[#111827] outline-none transition focus:border-[#C8A96A] focus:ring-1 focus:ring-[#C8A96A]/35"
           >
             <option value="">Select one</option>
             <option value="captain">Captain</option>
@@ -140,7 +140,7 @@ export function InterestForm() {
             required
             value={form.interestType}
             onChange={(event) => updateField("interestType", event.target.value)}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-[#121826] outline-none transition focus:border-[#8ec5f2]"
+            className="w-full rounded-xl border border-[#E5E1D8] bg-white px-4 py-3 text-[#111827] outline-none transition focus:border-[#C8A96A] focus:ring-1 focus:ring-[#C8A96A]/35"
           >
             <option value="">Select one</option>
             <option value="start-team">Start a team</option>
@@ -158,7 +158,7 @@ export function InterestForm() {
           rows={5}
           value={form.message}
           onChange={(event) => updateField("message", event.target.value)}
-          className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-[#121826] outline-none transition placeholder:text-slate-400 focus:border-[#8ec5f2]"
+          className="w-full rounded-xl border border-[#E5E1D8] bg-white px-4 py-3 text-[#111827] outline-none transition placeholder:text-slate-400 focus:border-[#C8A96A] focus:ring-1 focus:ring-[#C8A96A]/35"
           placeholder="Tell PTL a little about your interest, city, team, or partnership idea."
         />
       </label>
@@ -179,7 +179,7 @@ export function InterestForm() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="rounded-full border border-[#8ec5f2] bg-[#8ec5f2] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#9fd0f7] disabled:cursor-not-allowed disabled:opacity-70"
+          className="btn-ptl-primary disabled:cursor-not-allowed disabled:opacity-70"
         >
           {status === "submitting" ? "Submitting..." : "Submit Interest"}
         </button>
@@ -187,7 +187,7 @@ export function InterestForm() {
         {message ? (
           <p
             className={`text-sm leading-6 ${
-              status === "success" ? "text-[#0b1f57]" : "text-rose-500"
+              status === "success" ? "text-[#1F2933]" : "text-rose-500"
             }`}
           >
             {message}

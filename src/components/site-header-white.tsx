@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import { contactDetails, navLinks } from "@/lib/site-content";
 
@@ -28,59 +32,81 @@ function MailIcon() {
 }
 
 export function SiteHeaderWhite() {
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const heroOverlayHeader = pathname === "/";
+
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 16);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const frostedOnHero =
+    heroOverlayHeader &&
+    !scrolled &&
+    "border-b border-white/25 bg-[#F7F5F0]/78 backdrop-blur-md shadow-none";
+
+  const solidBar =
+    (!heroOverlayHeader || scrolled) &&
+    "border-b border-[#E5E1D8] bg-[#F7F5F0]/96 backdrop-blur-sm shadow-[0_1px_0_rgba(17,24,39,0.04)]";
+
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-slate-300 bg-white shadow-[0_1px_0_rgba(15,23,42,0.08)]">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-6 py-3 lg:px-8">
-        <div className="flex min-w-0 items-center gap-4">
-          <Link href="/" className="flex shrink-0 items-center">
-            <Image
-              src="/assets/ptl-crest-transparent.png"
-              alt="Premier Tennis League logo"
-              width={96}
-              height={96}
-              className="h-20 w-auto lg:h-24"
-              priority
-            />
-          </Link>
-          <div className="hidden min-w-0 lg:block">
-            <div className="flex items-center gap-6 text-xs font-semibold text-[#1f5f8f]">
-              <a
-                href={`tel:${contactDetails.phone}`}
-                className="inline-flex items-center gap-2 transition hover:text-black"
-              >
-                <PhoneIcon />
-                <span>{contactDetails.phone}</span>
-              </a>
-              <a
-                href={`mailto:${contactDetails.email}`}
-                className="inline-flex items-center gap-2 transition hover:text-black"
-              >
-                <MailIcon />
-                <span>{contactDetails.email}</span>
-              </a>
+    <header className="fixed inset-x-0 top-0 z-40">
+      <div
+        className={`transition-colors duration-300 ${frostedOnHero || ""} ${solidBar || ""}`}
+      >
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-5 py-2.5 lg:gap-6 lg:px-8">
+          <div className="flex min-w-0 items-center gap-3 lg:gap-5">
+            <Link href="/" className="flex shrink-0 items-center">
+              <Image
+                src="/assets/ptl-crest-transparent.png"
+                alt="Premier Tennis League logo"
+                width={96}
+                height={96}
+                className="h-14 w-auto lg:h-[4.25rem]"
+                priority
+              />
+            </Link>
+            <div className="hidden min-w-0 lg:block">
+              <div className="flex items-center gap-6 text-[11px] font-medium uppercase tracking-[0.14em] text-[#1F2933]/75">
+                <a
+                  href={`tel:${contactDetails.phone}`}
+                  className="inline-flex items-center gap-2 transition hover:text-[#111827]"
+                >
+                  <PhoneIcon />
+                  <span>{contactDetails.phone}</span>
+                </a>
+                <a
+                  href={`mailto:${contactDetails.email}`}
+                  className="inline-flex max-w-[220px] items-center gap-2 truncate transition hover:text-[#111827] xl:max-w-none"
+                >
+                  <MailIcon />
+                  <span className="truncate">{contactDetails.email}</span>
+                </a>
+              </div>
             </div>
           </div>
+
+          <nav className="relative z-10 hidden flex-1 items-center justify-center gap-8 lg:flex xl:gap-10">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-[14px] font-medium text-[#111827] transition hover:text-[#C8A96A]"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <Link href="/contact" className="btn-ptl-primary shrink-0 px-5 py-2 text-[13px]">
+            Start a Team
+          </Link>
         </div>
-
-        <nav className="relative z-10 hidden flex-1 items-center justify-center gap-9 lg:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="pointer-events-auto border-b-2 border-transparent pb-1 text-[16px] font-black tracking-[0.01em] transition hover:border-[#123e63] hover:text-[#123e63]"
-              style={{ color: "#0b1f57" }}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-
-        <Link
-          href="/contact"
-          className="shrink-0 rounded-full border border-[#8ec5f2] bg-[#8ec5f2] px-6 py-2.5 text-[15px] font-semibold text-white shadow-[0_6px_18px_rgba(142,197,242,0.2)] transition hover:bg-[#9fd0f7]"
-        >
-          Start a Team
-        </Link>
       </div>
     </header>
   );
