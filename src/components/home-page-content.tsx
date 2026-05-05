@@ -14,10 +14,10 @@ import {
 export function HomePageContent() {
   return (
     <>
-      <section className="relative min-h-[78vh] overflow-hidden border-b border-[#D4CFC4]">
+      <section className="relative min-h-[76vh] overflow-hidden border-b border-[#D4CFC4]">
         <div className="absolute inset-0">
           <video
-            className="h-full w-full scale-[1.04] object-cover contrast-[1.06] saturate-[1.07]"
+            className="h-full w-full object-cover"
             autoPlay
             muted
             loop
@@ -26,66 +26,33 @@ export function HomePageContent() {
           >
             <source src="/assets/hero-video.mp4" type="video/mp4" />
           </video>
-          {/* Cinematic stack: vignette, edge weight, vertical grade, center lift */}
+          {/* Single flat overlay — identical treatment on every frame for motion-safe readability */}
           <div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_96%_88%_at_50%_44%,rgba(17,24,39,0.03)_0%,rgba(17,24,39,0.52)_58%,rgba(4,6,11,0.92)_100%)]"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.52)_0%,transparent_17%,transparent_83%,rgba(0,0,0,0.52)_100%)]"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#111827]/64 via-[#151f2e]/26 via-[46%] to-[#10151f]/66"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0d121a]/55 from-[0%] via-transparent via-[28%] to-transparent"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_58%_48%_at_50%_45%,rgba(255,252,247,0.2)_0%,rgba(255,252,247,0.06)_42%,transparent_72%)]"
+            className="absolute inset-0 bg-[linear-gradient(rgba(8,12,20,0.48),rgba(8,12,20,0.48))]"
             aria-hidden
           />
         </div>
 
-        <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-px bg-gradient-to-r from-transparent via-[#C8A96A]/42 to-transparent"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-32 bg-gradient-to-t from-[#FFFCF8] via-[#FFFCF8]/45 to-transparent sm:h-36"
-          aria-hidden
-        />
+        <div className="relative z-10 mx-auto flex min-h-[76vh] w-full max-w-7xl flex-col items-center justify-center px-5 py-24 text-center sm:px-8 sm:py-28 lg:py-36">
+          <div className="w-full max-w-[900px]">
+            <h1 className="font-display text-[2.35rem] font-semibold uppercase leading-[1.06] tracking-[0.1em] text-white sm:text-[2.85rem] lg:text-[3.35rem] [text-shadow:0_2px_22px_rgba(0,0,0,0.55),0_1px_2px_rgba(0,0,0,0.35)]">
+              Premier Tennis League
+            </h1>
+            <h2 className="font-display mt-4 text-[1.35rem] leading-snug tracking-[0.02em] text-white sm:text-[1.55rem] lg:text-[1.85rem] [text-shadow:0_2px_16px_rgba(0,0,0,0.45),0_1px_1px_rgba(0,0,0,0.3)]">
+              Teams. Seasons. Promotion and Relegation.
+            </h2>
+            <p className="mx-auto mt-7 max-w-xl font-sans text-[0.8125rem] font-normal leading-[1.65] tracking-[0.03em] text-white/88 sm:mt-8 sm:text-sm lg:text-[0.9375rem] [text-shadow:0_1px_12px_rgba(0,0,0,0.45)]">
+              A structured, team-based tennis league built around results, not
+              ratings.
+            </p>
 
-        <div className="relative z-[2] mx-auto flex min-h-[78vh] w-full max-w-7xl items-center justify-center px-5 pb-28 pt-16 text-center sm:px-6 sm:pb-32 sm:pt-20 lg:px-8 lg:pb-36 lg:pt-24">
-          <div className="relative w-full max-w-[44rem] lg:max-w-[46rem]">
-            <div className="rounded-[1.625rem] border border-white/[0.09] bg-[rgba(8,11,16,0.15)] px-7 py-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_32px_80px_-12px_rgba(0,0,0,0.48)] backdrop-blur-[6px] sm:px-10 sm:py-12 lg:px-12 lg:py-16">
-              <div className="mx-auto mb-7 flex justify-center sm:mb-8" aria-hidden>
-                <div className="h-px w-[5.5rem] bg-gradient-to-r from-transparent via-white/40 to-transparent sm:w-28" />
-              </div>
-              <h1 className="font-display text-[2.45rem] font-semibold uppercase leading-[1.02] tracking-[0.11em] text-white drop-shadow-[0_4px_32px_rgba(0,0,0,0.55)] sm:text-[3.1rem] lg:text-[3.55rem] xl:text-[3.85rem]">
-                Premier Tennis League
-              </h1>
-              <h2 className="font-display mt-2 text-[1.55rem] leading-[1.14] tracking-[0.01em] text-[#F7F4EC] drop-shadow-[0_3px_22px_rgba(0,0,0,0.48)] sm:mt-2 sm:text-[2rem] lg:text-[2.4rem]">
-                Teams. Seasons. Promotion and Relegation.
-              </h2>
-              <p className="mx-auto mt-7 max-w-2xl text-[1rem] font-medium leading-8 tracking-[0.01em] text-[#EDE9DF] drop-shadow-[0_2px_14px_rgba(0,0,0,0.42)] sm:mt-8 sm:text-[1.07rem]">
-                A structured, team-based tennis league built around results, not
-                ratings.
-              </p>
-              <div className="mx-auto mt-8 flex justify-center sm:mt-9" aria-hidden>
-                <div className="h-px w-14 bg-gradient-to-r from-transparent via-white/28 to-transparent opacity-90 sm:w-[4.5rem]" />
-              </div>
-
-              <div className="mt-8 flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:mx-auto sm:mt-9 sm:max-w-none sm:flex-row sm:items-center sm:gap-4">
-                <Link href="/league-structure" className="btn-ptl-hero-primary w-full sm:w-auto sm:min-w-[200px]">
-                  View League Structure
-                </Link>
-                <Link href="/play" className="btn-ptl-hero-secondary w-full sm:w-auto sm:min-w-[180px]">
-                  Explore Formats
-                </Link>
-              </div>
+            <div className="mt-11 flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:mx-auto sm:max-w-none sm:flex-row sm:items-center sm:gap-4 lg:mt-12">
+              <Link href="/league-structure" className="btn-ptl-hero-primary w-full sm:w-auto sm:min-w-[200px]">
+                View League Structure
+              </Link>
+              <Link href="/play" className="btn-ptl-hero-secondary w-full sm:w-auto sm:min-w-[180px]">
+                Explore Formats
+              </Link>
             </div>
           </div>
         </div>
