@@ -14,10 +14,10 @@ import {
 export function HomePageContent() {
   return (
     <>
-      <section className="relative min-h-[72vh] overflow-hidden border-b border-[#E5E1D8]/80">
+      <section className="relative min-h-[72vh] overflow-hidden border-b border-[#D4CFC4]">
         <div className="absolute inset-0">
           <video
-            className="h-full w-full object-cover"
+            className="h-full w-full scale-[1.04] object-cover contrast-[1.06] saturate-[1.07]"
             autoPlay
             muted
             loop
@@ -26,23 +26,35 @@ export function HomePageContent() {
           >
             <source src="/assets/hero-video.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#111827]/40 via-[#1F2933]/38 to-[#F7F5F0]/92" />
+          {/* Cinematic depth: darker vignette, clearer center, no pale wash */}
+          <div
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_92%_82%_at_50%_46%,rgba(17,24,39,0.06)_0%,rgba(17,24,39,0.42)_55%,rgba(10,14,22,0.78)_100%)]"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#111827]/58 via-[#15202f]/22 via-[48%] to-[#121826]/58"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0f141d]/50 from-[0%] via-transparent via-[32%] to-transparent"
+            aria-hidden
+          />
         </div>
 
-        <div className="relative mx-auto flex min-h-[72vh] w-full max-w-7xl items-center justify-center px-5 pb-20 pt-12 text-center sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <h1 className="font-display text-[2rem] uppercase leading-[1.08] tracking-[0.14em] text-white sm:text-[2.65rem] lg:text-[3.15rem]">
+        <div className="relative mx-auto flex min-h-[72vh] w-full max-w-7xl items-center justify-center px-5 pb-20 pt-10 text-center sm:px-6 lg:px-8">
+          <div className="max-w-[42rem] lg:max-w-4xl">
+            <h1 className="font-display text-[2.45rem] font-semibold uppercase leading-[1.02] tracking-[0.11em] text-white drop-shadow-[0_4px_32px_rgba(0,0,0,0.55)] sm:text-[3.1rem] lg:text-[3.55rem] xl:text-[3.85rem]">
               Premier Tennis League
             </h1>
-            <h2 className="font-display mt-4 text-[1.45rem] leading-snug text-white/95 sm:text-[1.85rem] lg:text-[2.15rem]">
+            <h2 className="font-display mt-2 text-[1.55rem] leading-[1.14] tracking-[0.01em] text-[#F7F4EC] drop-shadow-[0_3px_22px_rgba(0,0,0,0.48)] sm:mt-2 sm:text-[2rem] lg:text-[2.4rem]">
               Teams. Seasons. Promotion and Relegation.
             </h2>
-            <p className="mx-auto mt-9 max-w-2xl text-[0.98rem] leading-8 text-white/88 sm:text-[1.05rem]">
+            <p className="mx-auto mt-7 max-w-2xl text-[1rem] font-medium leading-8 tracking-[0.01em] text-[#EDE9DF] drop-shadow-[0_2px_14px_rgba(0,0,0,0.42)] sm:mt-8 sm:text-[1.07rem]">
               A structured, team-based tennis league built around results, not
               ratings.
             </p>
 
-            <div className="mt-10 flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:mx-auto sm:max-w-none sm:flex-row sm:items-center sm:gap-4">
+            <div className="mt-9 flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:mx-auto sm:max-w-none sm:flex-row sm:items-center sm:gap-4">
               <Link href="/league-structure" className="btn-ptl-hero-primary w-full sm:w-auto sm:min-w-[200px]">
                 View League Structure
               </Link>
@@ -54,10 +66,10 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="border-b border-[#E5E1D8]/70 bg-[#F7F5F0] py-16 sm:py-24 lg:py-28">
+      <section className="ptl-section-border bg-[#FFFCF8] py-16 sm:py-24 lg:py-28">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-16">
-            <div className="relative aspect-[4/3] min-h-[280px] overflow-hidden rounded-[1.25rem] border border-[#E5E1D8] shadow-[0_2px_24px_rgba(17,24,39,0.06)] lg:min-h-[340px] lg:rounded-[1.375rem]">
+            <div className="relative aspect-[4/3] min-h-[280px] overflow-hidden rounded-[1.25rem] border border-[#D4CFC4] shadow-[0_4px_32px_rgba(17,24,39,0.11),0_1px_3px_rgba(17,24,39,0.07)] lg:min-h-[340px] lg:rounded-[1.375rem]">
               <Image
                 src="/assets/home-community-team.png"
                 alt="Tennis players sitting together between matches"
@@ -71,10 +83,10 @@ export function HomePageContent() {
                 Why We Built Premier Tennis League
               </p>
               <div className="mt-4 h-px w-12 bg-[#C8A96A]/55" aria-hidden />
-              <h2 className="mt-6 font-display text-[2rem] leading-[1.15] text-[#111827] sm:text-[2.4rem] lg:text-[2.75rem]">
+              <h2 className="mt-6 font-display text-[2rem] font-semibold leading-[1.12] text-[#0d1219] sm:text-[2.45rem] lg:text-[2.8rem]">
                 A better structure for competitive amateur tennis.
               </h2>
-              <p className="mt-6 text-base leading-8 text-[#1F2933]/88 sm:text-[1.06rem]">
+              <p className="mt-6 text-base leading-8 text-[#1F2933]/92 sm:text-[1.06rem]">
                 Too many leagues are built around ratings, ambiguity, and low
                 stakes. PTL is built around teams, seasons, standings, and
                 earned outcomes.
@@ -84,7 +96,7 @@ export function HomePageContent() {
                 {heroBullets.map((item) => (
                   <div
                     key={item}
-                    className="rounded-[1.125rem] border border-[#E5E1D8] bg-white/90 p-4 shadow-[0_2px_16px_rgba(17,24,39,0.04)] sm:p-5"
+                    className="rounded-[1.125rem] border border-[#D4CFC4] bg-white p-4 shadow-[0_3px_22px_rgba(17,24,39,0.08)] sm:p-5"
                   >
                     <p className="text-sm leading-7 text-[#1F2933]/90">{item}</p>
                   </div>
@@ -99,7 +111,7 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="border-b border-[#E5E1D8]/70 bg-white py-16 sm:py-24 lg:py-28">
+      <section className="ptl-section-border bg-white py-16 sm:py-24 lg:py-28">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="What Makes Premier Tennis League Different"
@@ -114,13 +126,13 @@ export function HomePageContent() {
               {leaguePillars.slice(0, 2).map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-[1.25rem] border border-[#E5E1D8] bg-[#FDFCF8] p-6 shadow-[0_2px_20px_rgba(17,24,39,0.04)] sm:p-7 lg:rounded-[1.375rem]"
+                  className="rounded-[1.25rem] border border-[#D4CFC4] bg-[#FFFDF9] p-6 shadow-[0_4px_26px_rgba(17,24,39,0.085)] sm:p-7 lg:rounded-[1.375rem]"
                 >
                   <div className="h-px w-10 bg-[#C8A96A]/45" aria-hidden />
-                  <h3 className="mt-4 font-display text-[1.65rem] leading-tight text-[#111827] sm:text-[1.85rem]">
+                  <h3 className="mt-4 font-display text-[1.65rem] font-semibold leading-tight text-[#0d1219] sm:text-[1.85rem]">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-[0.95rem] leading-7 text-[#1F2933]/88">
+                  <p className="mt-3 text-[0.95rem] leading-7 text-[#1F2933]/92">
                     {item.description}
                   </p>
                 </div>
@@ -128,7 +140,7 @@ export function HomePageContent() {
             </div>
 
             <div className="w-full lg:px-2">
-              <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[1.25rem] border border-[#E5E1D8] shadow-[0_2px_24px_rgba(17,24,39,0.06)] lg:max-w-none lg:rounded-[1.375rem]">
+              <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[1.25rem] border border-[#D4CFC4] shadow-[0_4px_32px_rgba(17,24,39,0.11)] lg:max-w-none lg:rounded-[1.375rem]">
                 <Image
                   src="/assets/player-portrait.jpg"
                   alt="Tennis player portrait on court"
@@ -142,13 +154,13 @@ export function HomePageContent() {
               {leaguePillars.slice(2).map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-[1.25rem] border border-[#E5E1D8] bg-[#FDFCF8] p-6 shadow-[0_2px_20px_rgba(17,24,39,0.04)] sm:p-7 lg:rounded-[1.375rem]"
+                  className="rounded-[1.25rem] border border-[#D4CFC4] bg-[#FFFDF9] p-6 shadow-[0_4px_26px_rgba(17,24,39,0.085)] sm:p-7 lg:rounded-[1.375rem]"
                 >
                   <div className="h-px w-10 bg-[#C8A96A]/45" aria-hidden />
-                  <h3 className="mt-4 font-display text-[1.65rem] leading-tight text-[#111827] sm:text-[1.85rem]">
+                  <h3 className="mt-4 font-display text-[1.65rem] font-semibold leading-tight text-[#0d1219] sm:text-[1.85rem]">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-[0.95rem] leading-7 text-[#1F2933]/88">
+                  <p className="mt-3 text-[0.95rem] leading-7 text-[#1F2933]/92">
                     {item.description}
                   </p>
                 </div>
@@ -158,7 +170,7 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="border-b border-[#E5E1D8]/70 bg-[#F7F5F0] py-16 sm:py-24 lg:py-28">
+      <section className="ptl-section-border bg-[#EBEAE6] py-16 sm:py-24 lg:py-28">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="How Premier Tennis League Works"
@@ -172,15 +184,15 @@ export function HomePageContent() {
             {howItWorks.map((item) => (
               <div
                 key={item.step}
-                className="rounded-[1.25rem] border border-[#E5E1D8] bg-white p-6 shadow-[0_2px_20px_rgba(17,24,39,0.04)] sm:p-7 lg:rounded-[1.375rem]"
+                className="rounded-[1.25rem] border border-[#D4CFC4] bg-white p-6 shadow-[0_4px_26px_rgba(17,24,39,0.09)] sm:p-7 lg:rounded-[1.375rem]"
               >
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C8A96A]">
                   Step {item.step}
                 </p>
-                <h3 className="mt-3 font-display text-[1.35rem] leading-snug text-[#111827] sm:text-2xl">
+                <h3 className="mt-3 font-display text-[1.35rem] font-semibold leading-snug text-[#0d1219] sm:text-2xl">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-sm leading-7 text-[#1F2933]/88 sm:text-base sm:leading-8">
+                <p className="mt-4 text-sm leading-7 text-[#1F2933]/92 sm:text-base sm:leading-8">
                   {item.description}
                 </p>
               </div>
@@ -189,7 +201,7 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="border-b border-[#E5E1D8]/70 bg-white py-16 sm:py-24 lg:py-28">
+      <section className="ptl-section-border bg-[#FAFAF8] py-16 sm:py-24 lg:py-28">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Who Will Thrive in Premier Tennis League"
@@ -200,7 +212,7 @@ export function HomePageContent() {
           />
 
           <div className="mt-12">
-            <div className="relative mx-auto aspect-[16/9] w-full max-w-5xl overflow-hidden rounded-[1.25rem] border border-[#E5E1D8] shadow-[0_2px_24px_rgba(17,24,39,0.06)] sm:aspect-[16/6] lg:rounded-[1.375rem]">
+            <div className="relative mx-auto aspect-[16/9] w-full max-w-5xl overflow-hidden rounded-[1.25rem] border border-[#D4CFC4] shadow-[0_4px_32px_rgba(17,24,39,0.11)] sm:aspect-[16/6] lg:rounded-[1.375rem]">
               <Image
                 src="/assets/home-team-huddle.png"
                 alt="Tennis team huddling together before a match"
@@ -211,17 +223,17 @@ export function HomePageContent() {
           </div>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2 lg:gap-8">
-            <div className="rounded-[1.25rem] border border-[#E5E1D8] bg-[#FDFCF8] p-6 shadow-[0_2px_20px_rgba(17,24,39,0.04)] sm:p-8 lg:rounded-[1.375rem]">
-              <h2 className="font-display text-2xl text-[#111827] sm:text-3xl">
+            <div className="rounded-[1.25rem] border border-[#D4CFC4] bg-white p-6 shadow-[0_4px_26px_rgba(17,24,39,0.088)] sm:p-8 lg:rounded-[1.375rem]">
+              <h2 className="font-display text-2xl font-semibold text-[#0d1219] sm:text-3xl">
                 This league is for
               </h2>
               <div className="mt-8 grid gap-4">
                 {teamFit.slice(0, 4).map((item) => (
                   <div
                     key={item}
-                    className="rounded-[1.125rem] border border-[#E5E1D8] bg-white p-4 sm:p-5"
+                    className="rounded-[1.125rem] border border-[#D9D4CA] bg-[#FFFCF8] p-4 shadow-[0_2px_14px_rgba(17,24,39,0.06)] sm:p-5"
                   >
-                    <p className="text-sm leading-7 text-[#1F2933]/90 sm:text-base">
+                    <p className="text-sm leading-7 text-[#1F2933]/92 sm:text-base">
                       {item}
                     </p>
                   </div>
@@ -229,17 +241,17 @@ export function HomePageContent() {
               </div>
             </div>
 
-            <div className="rounded-[1.25rem] border border-[#E5E1D8] bg-[#FDFCF8] p-6 shadow-[0_2px_20px_rgba(17,24,39,0.04)] sm:p-8 lg:rounded-[1.375rem]">
-              <h2 className="font-display text-2xl text-[#111827] sm:text-3xl">
+            <div className="rounded-[1.25rem] border border-[#D4CFC4] bg-white p-6 shadow-[0_4px_26px_rgba(17,24,39,0.088)] sm:p-8 lg:rounded-[1.375rem]">
+              <h2 className="font-display text-2xl font-semibold text-[#0d1219] sm:text-3xl">
                 This league is not for
               </h2>
               <div className="mt-8 grid gap-4">
                 {teamNotFit.slice(0, 4).map((item) => (
                   <div
                     key={item}
-                    className="rounded-[1.125rem] border border-[#E5E1D8] bg-white p-4 sm:p-5"
+                    className="rounded-[1.125rem] border border-[#D9D4CA] bg-[#FFFCF8] p-4 shadow-[0_2px_14px_rgba(17,24,39,0.06)] sm:p-5"
                   >
-                    <p className="text-sm leading-7 text-[#1F2933]/90 sm:text-base">
+                    <p className="text-sm leading-7 text-[#1F2933]/92 sm:text-base">
                       {item}
                     </p>
                   </div>
@@ -250,46 +262,46 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="bg-[#111827] py-16 text-white sm:py-24">
+      <section className="border-t border-[#2a3344] bg-[#111827] py-16 text-white sm:py-24">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="rounded-[1.25rem] border border-white/10 bg-[#1F2933]/55 px-6 py-10 shadow-[0_2px_32px_rgba(0,0,0,0.2)] sm:px-10 sm:py-12 lg:grid lg:grid-cols-[1.2fr_0.8fr] lg:gap-12 lg:rounded-[1.375rem] lg:px-12">
+          <div className="rounded-[1.25rem] border border-white/14 bg-[#1a2332]/92 px-6 py-10 shadow-[0_12px_48px_rgba(0,0,0,0.35)] sm:px-10 sm:py-12 lg:grid lg:grid-cols-[1.2fr_0.8fr] lg:gap-12 lg:rounded-[1.375rem] lg:px-12">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
                 Ready to Register a Team?
               </p>
               <div className="mt-4 h-px w-12 bg-[#C8A96A]/45" aria-hidden />
-              <h2 className="mt-6 font-display text-[1.85rem] leading-snug text-white sm:text-[2.15rem] lg:text-[2.35rem]">
+              <h2 className="mt-6 font-display text-[1.85rem] font-semibold leading-snug text-white sm:text-[2.15rem] lg:text-[2.35rem]">
                 Ready to learn more or start organizing a team?
               </h2>
-              <p className="mt-5 max-w-3xl text-base leading-8 text-white/78 sm:text-lg">
+              <p className="mt-5 max-w-3xl text-base leading-8 text-[#E8E4DC]/95 sm:text-lg">
                 Explore the format, learn the structure, and reach out if you
                 want to organize a team or bring PTL to your city.
               </p>
               <div className="mt-9 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                 <Link
                   href="/league-structure"
-                  className="inline-flex min-h-11 items-center justify-center rounded-xl bg-white px-6 py-2.5 text-center text-sm font-semibold text-[#111827] transition hover:bg-[#F7F5F0]"
+                  className="inline-flex min-h-9 items-center justify-center rounded-[11px] bg-white px-[1.35rem] py-2 text-center text-[13px] font-medium tracking-[0.02em] text-[#111827] shadow-[0_4px_14px_rgba(0,0,0,0.18)] transition hover:bg-[#F7F5F0]"
                 >
                   View League Structure
                 </Link>
                 <Link
                   href="/captains-corner"
-                  className="inline-flex min-h-11 items-center justify-center rounded-xl border border-white/35 bg-transparent px-6 py-2.5 text-center text-sm font-semibold text-white transition hover:border-white/55 hover:bg-white/8"
+                  className="inline-flex min-h-9 items-center justify-center rounded-[11px] border border-white/55 bg-transparent px-[1.35rem] py-2 text-center text-[13px] font-medium tracking-[0.02em] text-white shadow-[0_2px_12px_rgba(0,0,0,0.15)] transition hover:border-white hover:bg-white/10"
                 >
                   Captain&apos;s Corner
                 </Link>
               </div>
             </div>
 
-            <div className="mt-10 rounded-[1.125rem] border border-white/12 bg-white/[0.06] p-6 backdrop-blur-sm sm:p-7 lg:mt-0 lg:rounded-[1.25rem]">
+            <div className="mt-10 rounded-[1.125rem] border border-white/18 bg-[#252f3f]/95 p-6 sm:p-7 lg:mt-0 lg:rounded-[1.25rem]">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
                 Start a Team
               </p>
               <p className="mt-5 text-lg font-semibold text-white">
                 {contactDetails.email}
               </p>
-              <p className="mt-2 text-sm text-white/72">{contactDetails.phone}</p>
-              <p className="mt-6 text-sm leading-7 text-white/72">
+              <p className="mt-2 text-sm text-[#D4D0C8]">{contactDetails.phone}</p>
+              <p className="mt-6 text-sm leading-7 text-[#C9C5BC]">
                 Want to start organizing early? Reach out and PTL will keep you
                 updated as launch markets are announced.
               </p>

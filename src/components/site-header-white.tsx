@@ -45,44 +45,44 @@ export function SiteHeaderWhite() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const frostedOnHero =
+  const onHeroTop =
     heroOverlayHeader &&
     !scrolled &&
-    "border-b border-white/25 bg-[#F7F5F0]/78 backdrop-blur-md shadow-none";
+    "border-b border-[#B8B3A8]/90 bg-[#FFFCF8]/94 backdrop-blur-[12px] shadow-[0_1px_0_rgba(17,24,39,0.06)]";
 
   const solidBar =
     (!heroOverlayHeader || scrolled) &&
-    "border-b border-[#E5E1D8] bg-[#F7F5F0]/96 backdrop-blur-sm shadow-[0_1px_0_rgba(17,24,39,0.04)]";
+    "border-b border-[#C9C4BA] bg-[#FFFCF8] shadow-[0_1px_0_rgba(17,24,39,0.06)]";
 
   return (
     <header className="fixed inset-x-0 top-0 z-40">
       <div
-        className={`transition-colors duration-300 ${frostedOnHero || ""} ${solidBar || ""}`}
+        className={`transition-colors duration-300 ${onHeroTop || ""} ${solidBar || ""}`}
       >
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-5 py-2.5 lg:gap-6 lg:px-8">
-          <div className="flex min-w-0 items-center gap-3 lg:gap-5">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-5 py-1.5 lg:gap-5 lg:px-8 lg:py-2">
+          <div className="flex min-w-0 items-center gap-2.5 lg:gap-4">
             <Link href="/" className="flex shrink-0 items-center">
               <Image
                 src="/assets/ptl-crest-transparent.png"
                 alt="Premier Tennis League logo"
                 width={96}
                 height={96}
-                className="h-14 w-auto lg:h-[4.25rem]"
+                className="h-[3.85rem] w-auto lg:h-[4.85rem]"
                 priority
               />
             </Link>
             <div className="hidden min-w-0 lg:block">
-              <div className="flex items-center gap-6 text-[11px] font-medium uppercase tracking-[0.14em] text-[#1F2933]/75">
+              <div className="flex items-center gap-5 text-[10px] font-medium uppercase tracking-[0.16em] text-[#1F2933]/82">
                 <a
                   href={`tel:${contactDetails.phone}`}
-                  className="inline-flex items-center gap-2 transition hover:text-[#111827]"
+                  className="inline-flex items-center gap-1.5 transition hover:text-[#111827]"
                 >
                   <PhoneIcon />
                   <span>{contactDetails.phone}</span>
                 </a>
                 <a
                   href={`mailto:${contactDetails.email}`}
-                  className="inline-flex max-w-[220px] items-center gap-2 truncate transition hover:text-[#111827] xl:max-w-none"
+                  className="inline-flex max-w-[220px] items-center gap-1.5 truncate transition hover:text-[#111827] xl:max-w-none"
                 >
                   <MailIcon />
                   <span className="truncate">{contactDetails.email}</span>
@@ -91,19 +91,22 @@ export function SiteHeaderWhite() {
             </div>
           </div>
 
-          <nav className="relative z-10 hidden flex-1 items-center justify-center gap-8 lg:flex xl:gap-10">
+          <nav className="relative z-10 hidden flex-1 items-center justify-center gap-6 lg:flex xl:gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[14px] font-medium text-[#111827] transition hover:text-[#C8A96A]"
+                className="text-[13px] font-medium tracking-[0.04em] text-[#111827] transition hover:text-[#A68952]"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          <Link href="/contact" className="btn-ptl-primary shrink-0 px-5 py-2 text-[13px]">
+          <Link
+            href="/contact"
+            className="btn-ptl-primary shrink-0 px-[1.15rem] py-2"
+          >
             Start a Team
           </Link>
         </div>

@@ -16,7 +16,7 @@ export function SectionHeading({
   const eyebrowClass = "text-[#C8A96A]";
   const titleClass = theme === "light" ? "text-[#111827]" : "text-white";
   const descriptionClass =
-    theme === "light" ? "text-[#1F2933]/85" : "text-slate-300";
+    theme === "light" ? "text-[#1F2933]/95" : "text-slate-300";
   const wrapperClass =
     align === "center"
       ? "mx-auto max-w-3xl space-y-5 text-center"
@@ -35,7 +35,7 @@ export function SectionHeading({
         <div className="h-px w-12 bg-[#C8A96A]/55" aria-hidden />
       )}
       <h2
-        className={`font-display text-[2rem] leading-[1.15] sm:text-[2.35rem] lg:text-[2.6rem] ${titleClass} ${align === "left" ? "max-w-3xl" : ""}`}
+        className={`font-display text-[2.05rem] font-semibold leading-[1.12] tracking-[-0.01em] sm:text-[2.4rem] lg:text-[2.65rem] ${titleClass} ${align === "left" ? "max-w-3xl" : ""}`}
       >
         {title}
       </h2>
