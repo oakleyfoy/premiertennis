@@ -89,21 +89,21 @@ a {
   letter-spacing: 0.01em;
 }
 
-/* Buttons — lower profile, richer finish */
+/* Buttons — micro-detail inset + refined hover */
 .btn-ptl-primary {
-  @apply inline-flex min-h-9 items-center justify-center rounded-[11px] bg-[#111827] px-[1.35rem] py-2 text-center text-[13px] font-medium tracking-[0.02em] text-white shadow-[0_4px_14px_rgba(17,24,39,0.22),0_1px_2px_rgba(17,24,39,0.12)] transition hover:bg-[#1b2432] hover:shadow-[0_6px_18px_rgba(17,24,39,0.26)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111827];
+  @apply inline-flex min-h-9 items-center justify-center rounded-[11px] bg-[#111827] px-[1.35rem] py-2 text-center text-[13px] font-medium tracking-[0.02em] text-white shadow-[0_4px_16px_rgba(17,24,39,0.24),inset_0_1px_0_rgba(255,255,255,0.11),inset_0_-1px_0_rgba(0,0,0,0.12)] transition-all duration-300 ease-out hover:bg-[#1b2432] hover:shadow-[0_6px_22px_rgba(17,24,39,0.3),inset_0_1px_0_rgba(255,255,255,0.14)] active:scale-[0.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111827];
 }
 
 .btn-ptl-secondary {
-  @apply inline-flex min-h-9 items-center justify-center rounded-[11px] border border-[#111827]/38 bg-white px-[1.35rem] py-2 text-center text-[13px] font-medium tracking-[0.02em] text-[#111827] shadow-[0_1px_2px_rgba(17,24,39,0.05)] transition hover:border-[#111827]/55 hover:bg-[#FAFAF8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111827];
+  @apply inline-flex min-h-9 items-center justify-center rounded-[11px] border border-[#111827]/38 bg-white px-[1.35rem] py-2 text-center text-[13px] font-medium tracking-[0.02em] text-[#111827] shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_2px_6px_rgba(17,24,39,0.06)] transition-all duration-300 ease-out hover:border-[#111827]/52 hover:bg-[#FAFAF8] hover:shadow-[0_4px_12px_rgba(17,24,39,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111827];
 }
 
 .btn-ptl-hero-primary {
-  @apply inline-flex min-h-9 items-center justify-center rounded-[11px] bg-[#111827] px-7 py-2 text-center text-[13px] font-medium tracking-[0.03em] text-white shadow-[0_6px_22px_rgba(0,0,0,0.38),0_1px_0_rgba(255,255,255,0.08)_inset] transition hover:bg-[#1b2432];
+  @apply inline-flex min-h-[2.125rem] items-center justify-center rounded-[11px] bg-[#111827] px-7 py-[0.45rem] text-center text-[13px] font-medium tracking-[0.03em] text-white shadow-[0_8px_28px_rgba(0,0,0,0.42),inset_0_1px_0_rgba(255,255,255,0.14),inset_0_-1px_0_rgba(0,0,0,0.2)] transition-all duration-300 ease-out hover:bg-[#1a2330] hover:shadow-[0_10px_36px_rgba(0,0,0,0.48),inset_0_1px_0_rgba(255,255,255,0.18)] active:scale-[0.99];
 }
 
 .btn-ptl-hero-secondary {
-  @apply inline-flex min-h-9 items-center justify-center rounded-[11px] border border-white/65 bg-[rgba(255,255,255,0.09)] px-7 py-2 text-center text-[13px] font-medium tracking-[0.03em] text-white shadow-[0_2px_12px_rgba(0,0,0,0.18)] backdrop-blur-[6px] transition hover:border-white hover:bg-[rgba(255,255,255,0.14)];
+  @apply inline-flex min-h-[2.125rem] items-center justify-center rounded-[11px] border border-white/50 bg-[rgba(255,255,255,0.04)] px-7 py-[0.35rem] text-center text-[13px] font-medium tracking-[0.04em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_2px_14px_rgba(0,0,0,0.12)] backdrop-blur-[8px] transition-all duration-300 ease-out hover:border-white/85 hover:bg-[rgba(255,255,255,0.1)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_6px_24px_rgba(0,0,0,0.22)] active:scale-[0.99];
 }
 
 .ptl-eyebrow {
@@ -116,4 +116,9 @@ a {
 
 .ptl-section-border {
   @apply border-b border-[#D4CFC4];
+}
+
+/* Editorial rule — use with max-w-* / w-* on same element */
+.ptl-hairline {
+  @apply h-px bg-gradient-to-r from-transparent via-[#C8A96A]/45 to-transparent;
 }

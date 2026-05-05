@@ -19,8 +19,8 @@ export function SectionHeading({
     theme === "light" ? "text-[#1F2933]/95" : "text-slate-300";
   const wrapperClass =
     align === "center"
-      ? "mx-auto max-w-3xl space-y-5 text-center"
-      : "max-w-3xl space-y-5";
+      ? "mx-auto max-w-3xl space-y-6 text-center"
+      : "max-w-3xl space-y-6";
 
   return (
     <div className={wrapperClass}>
