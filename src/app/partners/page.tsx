@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { EditorialRule } from "@/components/editorial-rule";
 import { SectionHeading } from "@/components/section-heading";
 import { partnerTypes } from "@/lib/site-content";
 
@@ -27,7 +28,7 @@ export default function PartnersPage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {partnerTypes.map((item) => (
             <div key={item.title} className="ptl-rule-card">
-              <div className="h-px w-10 bg-[#C8A96A]/45" aria-hidden />
+              <EditorialRule surface="light" align="start" />
               <h2 className="mt-4 font-display text-2xl text-[#111827]">
                 {item.title}
               </h2>
@@ -44,6 +45,9 @@ export default function PartnersPage() {
           <h2 className="font-display text-2xl text-[#111827] sm:text-3xl">
             Early conversations can cover
           </h2>
+          <div className="mt-5">
+            <EditorialRule surface="light" align="start" />
+          </div>
           <div className="mt-10 grid gap-4 lg:grid-cols-2 lg:gap-5">
             {[
               "Court availability and launch support",
@@ -60,7 +64,10 @@ export default function PartnersPage() {
             ))}
           </div>
 
-          <div className="mt-10">
+          <div className="mt-10 flex justify-center">
+            <EditorialRule surface="light" />
+          </div>
+          <div className="mt-8">
             <Link href="/contact" className="btn-ptl-primary">
               Discuss a Partnership
             </Link>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { EditorialRule } from "@/components/editorial-rule";
 import { SectionHeading } from "@/components/section-heading";
 import {
   contactDetails,
@@ -35,6 +36,9 @@ export function HomePageContent() {
 
         <div className="relative z-10 mx-auto flex min-h-[76vh] w-full max-w-7xl flex-col items-center justify-center px-5 py-24 text-center sm:px-8 sm:py-28 lg:py-36">
           <div className="w-full max-w-[900px]">
+            <div className="mb-8 flex justify-center sm:mb-9">
+              <EditorialRule surface="dark" />
+            </div>
             <h1 className="font-display text-[2.35rem] font-semibold uppercase leading-[1.06] tracking-[0.1em] text-white sm:text-[2.85rem] lg:text-[3.35rem] [text-shadow:0_2px_22px_rgba(0,0,0,0.55),0_1px_2px_rgba(0,0,0,0.35)]">
               Premier Tennis League
             </h1>
@@ -46,7 +50,11 @@ export function HomePageContent() {
               ratings.
             </p>
 
-            <div className="mt-11 flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:mx-auto sm:max-w-none sm:flex-row sm:items-center sm:gap-4 lg:mt-12">
+            <div className="mt-10 flex justify-center sm:mt-11 lg:mt-12">
+              <EditorialRule surface="dark" />
+            </div>
+
+            <div className="mt-8 flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:mx-auto sm:max-w-none sm:flex-row sm:items-center sm:gap-4 lg:mt-9">
               <Link href="/league-structure" className="btn-ptl-hero-primary w-full sm:w-auto sm:min-w-[200px]">
                 View League Structure
               </Link>
@@ -74,7 +82,9 @@ export function HomePageContent() {
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
                 Why We Built Premier Tennis League
               </p>
-              <div className="mt-4 h-px w-14 bg-gradient-to-r from-transparent via-[#C8A96A]/55 to-transparent lg:w-20" aria-hidden />
+              <div className="mt-4">
+                <EditorialRule surface="light" align="start" />
+              </div>
               <h2 className="mt-6 font-display text-[2rem] font-semibold leading-[1.12] text-[#0d1219] sm:text-[2.45rem] lg:text-[2.8rem]">
                 A better structure for competitive amateur tennis.
               </h2>
@@ -261,7 +271,9 @@ export function HomePageContent() {
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
                 Ready to Register a Team?
               </p>
-              <div className="mt-4 h-px w-12 bg-[#C8A96A]/45" aria-hidden />
+              <div className="mt-4">
+                <EditorialRule surface="dark" align="start" />
+              </div>
               <h2 className="mt-6 font-display text-[1.85rem] font-semibold leading-snug text-white sm:text-[2.15rem] lg:text-[2.35rem]">
                 Ready to learn more or start organizing a team?
               </h2>
@@ -269,7 +281,10 @@ export function HomePageContent() {
                 Explore the format, learn the structure, and reach out if you
                 want to organize a team or bring PTL to your city.
               </p>
-              <div className="mt-9 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+              <div className="mt-8 flex justify-start">
+                <EditorialRule surface="dark" align="start" />
+              </div>
+              <div className="mt-8 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                 <Link
                   href="/league-structure"
                   className="inline-flex min-h-9 items-center justify-center rounded-[11px] bg-white px-[1.35rem] py-2 text-center text-[13px] font-medium tracking-[0.02em] text-[#111827] shadow-[0_4px_14px_rgba(0,0,0,0.18)] transition hover:bg-[#F7F5F0]"
@@ -289,6 +304,9 @@ export function HomePageContent() {
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
                 Start a Team
               </p>
+              <div className="mt-4">
+                <EditorialRule surface="dark" align="start" />
+              </div>
               <p className="mt-5 text-lg font-semibold text-white">
                 {contactDetails.email}
               </p>

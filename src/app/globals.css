@@ -111,7 +111,7 @@ a {
 }
 
 .ptl-divider {
-  @apply mx-auto h-px max-w-md bg-gradient-to-r from-transparent via-[#C8A96A]/65 to-transparent;
+  @apply mx-auto h-px w-[132px] bg-gradient-to-r from-transparent via-[#C8A96A]/28 to-transparent;
 }
 
 .ptl-section-border {
