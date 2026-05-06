@@ -122,56 +122,75 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="ptl-section-border bg-white py-[4.75rem] sm:py-[6.5rem] lg:py-[7.75rem]">
+      <section className="ptl-section-border bg-white py-[5.25rem] sm:py-[7rem] lg:py-[8.25rem]">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="What Makes Premier Tennis League Different"
-            title="Team-Built, Not Rating-Built"
-            description="Captains build teams from friends, partners, and mixed experience levels. There are no ratings, caps, or algorithms separating players. Teams rise or fall together."
-            theme="light"
-            align="center"
-          />
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="flex justify-center">
+              <EditorialRule surface="light" align="start" />
+            </div>
+            <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#C8A96A] sm:mt-6">
+              Core Principles
+            </p>
+            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A] sm:mt-7">
+              What Makes Premier Tennis League Different
+            </p>
+            <h2 className="mt-6 font-display text-[2.2rem] font-semibold leading-[1.06] tracking-[-0.02em] text-[#111827] sm:mt-7 sm:text-[2.55rem] lg:text-[2.85rem] lg:leading-[1.05]">
+              Team-Built, Not Rating-Built
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-[1.65] text-[#1F2933]/95 sm:mt-7 sm:text-lg sm:leading-[1.62]">
+              Captains build teams from friends, partners, and mixed experience
+              levels. There are no ratings, caps, or algorithms separating
+              players. Teams rise or fall together.
+            </p>
+          </div>
 
-          <div className="mt-16 grid gap-8 lg:grid-cols-[1fr_0.92fr_1fr] lg:items-center lg:gap-10">
-            <div className="grid gap-5">
-              {leaguePillars.slice(0, 2).map((item) => (
+          <div className="mt-20 grid gap-10 lg:mt-[5.25rem] lg:grid-cols-[1fr_0.96fr_1fr] lg:items-center lg:gap-12">
+            <div className="grid gap-6 lg:gap-7">
+              {leaguePillars.slice(0, 2).map((item, idx) => (
                 <div
                   key={item.title}
-                  className="rounded-[1.25rem] border border-[#D4CFC4] bg-[#FFFDF9] p-6 shadow-[0_4px_26px_rgba(17,24,39,0.085)] sm:p-7 lg:rounded-[1.375rem]"
+                  className={`rounded-[18px] border border-[#E5E1D8] bg-white px-5 py-5 shadow-[0_4px_22px_rgba(17,24,39,0.075),0_1px_2px_rgba(17,24,39,0.04)] sm:px-6 sm:py-5 lg:px-6 lg:py-6 ${idx === 0 ? "lg:px-7 lg:py-7 lg:shadow-[0_6px_28px_rgba(17,24,39,0.088),0_1px_3px_rgba(17,24,39,0.045)]" : ""}`}
                 >
-                  <div className="h-px w-10 bg-[#C8A96A]/45" aria-hidden />
-                  <h3 className="mt-4 font-display text-[1.65rem] font-semibold leading-tight text-[#0d1219] sm:text-[1.85rem]">
+                  <div
+                    className="h-px w-[42px] shrink-0 bg-gradient-to-r from-transparent via-[#C8A96A]/42 to-transparent"
+                    aria-hidden
+                  />
+                  <h3 className="mt-6 font-display text-[1.68rem] font-semibold leading-[1.12] text-[#0d1219] sm:text-[1.88rem]">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-[0.95rem] leading-7 text-[#1F2933]/92">
+                  <p className="mt-5 text-[0.95rem] leading-[1.72] text-[#1F2933]/92">
                     {item.description}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="w-full lg:px-2">
-              <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[1.25rem] border border-[#D4CFC4] shadow-[0_4px_32px_rgba(17,24,39,0.11)] lg:max-w-none lg:rounded-[1.375rem]">
+            <div className="w-full lg:px-1">
+              <div className="relative mx-auto aspect-[4/5] w-full max-w-[30.5rem] overflow-hidden rounded-[18px] border border-[#E5E1D8] shadow-[0_10px_44px_rgba(17,24,39,0.14),0_2px_8px_rgba(17,24,39,0.06)] lg:max-w-none">
                 <Image
                   src="/assets/player-portrait.jpg"
                   alt="Tennis player portrait on court"
                   fill
                   className="object-cover object-center"
+                  sizes="(min-width: 1024px) 32vw, 90vw"
                 />
               </div>
             </div>
 
-            <div className="grid gap-5">
+            <div className="grid gap-6 lg:gap-7">
               {leaguePillars.slice(2).map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-[1.25rem] border border-[#D4CFC4] bg-[#FFFDF9] p-6 shadow-[0_4px_26px_rgba(17,24,39,0.085)] sm:p-7 lg:rounded-[1.375rem]"
+                  className="rounded-[18px] border border-[#E5E1D8] bg-white px-5 py-5 shadow-[0_4px_22px_rgba(17,24,39,0.075),0_1px_2px_rgba(17,24,39,0.04)] sm:px-6 sm:py-5 lg:px-6 lg:py-6"
                 >
-                  <div className="h-px w-10 bg-[#C8A96A]/45" aria-hidden />
-                  <h3 className="mt-4 font-display text-[1.65rem] font-semibold leading-tight text-[#0d1219] sm:text-[1.85rem]">
+                  <div
+                    className="h-px w-[42px] shrink-0 bg-gradient-to-r from-transparent via-[#C8A96A]/42 to-transparent"
+                    aria-hidden
+                  />
+                  <h3 className="mt-6 font-display text-[1.68rem] font-semibold leading-[1.12] text-[#0d1219] sm:text-[1.88rem]">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-[0.95rem] leading-7 text-[#1F2933]/92">
+                  <p className="mt-5 text-[0.95rem] leading-[1.72] text-[#1F2933]/92">
                     {item.description}
                   </p>
                 </div>
