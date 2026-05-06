@@ -16,12 +16,15 @@ export function EditorialRule({
   const via =
     surface === "dark"
       ? "via-[rgba(255,252,246,0.24)]"
-      : "via-[#C8A96A]/28";
+      : "via-[#C8A96A]/38";
+
+  const widthClass =
+    surface === "light" ? "w-[124px] sm:w-[138px]" : "w-[118px] sm:w-[132px]";
 
   return (
     <div
       aria-hidden
-      className={`h-px w-[118px] shrink-0 bg-gradient-to-r from-transparent to-transparent ${via} sm:w-[132px] ${align === "center" ? "mx-auto" : ""} ${className}`}
+      className={`h-px shrink-0 bg-gradient-to-r from-transparent to-transparent ${via} ${widthClass} ${align === "center" ? "mx-auto" : ""} ${className}`}
     />
   );
 }

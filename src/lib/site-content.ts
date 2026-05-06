@@ -52,6 +52,26 @@ export const leaguePillars = [
   },
 ];
 
+/** Homepage “Core Principles” pillar cards only (About/Play still use leaguePillars). */
+export const homeCorePrincipleCards = [
+  {
+    title: "Team-Built, Not Rating-Built",
+    text: "Teams are formed by captains—not algorithms. No caps. No forced balance. Just real teams.",
+  },
+  {
+    title: "Results Do the Sorting",
+    text: "There are no preset levels. Match results determine where teams belong.",
+  },
+  {
+    title: "Collective Accountability",
+    text: "No hiding behind individual ratings. Teams win and lose together.",
+  },
+  {
+    title: "Tennis Without Ratings",
+    text: "No anxiety. No manipulation. You compete—and let the standings decide.",
+  },
+] as const;
+
 export const howItWorks = [
   {
     step: "01",

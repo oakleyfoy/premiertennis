@@ -6,8 +6,8 @@ import { SectionHeading } from "@/components/section-heading";
 import {
   contactDetails,
   heroBullets,
+  homeCorePrincipleCards,
   howItWorks,
-  leaguePillars,
   teamFit,
   teamNotFit,
 } from "@/lib/site-content";
@@ -102,7 +102,7 @@ export function HomePageContent() {
                 {heroBullets.map((item) => (
                   <div
                     key={item}
-                    className="rounded-[18px] border border-[#E5E1D8] bg-white px-4 py-3.5 shadow-[0_2px_14px_rgba(17,24,39,0.045)] transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(17,24,39,0.09)] sm:px-4 sm:py-4"
+                    className="rounded-[18px] border border-[#E5E1D8] bg-white px-4 py-3.5 shadow-[0_4px_22px_rgba(17,24,39,0.075),0_1px_2px_rgba(17,24,39,0.04)] transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(17,24,39,0.09)] sm:px-4 sm:py-4"
                   >
                     <p className="text-[0.8125rem] leading-[1.58] text-[#1F2933]/92 sm:text-sm sm:leading-relaxed">
                       {item}
@@ -122,111 +122,134 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="ptl-section-border bg-white py-[5.25rem] sm:py-[7rem] lg:py-[8.25rem]">
+      <section className="ptl-section-border bg-[#F2F1ED] py-[5.25rem] sm:py-[7rem] lg:py-[8.25rem]">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-[40rem] text-center lg:max-w-[48rem]">
             <div className="flex justify-center">
               <EditorialRule surface="light" align="start" />
             </div>
-            <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#C8A96A] sm:mt-6">
+            <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.32em] text-[#C6A86B] sm:mt-6 sm:text-[11px] sm:tracking-[0.34em]">
               Core Principles
             </p>
-            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A] sm:mt-7">
+            <h2 className="mt-7 font-display text-[2.15rem] font-semibold leading-[1.05] tracking-[-0.02em] text-[#111111] sm:mt-8 sm:text-[2.65rem] lg:mt-9 lg:text-[3.1rem] lg:leading-[1.04]">
               What Makes Premier Tennis League Different
-            </p>
-            <h2 className="mt-6 font-display text-[2.2rem] font-semibold leading-[1.06] tracking-[-0.02em] text-[#111827] sm:mt-7 sm:text-[2.55rem] lg:text-[2.85rem] lg:leading-[1.05]">
-              Team-Built, Not Rating-Built
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-[1.65] text-[#1F2933]/95 sm:mt-7 sm:text-lg sm:leading-[1.62]">
-              Captains build teams from friends, partners, and mixed experience
-              levels. There are no ratings, caps, or algorithms separating
-              players. Teams rise or fall together.
+            <p className="mx-auto mt-6 max-w-[36rem] text-[1.02rem] leading-[1.62] text-[#5c5c5c] sm:mt-7 sm:text-[1.055rem]">
+              A competitive structure built on teams, results, and earned
+              movement.
             </p>
           </div>
 
-          <div className="mt-20 grid gap-10 lg:mt-[5.25rem] lg:grid-cols-[1fr_0.96fr_1fr] lg:items-center lg:gap-12">
-            <div className="grid gap-6 lg:gap-7">
-              {leaguePillars.slice(0, 2).map((item, idx) => (
-                <div
+          <div className="mt-20 grid grid-cols-1 gap-8 lg:mt-[5.5rem] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.14fr)_minmax(0,1fr)] lg:items-stretch lg:gap-x-10 lg:gap-y-0">
+            <div className="grid content-center gap-6 lg:gap-7">
+              {homeCorePrincipleCards.slice(0, 2).map((item) => (
+                <article
                   key={item.title}
-                  className={`rounded-[18px] border border-[#E5E1D8] bg-white px-5 py-5 shadow-[0_4px_22px_rgba(17,24,39,0.075),0_1px_2px_rgba(17,24,39,0.04)] sm:px-6 sm:py-5 lg:px-6 lg:py-6 ${idx === 0 ? "lg:px-7 lg:py-7 lg:shadow-[0_6px_28px_rgba(17,24,39,0.088),0_1px_3px_rgba(17,24,39,0.045)]" : ""}`}
+                  className="flex flex-col rounded-[16px] border border-[#E5E1D8] bg-white p-[22px] shadow-[0_5px_24px_rgba(17,24,39,0.08),0_1px_3px_rgba(17,24,39,0.05)] transition duration-[250ms] ease-out hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(17,24,39,0.12),0_4px_10px_rgba(17,24,39,0.06)] sm:px-[26px] sm:py-6"
                 >
-                  <div
-                    className="h-px w-[42px] shrink-0 bg-gradient-to-r from-transparent via-[#C8A96A]/42 to-transparent"
-                    aria-hidden
-                  />
-                  <h3 className="mt-6 font-display text-[1.68rem] font-semibold leading-[1.12] text-[#0d1219] sm:text-[1.88rem]">
+                  <h3 className="font-display text-[1.28rem] font-semibold leading-snug text-[#111] sm:text-[1.38rem]">
                     {item.title}
                   </h3>
-                  <p className="mt-5 text-[0.95rem] leading-[1.72] text-[#1F2933]/92">
-                    {item.description}
+                  <p className="mt-4 text-[0.875rem] font-normal leading-[1.68] text-[#555] sm:text-[0.9rem]">
+                    {item.text}
                   </p>
-                </div>
+                </article>
               ))}
             </div>
 
-            <div className="w-full lg:px-1">
-              <div className="relative mx-auto aspect-[4/5] w-full max-w-[30.5rem] overflow-hidden rounded-[18px] border border-[#E5E1D8] shadow-[0_10px_44px_rgba(17,24,39,0.14),0_2px_8px_rgba(17,24,39,0.06)] lg:max-w-none">
+            <div className="flex min-w-0 items-center justify-center px-0 py-2 lg:px-4 lg:py-3">
+              <div className="relative aspect-[4/5] w-full max-w-[min(100%,26rem)] overflow-hidden rounded-[18px] border border-[#E5E1D8] shadow-[0_16px_52px_rgba(17,24,39,0.16),0_4px_14px_rgba(17,24,39,0.08)] transition-transform duration-[250ms] ease-out lg:max-w-none lg:scale-[1.07] lg:shadow-[0_22px_64px_rgba(17,24,39,0.2),0_6px_20px_rgba(17,24,39,0.1)]">
                 <Image
-                  src="/assets/player-portrait.jpg"
-                  alt="Tennis player portrait on court"
+                  src="/assets/home-team-huddle.png"
+                  alt="PTL teams together on court for doubles and team play"
                   fill
                   className="object-cover object-center"
-                  sizes="(min-width: 1024px) 32vw, 90vw"
+                  sizes="(min-width: 1024px) 36vw, 90vw"
                 />
               </div>
             </div>
 
-            <div className="grid gap-6 lg:gap-7">
-              {leaguePillars.slice(2).map((item) => (
-                <div
+            <div className="grid content-center gap-6 lg:gap-7">
+              {homeCorePrincipleCards.slice(2, 4).map((item) => (
+                <article
                   key={item.title}
-                  className="rounded-[18px] border border-[#E5E1D8] bg-white px-5 py-5 shadow-[0_4px_22px_rgba(17,24,39,0.075),0_1px_2px_rgba(17,24,39,0.04)] sm:px-6 sm:py-5 lg:px-6 lg:py-6"
+                  className="flex flex-col rounded-[16px] border border-[#E5E1D8] bg-white p-[22px] shadow-[0_5px_24px_rgba(17,24,39,0.08),0_1px_3px_rgba(17,24,39,0.05)] transition duration-[250ms] ease-out hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(17,24,39,0.12),0_4px_10px_rgba(17,24,39,0.06)] sm:px-[26px] sm:py-6"
                 >
-                  <div
-                    className="h-px w-[42px] shrink-0 bg-gradient-to-r from-transparent via-[#C8A96A]/42 to-transparent"
-                    aria-hidden
-                  />
-                  <h3 className="mt-6 font-display text-[1.68rem] font-semibold leading-[1.12] text-[#0d1219] sm:text-[1.88rem]">
+                  <h3 className="font-display text-[1.28rem] font-semibold leading-snug text-[#111] sm:text-[1.38rem]">
                     {item.title}
                   </h3>
-                  <p className="mt-5 text-[0.95rem] leading-[1.72] text-[#1F2933]/92">
-                    {item.description}
+                  <p className="mt-4 text-[0.875rem] font-normal leading-[1.68] text-[#555] sm:text-[0.9rem]">
+                    {item.text}
                   </p>
-                </div>
+                </article>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="ptl-section-border bg-[#EBEAE6] py-[4.75rem] sm:py-[6.5rem] lg:py-[7.75rem]">
+      <section className="ptl-section-border bg-[#EEEBE6] py-[5.25rem] sm:py-[7rem] lg:py-[8.25rem]">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="How Premier Tennis League Works"
-            title="A structured season built around teams, standings, and earned movement."
-            description="The model is meant to be easy to understand and meaningful to compete in."
-            theme="light"
-            align="center"
-          />
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
+              How Premier Tennis League Works
+            </p>
+            <div className="mt-4 flex justify-center">
+              <EditorialRule surface="light" align="start" />
+            </div>
+            <h2 className="mt-6 font-display text-[2.2rem] font-semibold leading-[1.06] tracking-[-0.02em] text-[#111827] sm:mt-7 sm:text-[2.55rem] lg:text-[2.85rem] lg:leading-[1.05]">
+              A structured season built around teams, standings, and earned
+              movement.
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-[1.65] text-[#1F2933]/95 sm:mt-7 sm:text-lg sm:leading-[1.62]">
+              The model is meant to be easy to understand and meaningful to
+              compete in.
+            </p>
+          </div>
 
-          <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-            {howItWorks.map((item) => (
-              <div
-                key={item.step}
-                className="rounded-[1.25rem] border border-[#D4CFC4] bg-white p-6 shadow-[0_4px_26px_rgba(17,24,39,0.09)] sm:p-7 lg:rounded-[1.375rem]"
-              >
-                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C8A96A]">
-                  Step {item.step}
-                </p>
-                <h3 className="mt-3 font-display text-[1.35rem] font-semibold leading-snug text-[#0d1219] sm:text-2xl">
-                  {item.title}
-                </h3>
-                <p className="mt-4 text-sm leading-7 text-[#1F2933]/92 sm:text-base sm:leading-8">
-                  {item.description}
-                </p>
+          <div className="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-[5.25rem] lg:grid-cols-4 lg:gap-7">
+            {howItWorks.map((item, i) => (
+              <div key={item.step} className="relative min-w-0">
+                <article className="flex h-full flex-col rounded-[18px] border border-[#E5E1D8] bg-white px-5 py-5 shadow-[0_4px_22px_rgba(17,24,39,0.075),0_1px_2px_rgba(17,24,39,0.04)] sm:px-6 sm:py-6">
+                  <p className="text-[11px] font-bold uppercase leading-none tracking-[0.2em] text-[#A8894A] sm:text-[12px] sm:tracking-[0.22em]">
+                    Step {item.step}
+                  </p>
+                  <h3 className="mt-5 font-display text-[1.38rem] font-semibold leading-[1.14] text-[#0d1219] sm:text-[1.48rem]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-5 max-w-[20rem] text-[0.9375rem] leading-[1.72] text-[#1F2933]/92">
+                    {item.description}
+                  </p>
+                </article>
+                {i < howItWorks.length - 1 && (
+                  <span
+                    className="pointer-events-none absolute top-1/2 right-0 z-[1] hidden -translate-y-1/2 translate-x-1/2 select-none font-sans text-[11px] font-normal leading-none text-[#C8A96A]/45 lg:block"
+                    aria-hidden
+                  >
+                    →
+                  </span>
+                )}
               </div>
             ))}
+          </div>
+
+          <div className="mt-14 flex flex-col items-center justify-center gap-4 sm:mt-16 sm:flex-row sm:gap-10">
+            <Link
+              href="/contact"
+              className="text-[13px] font-semibold tracking-[0.1em] text-[#0d1219] underline decoration-[#C8A96A]/35 decoration-1 underline-offset-[6px] transition hover:decoration-[#C8A96A]/70"
+            >
+              Start a Team
+            </Link>
+            <span
+              className="hidden h-4 w-px shrink-0 bg-[#C8A96A]/25 sm:block"
+              aria-hidden
+            />
+            <Link
+              href="/league-structure"
+              className="text-[13px] font-semibold tracking-[0.1em] text-[#0d1219] underline decoration-[#C8A96A]/35 decoration-1 underline-offset-[6px] transition hover:decoration-[#C8A96A]/70"
+            >
+              View League Structure
+            </Link>
           </div>
         </div>
       </section>
