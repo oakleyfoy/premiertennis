@@ -160,8 +160,8 @@ export function HomePageContent() {
             <div className="flex min-w-0 items-center justify-center px-0 py-2 lg:px-4 lg:py-3">
               <div className="relative aspect-[4/5] w-full max-w-[min(100%,26rem)] overflow-hidden rounded-[18px] border border-[#E5E1D8] shadow-[0_16px_52px_rgba(17,24,39,0.16),0_4px_14px_rgba(17,24,39,0.08)] transition-transform duration-[250ms] ease-out lg:max-w-none lg:scale-[1.07] lg:shadow-[0_22px_64px_rgba(17,24,39,0.2),0_6px_20px_rgba(17,24,39,0.1)]">
                 <Image
-                  src="/assets/home-team-huddle.png"
-                  alt="PTL teams together on court for doubles and team play"
+                  src="/assets/core-principles-center.png"
+                  alt="Team huddle on court: unity, accountability, and competitive spirit"
                   fill
                   className="object-cover object-center"
                   sizes="(min-width: 1024px) 36vw, 90vw"
