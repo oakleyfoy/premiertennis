@@ -10,6 +10,7 @@ import {
   howItWorks,
   teamFit,
   teamNotFit,
+  whoPtlIsForCards,
 } from "@/lib/site-content";
 
 export function HomePageContent() {
@@ -254,6 +255,59 @@ export function HomePageContent() {
               className="text-[13px] font-semibold tracking-[0.1em] text-[#0d1219] underline decoration-[#C8A96A]/35 decoration-1 underline-offset-[6px] transition hover:decoration-[#C8A96A]/70"
             >
               View League Structure
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="ptl-section-border bg-white py-[5.25rem] sm:py-[7rem] lg:py-[8.25rem]">
+        <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="flex justify-center">
+              <EditorialRule surface="light" align="start" />
+            </div>
+            <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#C6A86B] sm:mt-6 sm:text-[11px] sm:tracking-[0.3em]">
+              Who Premier Tennis League Is For
+            </p>
+            <h2 className="mt-6 font-display text-[2rem] font-semibold leading-[1.08] tracking-[-0.02em] text-[#111111] sm:mt-7 sm:text-[2.35rem] lg:text-[2.65rem] lg:leading-[1.05]">
+              Built for players who want more than casual tennis.
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-[1.02rem] leading-[1.65] text-[#5c5c5c] sm:mt-6 sm:text-[1.055rem]">
+              This league is designed for competitors who value structure, team
+              play, and real outcomes.
+            </p>
+          </div>
+
+          <div className="mt-16 grid grid-cols-1 gap-6 sm:gap-7 lg:mt-20 lg:grid-cols-3 lg:gap-8">
+            {whoPtlIsForCards.map((card) => (
+              <article
+                key={card.title}
+                className="flex flex-col rounded-[16px] border border-[#E5E1D8] bg-white p-[22px] shadow-[0_5px_22px_rgba(17,24,39,0.07),0_1px_3px_rgba(17,24,39,0.05)] transition duration-[250ms] ease-out hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(17,24,39,0.12),0_4px_10px_rgba(17,24,39,0.06)] sm:px-[26px] sm:py-6"
+              >
+                <h3 className="font-display text-[1.2rem] font-bold leading-snug text-[#111] sm:text-[1.28rem]">
+                  {card.title}
+                </h3>
+                <p className="mt-4 text-[0.875rem] leading-[1.68] text-[#555] sm:text-[0.9375rem]">
+                  {card.text}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <p className="mx-auto mt-14 max-w-2xl text-center text-[1.02rem] font-medium leading-[1.65] text-[#3d454d] sm:mt-16 sm:text-[1.055rem]">
+            If you want structure, competition, and team-based tennis —
+            you&apos;ll fit here.
+          </p>
+
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:mt-11 sm:flex-row sm:gap-4">
+            <Link href="/contact" className="btn-ptl-primary w-full min-w-[200px] sm:w-auto">
+              Start a Team
+            </Link>
+            <Link
+              href="/cities"
+              className="btn-ptl-secondary w-full min-w-[200px] sm:w-auto"
+            >
+              Find a League Near You
             </Link>
           </div>
         </div>

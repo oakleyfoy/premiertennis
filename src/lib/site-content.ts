@@ -99,6 +99,21 @@ export const howItWorks = [
   },
 ];
 
+export const whoPtlIsForCards = [
+  {
+    title: "Players Who Want Matches That Matter",
+    text: "You're not looking for casual hit-arounds. You want real matches, real standings, and something to compete for every week.",
+  },
+  {
+    title: "Captains Who Want to Build Teams",
+    text: "You enjoy organizing, leading, and bringing people together. This is your chance to build a team and compete as a unit.",
+  },
+  {
+    title: "Players Tired of Rating-Based Leagues",
+    text: "No more sandbagging, manipulation, or confusion. You compete—and the results take care of the rest.",
+  },
+] as const;
+
 export const valuePoints = [
   "A structured, team-based tennis league built around results, not ratings",
   "Clear standings, scheduled seasons, and a defined competitive model",
