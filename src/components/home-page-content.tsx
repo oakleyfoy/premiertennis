@@ -71,14 +71,18 @@ export function HomePageContent() {
       <section className="ptl-section-border border-t border-[#E8E4DC] bg-[#FFFCF8] py-[5.25rem] shadow-[inset_0_1px_0_rgba(255,255,255,1)] sm:py-[7rem] lg:py-[8.25rem]">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-x-16 lg:gap-y-0">
-            <div className="relative aspect-[4/3] min-h-[300px] overflow-hidden rounded-[16px] border border-[#E5E1D8] shadow-[0_10px_40px_rgba(17,24,39,0.12),0_2px_8px_rgba(17,24,39,0.06)] lg:min-h-[360px]">
+            <div className="relative aspect-[4/3] min-h-[300px] overflow-hidden rounded-[16px] border border-[#E5E1D8] shadow-[inset_0_1px_0_rgba(255,255,255,0.55),0_18px_56px_rgba(17,24,39,0.16),0_6px_20px_rgba(17,24,39,0.1)] ring-1 ring-[rgba(17,24,39,0.06)] lg:min-h-[360px]">
               <div className="absolute inset-0">
                 <Image
                   src="/assets/why-built-court-highfive.png"
                   alt="Two partners high-fiving over the net on a hard court, celebrating teamwork and competition"
                   fill
-                  className="object-cover object-[56%_100%] brightness-[1.03] contrast-[1.06] saturate-[1.02] scale-[1.1] origin-[56%_88%] sm:scale-[1.14] sm:origin-[55%_86%] lg:scale-[1.16]"
+                  className="object-cover object-[50%_100%] contrast-[1.1] saturate-[1.02] scale-[1.2] origin-[50%_84%] sm:scale-[1.24] sm:origin-[50%_82%] lg:scale-[1.27] lg:origin-[50%_80%]"
                   sizes="(min-width: 1024px) 48vw, 100vw"
+                />
+                <div
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[rgba(8,12,20,0.09)] via-[rgba(8,12,20,0.02)] via-45% to-[rgba(8,12,20,0.07)]"
+                  aria-hidden
                 />
               </div>
             </div>
