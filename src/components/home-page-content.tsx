@@ -35,26 +35,28 @@ export function HomePageContent() {
         </div>
 
         <div className="relative z-10 mx-auto flex min-h-[76vh] w-full max-w-7xl flex-col items-center justify-center px-5 py-24 text-center sm:px-8 sm:py-28 lg:py-36">
-          <div className="w-full max-w-[900px]">
-            <div className="mb-8 flex justify-center sm:mb-9">
+          <div
+            className="w-full max-w-[700px] rounded-[18px] border border-[rgba(255,255,255,0.18)] bg-[rgba(15,20,30,0.55)] px-6 py-12 shadow-[0_20px_60px_rgba(0,0,0,0.25)] sm:max-w-[760px] sm:rounded-[20px] sm:px-[50px] sm:py-[60px] lg:max-w-[820px] lg:rounded-[22px] lg:px-[60px] lg:py-[80px]"
+          >
+            <div className="mb-7 flex justify-center sm:mb-8">
               <EditorialRule surface="dark" />
             </div>
-            <h1 className="font-display text-[2.35rem] font-semibold uppercase leading-[1.06] tracking-[0.1em] text-white sm:text-[2.85rem] lg:text-[3.35rem] [text-shadow:0_2px_22px_rgba(0,0,0,0.55),0_1px_2px_rgba(0,0,0,0.35)]">
+            <h1 className="font-display text-[2.35rem] font-semibold uppercase leading-[1.06] tracking-[0.1em] text-white sm:text-[2.85rem] lg:text-[3.25rem] [text-shadow:0_2px_18px_rgba(0,0,0,0.45),0_1px_2px_rgba(0,0,0,0.35)]">
               Premier Tennis League
             </h1>
-            <h2 className="font-display mt-4 text-[1.35rem] leading-snug tracking-[0.02em] text-white sm:text-[1.55rem] lg:text-[1.85rem] [text-shadow:0_2px_16px_rgba(0,0,0,0.45),0_1px_1px_rgba(0,0,0,0.3)]">
+            <h2 className="font-display mt-4 text-[1.35rem] leading-snug tracking-[0.02em] text-white sm:text-[1.55rem] lg:text-[1.85rem] [text-shadow:0_2px_14px_rgba(0,0,0,0.4),0_1px_1px_rgba(0,0,0,0.28)]">
               Teams. Seasons. Promotion and Relegation.
             </h2>
-            <p className="mx-auto mt-7 max-w-xl font-sans text-[0.8125rem] font-normal leading-[1.65] tracking-[0.03em] text-white/88 sm:mt-8 sm:text-sm lg:text-[0.9375rem] [text-shadow:0_1px_12px_rgba(0,0,0,0.45)]">
+            <p className="mx-auto mt-7 max-w-xl font-sans text-[0.8125rem] font-normal leading-[1.65] tracking-[0.03em] text-white/88 sm:mt-8 sm:text-sm lg:text-[0.9375rem] [text-shadow:0_1px_10px_rgba(0,0,0,0.4)]">
               A structured, team-based tennis league built around results, not
               ratings.
             </p>
 
-            <div className="mt-10 flex justify-center sm:mt-11 lg:mt-12">
+            <div className="mt-10 flex justify-center sm:mt-11">
               <EditorialRule surface="dark" />
             </div>
 
-            <div className="mt-8 flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:mx-auto sm:max-w-none sm:flex-row sm:items-center sm:gap-4 lg:mt-9">
+            <div className="mt-9 flex w-full flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
               <Link href="/league-structure" className="btn-ptl-hero-primary w-full sm:w-auto sm:min-w-[200px]">
                 View League Structure
               </Link>

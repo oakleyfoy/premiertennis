@@ -103,7 +103,7 @@ a {
 }
 
 .btn-ptl-hero-secondary {
-  @apply inline-flex min-h-[2.125rem] items-center justify-center rounded-[11px] border border-white/50 bg-[rgba(255,255,255,0.04)] px-7 py-[0.35rem] text-center text-[13px] font-medium tracking-[0.04em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_2px_14px_rgba(0,0,0,0.12)] backdrop-blur-[8px] transition-all duration-300 ease-out hover:border-white/85 hover:bg-[rgba(255,255,255,0.1)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_6px_24px_rgba(0,0,0,0.22)] active:scale-[0.99];
+  @apply inline-flex min-h-[2.125rem] items-center justify-center rounded-[11px] border border-white/50 bg-[rgba(255,255,255,0.04)] px-7 py-[0.35rem] text-center text-[13px] font-medium tracking-[0.04em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_2px_14px_rgba(0,0,0,0.12)] transition-all duration-300 ease-out hover:border-white/85 hover:bg-[rgba(255,255,255,0.1)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_6px_24px_rgba(0,0,0,0.22)] active:scale-[0.99];
 }
 
 .ptl-eyebrow {
