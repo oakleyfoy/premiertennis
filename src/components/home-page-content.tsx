@@ -68,46 +68,53 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="ptl-section-border border-t border-[#E8E4DC] bg-[#FFFCF8] py-[4.75rem] shadow-[inset_0_1px_0_rgba(255,255,255,1)] sm:py-[6.5rem] lg:py-[7.75rem]">
+      <section className="ptl-section-border border-t border-[#E8E4DC] bg-[#FFFCF8] py-[5.25rem] shadow-[inset_0_1px_0_rgba(255,255,255,1)] sm:py-[7rem] lg:py-[8.25rem]">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-x-20">
-            <div className="relative aspect-[4/3] min-h-[280px] overflow-hidden rounded-[1.25rem] border border-[#D4CFC4] shadow-[0_4px_32px_rgba(17,24,39,0.11),0_1px_3px_rgba(17,24,39,0.07)] lg:min-h-[340px] lg:rounded-[1.375rem]">
+          <div className="grid gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-x-20">
+            <div className="relative aspect-[4/3] min-h-[280px] overflow-hidden rounded-[18px] border border-[#E5E1D8] shadow-[0_6px_36px_rgba(17,24,39,0.09),0_1px_3px_rgba(17,24,39,0.05)] lg:min-h-[340px]">
               <Image
-                src="/assets/home-community-team.png"
-                alt="Tennis players sitting together between matches"
+                src="/assets/hero-court.jpeg"
+                alt="Competitive hard court tennis facility for structured league play"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
+                sizes="(min-width: 1024px) 42vw, 100vw"
               />
             </div>
 
-            <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
-                Why We Built Premier Tennis League
-              </p>
-              <div className="mt-4">
+            <div className="flex max-w-xl flex-col lg:max-w-none">
+              <div className="mb-5 flex justify-center sm:mb-6 lg:justify-start">
                 <EditorialRule surface="light" align="start" />
               </div>
-              <h2 className="mt-6 font-display text-[2rem] font-semibold leading-[1.12] text-[#0d1219] sm:text-[2.45rem] lg:text-[2.8rem]">
+              <p className="text-center text-[11px] font-semibold uppercase tracking-[0.24em] text-[#C8A96A] lg:text-left">
+                Why We Built Premier Tennis League
+              </p>
+
+              <h2 className="mt-5 font-display text-[2.15rem] font-semibold leading-[1.06] tracking-[-0.02em] text-[#0d1219] sm:mt-6 sm:text-[2.55rem] lg:text-[2.95rem] lg:leading-[1.05]">
                 A better structure for competitive amateur tennis.
               </h2>
-              <p className="mt-6 text-base leading-8 text-[#1F2933]/92 sm:text-[1.06rem]">
+              <p className="mt-7 max-w-[26rem] text-[1.02rem] leading-[1.72] text-[#1F2933]/92 lg:max-w-[27rem] lg:text-[1.055rem] lg:leading-[1.74]">
                 Too many leagues are built around ratings, ambiguity, and low
                 stakes. PTL is built around teams, seasons, standings, and
                 earned outcomes.
               </p>
 
-              <div className="mt-9 grid gap-3 sm:grid-cols-2 sm:gap-4">
+              <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
                 {heroBullets.map((item) => (
                   <div
                     key={item}
-                    className="rounded-[1.125rem] border border-[#D4CFC4] bg-white p-4 shadow-[0_3px_22px_rgba(17,24,39,0.08)] sm:p-5"
+                    className="rounded-[18px] border border-[#E5E1D8] bg-white px-4 py-3.5 shadow-[0_2px_14px_rgba(17,24,39,0.045)] transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(17,24,39,0.09)] sm:px-4 sm:py-4"
                   >
-                    <p className="text-sm leading-7 text-[#1F2933]/90">{item}</p>
+                    <p className="text-[0.8125rem] leading-[1.58] text-[#1F2933]/92 sm:text-sm sm:leading-relaxed">
+                      {item}
+                    </p>
                   </div>
                 ))}
               </div>
 
-              <Link href="/league-structure" className="btn-ptl-primary mt-9">
+              <Link
+                href="/league-structure"
+                className="btn-ptl-primary mt-12 self-start px-5 py-[0.42rem] text-[12px] tracking-[0.04em] sm:mt-14"
+              >
                 View League Structure
               </Link>
             </div>
