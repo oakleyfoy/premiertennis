@@ -71,15 +71,27 @@ export function HomePageContent() {
 
       <section className="ptl-section-border border-t border-[#E8E4DC] bg-[#FFFCF8] py-[5.25rem] shadow-[inset_0_1px_0_rgba(255,255,255,1)] sm:py-[7rem] lg:py-[8.25rem]">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-x-16 lg:gap-y-0">
-            <div className="relative aspect-[4/3] min-h-[300px] overflow-hidden rounded-[16px] border border-[#E5E1D8] shadow-[inset_0_1px_0_rgba(255,255,255,0.55),0_18px_56px_rgba(17,24,39,0.16),0_6px_20px_rgba(17,24,39,0.1)] ring-1 ring-[rgba(17,24,39,0.06)] lg:min-h-[360px]">
+          <div className="mx-auto max-w-4xl text-center sm:max-w-5xl">
+            <div className="flex justify-center">
+              <EditorialRule surface="light" align="start" />
+            </div>
+            <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#C8A96A] sm:mt-6">
+              Why We Built Premier Tennis League
+            </p>
+            <h2 className="mt-5 font-display text-[2.15rem] font-semibold leading-[1.06] tracking-[-0.02em] text-[#0d1219] sm:mt-6 sm:text-[2.55rem] lg:text-[2.95rem] lg:leading-[1.05]">
+              A better way to compete in amateur tennis.
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-10 sm:mt-14 lg:mt-16 lg:grid-cols-[minmax(0,260px)_minmax(0,1fr)] lg:items-start lg:gap-x-12 lg:gap-y-0 xl:grid-cols-[minmax(0,300px)_minmax(0,1fr)] xl:gap-x-14">
+            <div className="relative mx-auto aspect-[4/3] w-full max-w-[min(100%,320px)] overflow-hidden rounded-[16px] border border-[#E5E1D8] shadow-[inset_0_1px_0_rgba(255,255,255,0.55),0_18px_56px_rgba(17,24,39,0.16),0_6px_20px_rgba(17,24,39,0.1)] ring-1 ring-[rgba(17,24,39,0.06)] lg:mx-0 lg:max-w-none lg:min-h-0">
               <div className="absolute inset-0">
                 <Image
                   src="/assets/why-built-court-highfive.png"
                   alt="Two partners high-fiving over the net on a hard court, celebrating teamwork and competition"
                   fill
                   className="object-cover object-[50%_100%] contrast-[1.1] saturate-[1.02] scale-[1.2] origin-[50%_84%] sm:scale-[1.24] sm:origin-[50%_82%] lg:scale-[1.27] lg:origin-[50%_80%]"
-                  sizes="(min-width: 1024px) 48vw, 100vw"
+                  sizes="(min-width: 1024px) 300px, 100vw"
                 />
                 <div
                   className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[rgba(8,12,20,0.09)] via-[rgba(8,12,20,0.02)] via-45% to-[rgba(8,12,20,0.07)]"
@@ -88,18 +100,8 @@ export function HomePageContent() {
               </div>
             </div>
 
-            <div className="flex max-w-xl flex-col lg:max-w-none">
-              <div className="mb-5 flex justify-center sm:mb-6 lg:justify-start">
-                <EditorialRule surface="light" align="start" />
-              </div>
-              <p className="text-center text-[11px] font-semibold uppercase tracking-[0.24em] text-[#C8A96A] lg:text-left">
-                Why We Built Premier Tennis League
-              </p>
-
-              <h2 className="mt-5 font-display text-[2.15rem] font-semibold leading-[1.06] tracking-[-0.02em] text-[#0d1219] sm:mt-6 sm:text-[2.55rem] lg:text-[2.95rem] lg:leading-[1.05]">
-                A better way to compete in amateur tennis.
-              </h2>
-              <p className="mt-7 max-w-[26rem] text-[1.02rem] leading-[1.72] text-[#1F2933]/92 lg:max-w-[27rem] lg:text-[1.055rem] lg:leading-[1.74]">
+            <div className="flex min-w-0 flex-col lg:pt-1">
+              <p className="text-left text-[1.02rem] leading-[1.72] text-[#1F2933]/92 sm:text-[1.055rem] sm:leading-[1.74] lg:max-w-none lg:text-[1.06rem] lg:leading-[1.75]">
                 Most leagues rely on ratings, guesswork, and artificial balance.
                 <br />
                 <br />
@@ -109,7 +111,7 @@ export function HomePageContent() {
                 Teams compete, results matter, and movement is earned.
               </p>
 
-              <div className="mt-11 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
+              <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-11 sm:grid-cols-2 sm:gap-6">
                 {heroBullets.map((item) => (
                   <div
                     key={item}
@@ -121,14 +123,16 @@ export function HomePageContent() {
                   </div>
                 ))}
               </div>
-
-              <Link
-                href="/league-structure"
-                className="btn-ptl-primary mt-12 self-start px-6 py-2.5 text-[12.5px] font-semibold tracking-[0.04em] shadow-[0_6px_22px_rgba(8,12,20,0.38)] transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#1a2330] hover:shadow-[0_10px_30px_rgba(8,12,20,0.48)] sm:mt-14"
-              >
-                View League Structure
-              </Link>
             </div>
+          </div>
+
+          <div className="mt-12 flex justify-center sm:mt-14">
+            <Link
+              href="/league-structure"
+              className="btn-ptl-primary px-6 py-2.5 text-[12.5px] font-semibold tracking-[0.04em] shadow-[0_6px_22px_rgba(8,12,20,0.38)] transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#1a2330] hover:shadow-[0_10px_30px_rgba(8,12,20,0.48)]"
+            >
+              View League Structure
+            </Link>
           </div>
         </div>
       </section>
