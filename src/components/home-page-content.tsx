@@ -135,11 +135,11 @@ export function HomePageContent() {
 
       <section className="ptl-section-border bg-[#F2F1ED] py-[5.25rem] sm:py-[7rem] lg:py-[8.25rem]">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.12fr)_minmax(0,1fr)] lg:grid-rows-2 lg:gap-x-10 lg:gap-y-7">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.18fr)_minmax(0,1fr)] lg:grid-rows-2 lg:gap-x-10 lg:gap-y-7">
             {homeCorePrincipleCards.slice(0, 2).map((item, idx) => (
               <article
                 key={item.title}
-                className={`flex flex-col rounded-[18px] border border-[#E5E1D8] bg-white p-[22px] shadow-[0_5px_24px_rgba(17,24,39,0.08),0_1px_3px_rgba(17,24,39,0.05)] transition duration-[250ms] ease-out hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(17,24,39,0.12),0_4px_10px_rgba(17,24,39,0.06)] sm:px-[26px] sm:py-6 ${idx === 0 ? "order-2 lg:order-none lg:col-start-1 lg:row-start-1" : "order-3 lg:order-none lg:col-start-1 lg:row-start-2"}`}
+                className={`flex flex-col rounded-[18px] border border-[#E5E1D8] bg-white p-[22px] shadow-[0_5px_24px_rgba(17,24,39,0.08),0_1px_3px_rgba(17,24,39,0.05)] transition duration-[250ms] ease-out hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(17,24,39,0.12),0_4px_10px_rgba(17,24,39,0.06)] sm:px-[26px] sm:py-6 ${idx === 0 ? "order-3 lg:order-none lg:col-start-1 lg:row-start-1" : "order-4 lg:order-none lg:col-start-1 lg:row-start-2"}`}
               >
                 <h3 className="font-display text-[1.28rem] font-semibold leading-snug text-[#111] sm:text-[1.38rem]">
                   {item.title}
@@ -150,37 +150,36 @@ export function HomePageContent() {
               </article>
             ))}
 
-            <article className="order-1 flex h-full min-h-0 flex-col overflow-hidden rounded-[18px] border border-[#E5E1D8] bg-white shadow-[0_8px_32px_rgba(17,24,39,0.1),0_2px_8px_rgba(17,24,39,0.06)] lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1">
-              <div className="flex flex-col px-6 pb-1 pt-6 text-center sm:px-8 sm:pt-7">
-                <div className="flex justify-center">
-                  <EditorialRule surface="light" align="start" />
-                </div>
-                <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.32em] text-[#C6A86B] sm:text-[11px] sm:tracking-[0.34em]">
-                  Core Principles
-                </p>
-                <h2 className="mt-5 font-display text-[1.85rem] font-semibold leading-[1.06] tracking-[-0.02em] text-[#111111] sm:mt-6 sm:text-[2.15rem] lg:text-[2.35rem] lg:leading-[1.05]">
-                  What Makes Premier Tennis League Different
-                </h2>
-                <p className="mx-auto mt-4 max-w-[26rem] text-[0.98rem] font-normal leading-[1.62] text-[#5c5c5c] sm:mt-5 sm:text-[1.02rem]">
-                  A competitive structure built on teams, results, and earned
-                  movement.
-                </p>
+            <article className="order-1 flex flex-col rounded-[18px] border border-[#E5E1D8] bg-white px-6 py-7 text-center shadow-[0_10px_36px_rgba(17,24,39,0.11),0_2px_10px_rgba(17,24,39,0.06)] sm:px-8 sm:py-8 lg:order-none lg:col-start-2 lg:row-start-1 lg:px-10 lg:py-9">
+              <div className="flex justify-center">
+                <EditorialRule surface="light" align="start" />
               </div>
-              <div className="relative mt-5 min-h-[220px] w-full flex-1 sm:min-h-[260px] lg:mt-6 lg:min-h-[min(40vh,320px)]">
-                <Image
-                  src="/assets/core-principles-center.png"
-                  alt="Team huddle on court: unity, accountability, and competitive spirit"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(min-width: 1024px) 34vw, 100vw"
-                />
-              </div>
+              <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.32em] text-[#C6A86B] sm:text-[11px] sm:tracking-[0.34em]">
+                Core Principles
+              </p>
+              <h2 className="mt-5 font-display text-[1.95rem] font-semibold leading-[1.06] tracking-[-0.02em] text-[#111111] sm:mt-6 sm:text-[2.2rem] lg:text-[2.45rem] lg:leading-[1.05]">
+                What Makes Premier Tennis League Different
+              </h2>
+              <p className="mx-auto mt-4 max-w-[28rem] text-[0.98rem] font-normal leading-[1.62] text-[#5c5c5c] sm:mt-5 sm:text-[1.02rem] lg:mt-6">
+                A competitive structure built on teams, results, and earned
+                movement.
+              </p>
             </article>
+
+            <div className="relative order-2 aspect-[4/3] min-h-[200px] w-full overflow-hidden rounded-[18px] border border-[#E5E1D8] shadow-[0_8px_28px_rgba(17,24,39,0.1),0_2px_8px_rgba(17,24,39,0.05)] sm:min-h-[240px] lg:order-none lg:col-start-2 lg:row-start-2 lg:aspect-[5/4] lg:min-h-0">
+              <Image
+                src="/assets/core-principles-center.png"
+                alt="Team huddle on court: unity, accountability, and competitive spirit"
+                fill
+                className="object-cover object-center"
+                sizes="(min-width: 1024px) 34vw, 90vw"
+              />
+            </div>
 
             {homeCorePrincipleCards.slice(2, 4).map((item, idx) => (
               <article
                 key={item.title}
-                className={`flex flex-col rounded-[18px] border border-[#E5E1D8] bg-white p-[22px] shadow-[0_5px_24px_rgba(17,24,39,0.08),0_1px_3px_rgba(17,24,39,0.05)] transition duration-[250ms] ease-out hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(17,24,39,0.12),0_4px_10px_rgba(17,24,39,0.06)] sm:px-[26px] sm:py-6 ${idx === 0 ? "order-4 lg:order-none lg:col-start-3 lg:row-start-1" : "order-5 lg:order-none lg:col-start-3 lg:row-start-2"}`}
+                className={`flex flex-col rounded-[18px] border border-[#E5E1D8] bg-white p-[22px] shadow-[0_5px_24px_rgba(17,24,39,0.08),0_1px_3px_rgba(17,24,39,0.05)] transition duration-[250ms] ease-out hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(17,24,39,0.12),0_4px_10px_rgba(17,24,39,0.06)] sm:px-[26px] sm:py-6 ${idx === 0 ? "order-5 lg:order-none lg:col-start-3 lg:row-start-1" : "order-6 lg:order-none lg:col-start-3 lg:row-start-2"}`}
               >
                 <h3 className="font-display text-[1.28rem] font-semibold leading-snug text-[#111] sm:text-[1.38rem]">
                   {item.title}
