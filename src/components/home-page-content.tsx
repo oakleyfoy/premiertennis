@@ -70,14 +70,14 @@ export function HomePageContent() {
 
       <section className="ptl-section-border border-t border-[#E8E4DC] bg-[#FFFCF8] py-[5.25rem] shadow-[inset_0_1px_0_rgba(255,255,255,1)] sm:py-[7rem] lg:py-[8.25rem]">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="grid gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-x-20">
-            <div className="relative aspect-[4/3] min-h-[280px] overflow-hidden rounded-[18px] border border-[#E5E1D8] shadow-[0_6px_36px_rgba(17,24,39,0.09),0_1px_3px_rgba(17,24,39,0.05)] lg:min-h-[340px]">
+          <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-x-16 lg:gap-y-0">
+            <div className="relative aspect-[4/3] min-h-[300px] overflow-hidden rounded-[16px] border border-[#E5E1D8] shadow-[0_10px_40px_rgba(17,24,39,0.12),0_2px_8px_rgba(17,24,39,0.06)] lg:min-h-[360px]">
               <Image
-                src="/assets/hero-court.jpeg"
-                alt="Competitive hard court tennis facility for structured league play"
+                src="/assets/why-built-doubles.jpg"
+                alt="Four players in a doubles match on court—teams, competition, and real play"
                 fill
-                className="object-cover object-center"
-                sizes="(min-width: 1024px) 42vw, 100vw"
+                className="object-cover object-[38%_center]"
+                sizes="(min-width: 1024px) 48vw, 100vw"
               />
             </div>
 
@@ -90,21 +90,25 @@ export function HomePageContent() {
               </p>
 
               <h2 className="mt-5 font-display text-[2.15rem] font-semibold leading-[1.06] tracking-[-0.02em] text-[#0d1219] sm:mt-6 sm:text-[2.55rem] lg:text-[2.95rem] lg:leading-[1.05]">
-                A better structure for competitive amateur tennis.
+                A better way to compete in amateur tennis.
               </h2>
               <p className="mt-7 max-w-[26rem] text-[1.02rem] leading-[1.72] text-[#1F2933]/92 lg:max-w-[27rem] lg:text-[1.055rem] lg:leading-[1.74]">
-                Too many leagues are built around ratings, ambiguity, and low
-                stakes. PTL is built around teams, seasons, standings, and
-                earned outcomes.
+                Most leagues rely on ratings, guesswork, and artificial balance.
+                <br />
+                <br />
+                Premier Tennis League removes that.
+                <br />
+                <br />
+                Teams compete, results matter, and movement is earned.
               </p>
 
-              <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+              <div className="mt-11 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
                 {heroBullets.map((item) => (
                   <div
                     key={item}
-                    className="rounded-[18px] border border-[#E5E1D8] bg-white px-4 py-3.5 shadow-[0_4px_22px_rgba(17,24,39,0.075),0_1px_2px_rgba(17,24,39,0.04)] transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(17,24,39,0.09)] sm:px-4 sm:py-4"
+                    className="rounded-[16px] border border-[#E5E1D8] bg-white px-5 py-5 shadow-[0_5px_22px_rgba(17,24,39,0.08),0_1px_3px_rgba(17,24,39,0.05)] transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(17,24,39,0.12)] sm:px-6 sm:py-6"
                   >
-                    <p className="text-[0.8125rem] leading-[1.58] text-[#1F2933]/92 sm:text-sm sm:leading-relaxed">
+                    <p className="text-[0.875rem] font-medium leading-[1.55] text-[#1a2330] sm:text-[0.9375rem] sm:leading-[1.58]">
                       {item}
                     </p>
                   </div>
@@ -113,7 +117,7 @@ export function HomePageContent() {
 
               <Link
                 href="/league-structure"
-                className="btn-ptl-primary mt-12 self-start px-5 py-[0.42rem] text-[12px] tracking-[0.04em] sm:mt-14"
+                className="btn-ptl-primary mt-12 self-start px-6 py-2.5 text-[12.5px] font-semibold tracking-[0.04em] shadow-[0_6px_22px_rgba(8,12,20,0.38)] transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#1a2330] hover:shadow-[0_10px_30px_rgba(8,12,20,0.48)] sm:mt-14"
               >
                 View League Structure
               </Link>
@@ -124,66 +128,61 @@ export function HomePageContent() {
 
       <section className="ptl-section-border bg-[#F2F1ED] py-[5.25rem] sm:py-[7rem] lg:py-[8.25rem]">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-[40rem] text-center lg:max-w-[48rem]">
-            <div className="flex justify-center">
-              <EditorialRule surface="light" align="start" />
-            </div>
-            <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.32em] text-[#C6A86B] sm:mt-6 sm:text-[11px] sm:tracking-[0.34em]">
-              Core Principles
-            </p>
-            <h2 className="mt-7 font-display text-[2.15rem] font-semibold leading-[1.05] tracking-[-0.02em] text-[#111111] sm:mt-8 sm:text-[2.65rem] lg:mt-9 lg:text-[3.1rem] lg:leading-[1.04]">
-              What Makes Premier Tennis League Different
-            </h2>
-            <p className="mx-auto mt-6 max-w-[36rem] text-[1.02rem] leading-[1.62] text-[#5c5c5c] sm:mt-7 sm:text-[1.055rem]">
-              A competitive structure built on teams, results, and earned
-              movement.
-            </p>
-          </div>
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.12fr)_minmax(0,1fr)] lg:grid-rows-2 lg:gap-x-10 lg:gap-y-7">
+            {homeCorePrincipleCards.slice(0, 2).map((item, idx) => (
+              <article
+                key={item.title}
+                className={`flex flex-col rounded-[18px] border border-[#E5E1D8] bg-white p-[22px] shadow-[0_5px_24px_rgba(17,24,39,0.08),0_1px_3px_rgba(17,24,39,0.05)] transition duration-[250ms] ease-out hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(17,24,39,0.12),0_4px_10px_rgba(17,24,39,0.06)] sm:px-[26px] sm:py-6 ${idx === 0 ? "order-2 lg:order-none lg:col-start-1 lg:row-start-1" : "order-3 lg:order-none lg:col-start-1 lg:row-start-2"}`}
+              >
+                <h3 className="font-display text-[1.28rem] font-semibold leading-snug text-[#111] sm:text-[1.38rem]">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-[0.875rem] font-normal leading-[1.68] text-[#555] sm:text-[0.9rem]">
+                  {item.text}
+                </p>
+              </article>
+            ))}
 
-          <div className="mt-20 grid grid-cols-1 gap-8 lg:mt-[5.5rem] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.14fr)_minmax(0,1fr)] lg:items-stretch lg:gap-x-10 lg:gap-y-0">
-            <div className="grid content-center gap-6 lg:gap-7">
-              {homeCorePrincipleCards.slice(0, 2).map((item) => (
-                <article
-                  key={item.title}
-                  className="flex flex-col rounded-[16px] border border-[#E5E1D8] bg-white p-[22px] shadow-[0_5px_24px_rgba(17,24,39,0.08),0_1px_3px_rgba(17,24,39,0.05)] transition duration-[250ms] ease-out hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(17,24,39,0.12),0_4px_10px_rgba(17,24,39,0.06)] sm:px-[26px] sm:py-6"
-                >
-                  <h3 className="font-display text-[1.28rem] font-semibold leading-snug text-[#111] sm:text-[1.38rem]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-4 text-[0.875rem] font-normal leading-[1.68] text-[#555] sm:text-[0.9rem]">
-                    {item.text}
-                  </p>
-                </article>
-              ))}
-            </div>
-
-            <div className="flex min-w-0 items-center justify-center px-0 py-2 lg:px-4 lg:py-3">
-              <div className="relative aspect-[4/5] w-full max-w-[min(100%,26rem)] overflow-hidden rounded-[18px] border border-[#E5E1D8] shadow-[0_16px_52px_rgba(17,24,39,0.16),0_4px_14px_rgba(17,24,39,0.08)] transition-transform duration-[250ms] ease-out lg:max-w-none lg:scale-[1.07] lg:shadow-[0_22px_64px_rgba(17,24,39,0.2),0_6px_20px_rgba(17,24,39,0.1)]">
+            <article className="order-1 flex h-full min-h-0 flex-col overflow-hidden rounded-[18px] border border-[#E5E1D8] bg-white shadow-[0_8px_32px_rgba(17,24,39,0.1),0_2px_8px_rgba(17,24,39,0.06)] lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1">
+              <div className="flex flex-col px-6 pb-1 pt-6 text-center sm:px-8 sm:pt-7">
+                <div className="flex justify-center">
+                  <EditorialRule surface="light" align="start" />
+                </div>
+                <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.32em] text-[#C6A86B] sm:text-[11px] sm:tracking-[0.34em]">
+                  Core Principles
+                </p>
+                <h2 className="mt-5 font-display text-[1.85rem] font-semibold leading-[1.06] tracking-[-0.02em] text-[#111111] sm:mt-6 sm:text-[2.15rem] lg:text-[2.35rem] lg:leading-[1.05]">
+                  What Makes Premier Tennis League Different
+                </h2>
+                <p className="mx-auto mt-4 max-w-[26rem] text-[0.98rem] font-normal leading-[1.62] text-[#5c5c5c] sm:mt-5 sm:text-[1.02rem]">
+                  A competitive structure built on teams, results, and earned
+                  movement.
+                </p>
+              </div>
+              <div className="relative mt-5 min-h-[220px] w-full flex-1 sm:min-h-[260px] lg:mt-6 lg:min-h-[min(40vh,320px)]">
                 <Image
                   src="/assets/core-principles-center.png"
                   alt="Team huddle on court: unity, accountability, and competitive spirit"
                   fill
                   className="object-cover object-center"
-                  sizes="(min-width: 1024px) 36vw, 90vw"
+                  sizes="(min-width: 1024px) 34vw, 100vw"
                 />
               </div>
-            </div>
+            </article>
 
-            <div className="grid content-center gap-6 lg:gap-7">
-              {homeCorePrincipleCards.slice(2, 4).map((item) => (
-                <article
-                  key={item.title}
-                  className="flex flex-col rounded-[16px] border border-[#E5E1D8] bg-white p-[22px] shadow-[0_5px_24px_rgba(17,24,39,0.08),0_1px_3px_rgba(17,24,39,0.05)] transition duration-[250ms] ease-out hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(17,24,39,0.12),0_4px_10px_rgba(17,24,39,0.06)] sm:px-[26px] sm:py-6"
-                >
-                  <h3 className="font-display text-[1.28rem] font-semibold leading-snug text-[#111] sm:text-[1.38rem]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-4 text-[0.875rem] font-normal leading-[1.68] text-[#555] sm:text-[0.9rem]">
-                    {item.text}
-                  </p>
-                </article>
-              ))}
-            </div>
+            {homeCorePrincipleCards.slice(2, 4).map((item, idx) => (
+              <article
+                key={item.title}
+                className={`flex flex-col rounded-[18px] border border-[#E5E1D8] bg-white p-[22px] shadow-[0_5px_24px_rgba(17,24,39,0.08),0_1px_3px_rgba(17,24,39,0.05)] transition duration-[250ms] ease-out hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(17,24,39,0.12),0_4px_10px_rgba(17,24,39,0.06)] sm:px-[26px] sm:py-6 ${idx === 0 ? "order-4 lg:order-none lg:col-start-3 lg:row-start-1" : "order-5 lg:order-none lg:col-start-3 lg:row-start-2"}`}
+              >
+                <h3 className="font-display text-[1.28rem] font-semibold leading-snug text-[#111] sm:text-[1.38rem]">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-[0.875rem] font-normal leading-[1.68] text-[#555] sm:text-[0.9rem]">
+                  {item.text}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>

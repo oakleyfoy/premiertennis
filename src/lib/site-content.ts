@@ -23,10 +23,10 @@ export const footerPlayerLinks = [
 ];
 
 export const heroBullets = [
-  "Eliminate ratings, algorithms, and subjective placement",
-  "Let teams compete, advance, and fall together",
-  "Create real stakes through promotion and relegation",
-  "Turn amateur tennis into a true league sport",
+  "Eliminate ratings and subjective placement",
+  "Teams compete, advance, and fall together",
+  "Real stakes through promotion and relegation",
+  "Turn amateur tennis into a true league system",
 ];
 
 export const leaguePillars = [
