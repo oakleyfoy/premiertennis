@@ -4,11 +4,13 @@ export const navLinks = [
   { href: "/cities", label: "Cities" },
   { href: "/captains-corner", label: "Captain's Corner" },
   { href: "/about", label: "About" },
+  { href: "/vision", label: "PTL Vision" },
 ];
 
 export const footerLeagueLinks = [
   { href: "/league-structure", label: "League Structure" },
   { href: "/play", label: "Play" },
+  { href: "/vision", label: "PTL Vision" },
   { href: "/league-structure", label: "Scoring & Standings" },
   { href: "/league-structure", label: "Promotion & Relegation" },
   { href: "/faq", label: "FAQ" },
@@ -17,6 +19,7 @@ export const footerLeagueLinks = [
 export const footerPlayerLinks = [
   { href: "/contact", label: "Start a Team" },
   { href: "/captains-corner", label: "Captain's Corner" },
+  { href: "/vision", label: "Why PTL Exists" },
   { href: "/cities", label: "Cities" },
   { href: "/league-structure", label: "Season Calendar (future)" },
   { href: "/contact", label: "Contact PTL" },
@@ -302,3 +305,49 @@ export const contactDetails = {
   phone: "+1-800-997-0150",
   launchNote: "Launching this fall in pilot cities to be announced.",
 };
+
+export const visionFoundations = [
+  "Premier Tennis League was not created to be another local tennis league.",
+  "It was built from the belief that recreational tennis deserves real teams, real rivalries, real identity, and a structure players can invest in for years rather than a single season.",
+  "PTL is designed as a long-term team tennis ecosystem built around continuity, promotion and relegation, competitive pride, and lasting club culture instead of temporary lineups and rating calculations.",
+] as const;
+
+export const visionGlobalDestinations = [
+  "Morocco",
+  "Spain",
+  "England",
+  "Japan",
+  "France",
+] as const;
+
+export const visionNetworkLayers = [
+  "Local city leagues",
+  "Regional and national qualification",
+  "Destination-based Premier events",
+  "Team travel and training experiences",
+  "Shared international club culture",
+] as const;
+
+export const visionSportsExperience = [
+  "Seasonal standings",
+  "Promotion races",
+  "Relegation battles",
+  "Team rankings",
+  "Player statistics",
+  "Historical records",
+  "Championship histories",
+  "Rivalry tracking",
+  "Captain records",
+  "Winning streaks",
+  "Playoff qualification races",
+  "Long-term league history",
+] as const;
+
+export const visionIdentityPoints = [
+  "Teams that exist for years",
+  "Rivalries that grow every season",
+  "Promotion battles that matter",
+  "Championship races that players remember",
+  "Captains building rosters and culture over time",
+  "Cities rallying behind their clubs",
+] as const;
