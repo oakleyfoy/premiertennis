@@ -10,7 +10,7 @@ import "./globals.css";
 
 import { SiteShell } from "@/components/site-shell";
 
-const GOOGLE_TAG_ID = "G-5ST6HZWQNC";
+const GOOGLE_TAG_ID = "G-3KH1J5T50S";
 
 export const metadata: Metadata = {
   title: {
@@ -19,11 +19,6 @@ export const metadata: Metadata = {
   },
   description:
     "Premier Tennis League is a structured, team-based tennis league built around results, seasons, and earned movement.",
-  icons: {
-    icon: "/assets/ptl-crest-transparent.png",
-    shortcut: "/assets/ptl-crest-transparent.png",
-    apple: "/assets/ptl-crest-transparent.png",
-  },
 };
 
 export default function RootLayout({
