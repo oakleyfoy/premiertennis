@@ -6,7 +6,6 @@ import { useState } from "react";
 type FormPayload = {
   name: string;
   email: string;
-  phone: string;
   city: string;
   role: string;
   interestType: string;
@@ -18,7 +17,6 @@ type FormPayload = {
 const initialState: FormPayload = {
   name: "",
   email: "",
-  phone: "",
   city: "",
   role: "",
   interestType: "",
@@ -158,16 +156,6 @@ export function InterestForm({ recaptchaSiteKey = "" }: InterestFormProps) {
             onChange={(event) => updateField("email", event.target.value)}
             className="w-full rounded-xl border border-[#E5E1D8] bg-white px-4 py-3 text-[#111827] outline-none transition placeholder:text-slate-400 focus:border-[#C8A96A] focus:ring-1 focus:ring-[#C8A96A]/35"
             placeholder="you@example.com"
-          />
-        </label>
-
-        <label className="space-y-2">
-          <span className="text-sm font-medium text-slate-700">Phone</span>
-          <input
-            value={form.phone}
-            onChange={(event) => updateField("phone", event.target.value)}
-            className="w-full rounded-xl border border-[#E5E1D8] bg-white px-4 py-3 text-[#111827] outline-none transition placeholder:text-slate-400 focus:border-[#C8A96A] focus:ring-1 focus:ring-[#C8A96A]/35"
-            placeholder="Optional"
           />
         </label>
 

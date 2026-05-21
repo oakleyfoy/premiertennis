@@ -6,7 +6,6 @@ import nodemailer from "nodemailer";
 export type InterestSubmission = {
   name: string;
   email: string;
-  phone: string;
   city: string;
   role: string;
   interestType: string;
@@ -140,7 +139,6 @@ function buildInternalEmailText(submission: InterestSubmission) {
     `Submitted: ${submission.submittedAt}`,
     `Name: ${submission.name}`,
     `Email: ${submission.email}`,
-    `Phone: ${submission.phone || "Not provided"}`,
     `City: ${submission.city || "Not provided"}`,
     `Role: ${submission.role || "Not provided"}`,
     `Interest Type: ${submission.interestType}`,
@@ -164,7 +162,6 @@ function buildInternalEmailHtml(submission: InterestSubmission) {
     ["Submitted", submission.submittedAt],
     ["Name", submission.name],
     ["Email", submission.email],
-    ["Phone", submission.phone || "Not provided"],
     ["City", submission.city || "Not provided"],
     ["Role", submission.role || "Not provided"],
     ["Interest Type", submission.interestType],

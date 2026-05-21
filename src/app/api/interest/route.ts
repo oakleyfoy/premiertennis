@@ -87,7 +87,6 @@ export async function POST(request: Request) {
     const submission = {
       name: clean(body.name),
       email: clean(body.email),
-      phone: clean(body.phone),
       city: clean(body.city),
       role: clean(body.role),
       interestType: clean(body.interestType),

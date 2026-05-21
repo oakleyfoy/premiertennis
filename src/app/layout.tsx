@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   },
   description:
     "Premier Tennis League is a structured, team-based tennis league built around results, seasons, and earned movement.",
+  icons: {
+    icon: "/assets/ptl-crest-transparent.png",
+    shortcut: "/assets/ptl-crest-transparent.png",
+    apple: "/assets/ptl-crest-transparent.png",
+  },
 };
 
 export default function RootLayout({
