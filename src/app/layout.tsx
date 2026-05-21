@@ -5,9 +5,12 @@ import "@fontsource/cormorant-garamond/700.css";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
+import Script from "next/script";
 import "./globals.css";
 
 import { SiteShell } from "@/components/site-shell";
+
+const GOOGLE_TAG_ID = "G-5ST6HZWQNC";
 
 export const metadata: Metadata = {
   title: {
@@ -33,6 +36,18 @@ export default function RootLayout({
       <body className="min-h-full bg-[#F7F5F0] text-[#111827]">
         <SiteShell>{children}</SiteShell>
       </body>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GOOGLE_TAG_ID}');
+        `}
+      </Script>
     </html>
   );
 }
