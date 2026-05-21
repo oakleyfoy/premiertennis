@@ -18,6 +18,8 @@ const contactReasons = [
 ];
 
 export default function ContactPage() {
+  const recaptchaSiteKey = process.env.RECAPTCHA_SITE_KEY ?? "";
+
   return (
     <section className="relative overflow-hidden bg-[#F7F5F0] py-16 text-[#111827] sm:py-20">
       <div className="absolute inset-0">
@@ -113,7 +115,7 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-8 rounded-[18px] border border-[#EEE8DE] bg-[linear-gradient(180deg,#fffefb_0%,#faf7f0_100%)] px-4 py-4 sm:px-5 sm:py-5">
-              <InterestForm />
+              <InterestForm recaptchaSiteKey={recaptchaSiteKey} />
             </div>
           </section>
         </div>

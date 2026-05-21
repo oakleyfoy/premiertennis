@@ -1,5 +1,6 @@
 "use client";
 
+import Script from "next/script";
 import { useState } from "react";
 
 type FormPayload = {
@@ -11,6 +12,7 @@ type FormPayload = {
   interestType: string;
   message: string;
   company: string;
+  recaptchaToken: string;
 };
 
 const initialState: FormPayload = {
@@ -22,9 +24,55 @@ const initialState: FormPayload = {
   interestType: "",
   message: "",
   company: "",
+  recaptchaToken: "",
 };
 
-export function InterestForm() {
+type InterestFormProps = {
+  recaptchaSiteKey?: string;
+};
+
+declare global {
+  interface Window {
+    grecaptcha?: {
+      ready: (callback: () => void) => void;
+      execute: (
+        siteKey: string,
+        options: { action: string },
+      ) => Promise<string>;
+    };
+  }
+}
+
+async function waitForRecaptcha() {
+  for (let attempt = 0; attempt < 20; attempt += 1) {
+    if (window.grecaptcha) {
+      return window.grecaptcha;
+    }
+
+    await new Promise((resolve) => setTimeout(resolve, 150));
+  }
+
+  return null;
+}
+
+async function getRecaptchaToken(siteKey: string) {
+  const grecaptcha = await waitForRecaptcha();
+
+  if (!grecaptcha) {
+    throw new Error("Security verification is still loading. Please try again.");
+  }
+
+  return new Promise<string>((resolve, reject) => {
+    grecaptcha.ready(() => {
+      grecaptcha
+        .execute(siteKey, { action: "interest_form" })
+        .then(resolve)
+        .catch(() => reject(new Error("Security verification failed. Please try again.")));
+    });
+  });
+}
+
+export function InterestForm({ recaptchaSiteKey = "" }: InterestFormProps) {
   const [form, setForm] = useState<FormPayload>(initialState);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
     "idle",
@@ -37,12 +85,19 @@ export function InterestForm() {
     setMessage("");
 
     try {
+      const recaptchaToken = recaptchaSiteKey
+        ? await getRecaptchaToken(recaptchaSiteKey)
+        : "";
+
       const response = await fetch("/api/interest", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          recaptchaToken,
+        }),
       });
 
       const result = (await response.json()) as {
@@ -73,8 +128,16 @@ export function InterestForm() {
   }
 
   return (
-    <form className="space-y-5" onSubmit={handleSubmit}>
-      <div className="grid gap-5 sm:grid-cols-2">
+    <>
+      {recaptchaSiteKey ? (
+        <Script
+          id="google-recaptcha"
+          src={`https://www.google.com/recaptcha/api.js?render=${encodeURIComponent(recaptchaSiteKey)}`}
+        />
+      ) : null}
+
+      <form className="space-y-5" onSubmit={handleSubmit}>
+        <div className="grid gap-5 sm:grid-cols-2">
         <label className="space-y-2">
           <span className="text-sm font-medium text-slate-700">Name</span>
           <input
@@ -150,50 +213,76 @@ export function InterestForm() {
             <option value="general">General inquiry</option>
           </select>
         </label>
-      </div>
+        </div>
 
-      <label className="space-y-2">
-        <span className="text-sm font-medium text-slate-700">Message</span>
-        <textarea
-          rows={5}
-          value={form.message}
-          onChange={(event) => updateField("message", event.target.value)}
-          className="w-full rounded-xl border border-[#E5E1D8] bg-white px-4 py-3 text-[#111827] outline-none transition placeholder:text-slate-400 focus:border-[#C8A96A] focus:ring-1 focus:ring-[#C8A96A]/35"
-          placeholder="Tell PTL a little about your interest, city, team, or partnership idea."
-        />
-      </label>
-
-      <div className="hidden">
-        <label>
-          Company
-          <input
-            tabIndex={-1}
-            autoComplete="off"
-            value={form.company}
-            onChange={(event) => updateField("company", event.target.value)}
+        <label className="space-y-2">
+          <span className="text-sm font-medium text-slate-700">Message</span>
+          <textarea
+            rows={5}
+            value={form.message}
+            onChange={(event) => updateField("message", event.target.value)}
+            className="w-full rounded-xl border border-[#E5E1D8] bg-white px-4 py-3 text-[#111827] outline-none transition placeholder:text-slate-400 focus:border-[#C8A96A] focus:ring-1 focus:ring-[#C8A96A]/35"
+            placeholder="Tell PTL a little about your interest, city, team, or partnership idea."
           />
         </label>
-      </div>
 
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <button
-          type="submit"
-          disabled={status === "submitting"}
-          className="btn-ptl-primary disabled:cursor-not-allowed disabled:opacity-70"
-        >
-          {status === "submitting" ? "Submitting..." : "Submit Interest"}
-        </button>
+        <div className="hidden">
+          <label>
+            Company
+            <input
+              tabIndex={-1}
+              autoComplete="off"
+              value={form.company}
+              onChange={(event) => updateField("company", event.target.value)}
+            />
+          </label>
+        </div>
 
-        {message ? (
-          <p
-            className={`text-sm leading-6 ${
-              status === "success" ? "text-[#1F2933]" : "text-rose-500"
-            }`}
-          >
-            {message}
-          </p>
-        ) : null}
-      </div>
-    </form>
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <button
+              type="submit"
+              disabled={status === "submitting"}
+              className="btn-ptl-primary disabled:cursor-not-allowed disabled:opacity-70"
+            >
+              {status === "submitting" ? "Submitting..." : "Submit Interest"}
+            </button>
+            {recaptchaSiteKey ? (
+              <p className="mt-3 max-w-[28rem] text-xs leading-5 text-[#6B7280]">
+                This form is protected by reCAPTCHA and the Google{" "}
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline underline-offset-2"
+                >
+                  Privacy Policy
+                </a>{" "}
+                and{" "}
+                <a
+                  href="https://policies.google.com/terms"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline underline-offset-2"
+                >
+                  Terms of Service
+                </a>{" "}
+                apply.
+              </p>
+            ) : null}
+          </div>
+
+          {message ? (
+            <p
+              className={`text-sm leading-6 ${
+                status === "success" ? "text-[#1F2933]" : "text-rose-500"
+              }`}
+            >
+              {message}
+            </p>
+          ) : null}
+        </div>
+      </form>
+    </>
   );
 }

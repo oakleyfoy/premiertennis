@@ -53,14 +53,69 @@ export async function saveInterestSubmission(submission: InterestSubmission) {
   }
 }
 
-function getMailConfig() {
+type SmtpMailConfig = {
+  host: string;
+  port: number;
+  secure: boolean;
+  user: string;
+  pass: string;
+  from: string;
+  to: string;
+};
+
+type MicrosoftMailConfig = {
+  clientId: string;
+  clientSecret: string;
+  tenantId: string;
+  from: string;
+  to: string;
+};
+
+type MailPayload = {
+  to: string;
+  subject: string;
+  text: string;
+  html: string;
+  replyTo?: string;
+};
+
+function getSharedMailboxSettings() {
+  const from = process.env.MAIL_FROM_EMAIL ?? process.env.FORM_FROM_EMAIL;
+  const to = process.env.INQUIRY_TO_EMAIL ?? process.env.FORM_TO_EMAIL;
+
+  if (!from || !to) {
+    return null;
+  }
+
+  return { from, to };
+}
+
+function getMicrosoftMailConfig(): MicrosoftMailConfig | null {
+  const shared = getSharedMailboxSettings();
+  const clientId = process.env.MICROSOFT_CLIENT_ID;
+  const clientSecret = process.env.MICROSOFT_CLIENT_SECRET;
+  const tenantId = process.env.MICROSOFT_TENANT_ID;
+
+  if (!shared || !clientId || !clientSecret || !tenantId) {
+    return null;
+  }
+
+  return {
+    clientId,
+    clientSecret,
+    tenantId,
+    from: shared.from,
+    to: shared.to,
+  };
+}
+
+function getSmtpMailConfig(): SmtpMailConfig | null {
+  const shared = getSharedMailboxSettings();
   const host = process.env.SMTP_HOST;
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
-  const from = process.env.FORM_FROM_EMAIL;
-  const to = process.env.FORM_TO_EMAIL;
 
-  if (!host || !user || !pass || !from || !to) {
+  if (!shared || !host || !user || !pass) {
     return null;
   }
 
@@ -73,12 +128,12 @@ function getMailConfig() {
     secure,
     user,
     pass,
-    from,
-    to,
+    from: shared.from,
+    to: shared.to,
   };
 }
 
-function buildEmailText(submission: InterestSubmission) {
+function buildInternalEmailText(submission: InterestSubmission) {
   return [
     "New Premier Tennis League interest form submission",
     "",
@@ -104,7 +159,7 @@ function escapeHtml(value: string) {
     .replaceAll("'", "&#39;");
 }
 
-function buildEmailHtml(submission: InterestSubmission) {
+function buildInternalEmailHtml(submission: InterestSubmission) {
   const rows = [
     ["Submitted", submission.submittedAt],
     ["Name", submission.name],
@@ -145,8 +200,125 @@ function buildEmailHtml(submission: InterestSubmission) {
   `;
 }
 
+function buildAutoReplyText(submission: InterestSubmission) {
+  return [
+    `Hi ${submission.name},`,
+    "",
+    "Thanks for reaching out to Premier Tennis League.",
+    "",
+    "This is an automatic confirmation that your inquiry was received. PTL will review your message and follow up as launch details, team-building opportunities, and market information develop.",
+    "",
+    `Interest Type: ${submission.interestType}`,
+    `City: ${submission.city || "Not provided"}`,
+    "",
+    "If you need to add anything else, reply to this email and it will go straight to the PTL inbox.",
+    "",
+    "Premier Tennis League",
+  ].join("\n");
+}
+
+function buildAutoReplyHtml(submission: InterestSubmission) {
+  return `
+    <div style="font-family: Arial, sans-serif; color: #0f172a;">
+      <h2 style="margin-bottom: 16px;">Thanks for contacting Premier Tennis League</h2>
+      <p style="margin: 0 0 16px; line-height: 1.7;">Hi ${escapeHtml(submission.name)},</p>
+      <p style="margin: 0 0 16px; line-height: 1.7;">
+        This is an automatic confirmation that PTL received your inquiry. The team will review your message and follow up as launch details, team-building opportunities, and market information develop.
+      </p>
+      <div style="margin: 20px 0; padding: 16px; border: 1px solid #dbe3ee; background: #f8fafc; max-width: 640px;">
+        <p style="margin: 0 0 8px; font-weight: 700;">What we received</p>
+        <p style="margin: 0; line-height: 1.7;">Interest Type: ${escapeHtml(submission.interestType)}</p>
+        <p style="margin: 0; line-height: 1.7;">City: ${escapeHtml(submission.city || "Not provided")}</p>
+      </div>
+      <p style="margin: 0; line-height: 1.7;">
+        If you need to add anything else, simply reply to this email and it will go straight to the PTL inbox.
+      </p>
+      <p style="margin: 20px 0 0; line-height: 1.7;">Premier Tennis League</p>
+    </div>
+  `;
+}
+
+async function fetchMicrosoftAccessToken(config: MicrosoftMailConfig) {
+  const body = new URLSearchParams({
+    client_id: config.clientId,
+    client_secret: config.clientSecret,
+    scope: "https://graph.microsoft.com/.default",
+    grant_type: "client_credentials",
+  });
+
+  const response = await fetch(
+    `https://login.microsoftonline.com/${config.tenantId}/oauth2/v2.0/token`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body,
+    },
+  );
+
+  if (!response.ok) {
+    throw new Error("Unable to authenticate with Microsoft Graph.");
+  }
+
+  const result = (await response.json()) as { access_token?: string };
+
+  if (!result.access_token) {
+    throw new Error("Microsoft Graph access token was missing.");
+  }
+
+  return result.access_token;
+}
+
+async function sendMicrosoftMail(
+  config: MicrosoftMailConfig,
+  payload: MailPayload,
+) {
+  const accessToken = await fetchMicrosoftAccessToken(config);
+  const response = await fetch(
+    `https://graph.microsoft.com/v1.0/users/${encodeURIComponent(config.from)}/sendMail`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message: {
+          subject: payload.subject,
+          body: {
+            contentType: "HTML",
+            content: payload.html,
+          },
+          toRecipients: [
+            {
+              emailAddress: {
+                address: payload.to,
+              },
+            },
+          ],
+          replyTo: payload.replyTo
+            ? [
+                {
+                  emailAddress: {
+                    address: payload.replyTo,
+                  },
+                },
+              ]
+            : undefined,
+        },
+        saveToSentItems: true,
+      }),
+    },
+  );
+
+  if (!response.ok) {
+    throw new Error("Microsoft Graph sendMail request failed.");
+  }
+}
+
 async function sendInterestSubmissionEmail(submission: InterestSubmission) {
-  const config = getMailConfig();
+  const config = getSmtpMailConfig();
 
   if (!config) {
     throw new Error("SMTP mail configuration is incomplete.");
@@ -167,21 +339,51 @@ async function sendInterestSubmissionEmail(submission: InterestSubmission) {
     to: config.to,
     replyTo: submission.email,
     subject: `PTL interest: ${submission.name} (${submission.interestType})`,
-    text: buildEmailText(submission),
-    html: buildEmailHtml(submission),
+    text: buildInternalEmailText(submission),
+    html: buildInternalEmailHtml(submission),
+  });
+
+  await transporter.sendMail({
+    from: config.from,
+    to: submission.email,
+    replyTo: config.to,
+    subject: "We received your Premier Tennis League inquiry",
+    text: buildAutoReplyText(submission),
+    html: buildAutoReplyHtml(submission),
   });
 }
 
 export async function dispatchInterestSubmission(submission: InterestSubmission) {
-  const mailConfig = getMailConfig();
+  const microsoftConfig = getMicrosoftMailConfig();
+  const smtpConfig = getSmtpMailConfig();
 
-  if (mailConfig) {
+  if (microsoftConfig) {
+    await sendMicrosoftMail(microsoftConfig, {
+      to: microsoftConfig.to,
+      replyTo: submission.email,
+      subject: `PTL interest: ${submission.name} (${submission.interestType})`,
+      text: buildInternalEmailText(submission),
+      html: buildInternalEmailHtml(submission),
+    });
+
+    await sendMicrosoftMail(microsoftConfig, {
+      to: submission.email,
+      replyTo: microsoftConfig.to,
+      subject: "We received your Premier Tennis League inquiry",
+      text: buildAutoReplyText(submission),
+      html: buildAutoReplyHtml(submission),
+    });
+
+    return { mode: "microsoft-email" as const };
+  }
+
+  if (smtpConfig) {
     await sendInterestSubmissionEmail(submission);
-    return { mode: "email" as const };
+    return { mode: "smtp-email" as const };
   }
 
   if (process.env.NODE_ENV === "production") {
-    throw new Error("SMTP mail configuration is required in production.");
+    throw new Error("Email configuration is required in production.");
   }
 
   const filePath = await saveInterestSubmission(submission);
