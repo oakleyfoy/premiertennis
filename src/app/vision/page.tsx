@@ -8,7 +8,6 @@ import {
   visionIdentityPoints,
   visionNetworkLayers,
   visionSportsExperience,
-  visionWorldwideExperiences,
 } from "@/lib/site-content";
 
 export const metadata: Metadata = {
@@ -168,45 +167,6 @@ export default function VisionPage() {
                         </p>
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-6 rounded-[22px] border border-[#E8E0D3] bg-[#FBF8F1] p-4 sm:p-5">
-                <div className="flex flex-col gap-3 border-b border-[#E8E0D3] pb-4 sm:flex-row sm:items-end sm:justify-between">
-                  <div>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A68952]">
-                      Worldwide Experiences
-                    </p>
-                    <p className="mt-2 text-[0.96rem] leading-7 text-[#1F2933]/78">
-                      Early destination dates are now on the calendar. Full details
-                      and itinerary information will follow.
-                    </p>
-                  </div>
-                  <div className="inline-flex items-center rounded-full border border-[#D8C8AA] bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#8C7341]">
-                    More Info Coming
-                  </div>
-                </div>
-
-                <div className="mt-4 grid gap-3 lg:grid-cols-3">
-                  {visionWorldwideExperiences.map((item) => (
-                    <article
-                      key={item.title}
-                      className="rounded-[18px] border border-[#E5DED1] bg-white px-4 py-4 shadow-[0_6px_18px_rgba(17,24,39,0.04),0_2px_8px_rgba(17,24,39,0.025)]"
-                    >
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#A68952]">
-                        Worldwide
-                      </p>
-                      <h3 className="mt-3 font-display text-[1.34rem] leading-[1.14] text-[#111827]">
-                        {item.title}
-                      </h3>
-                      <p className="mt-4 text-[0.96rem] font-semibold leading-7 text-[#1F2933]">
-                        {item.date}
-                      </p>
-                      <p className="mt-3 text-[0.88rem] leading-6 text-[#6B7280]">
-                        {item.status}
-                      </p>
-                    </article>
                   ))}
                 </div>
               </div>

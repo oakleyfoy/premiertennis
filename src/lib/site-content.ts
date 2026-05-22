@@ -351,21 +351,3 @@ export const visionIdentityPoints = [
   "Captains building rosters and culture over time",
   "Cities rallying behind their clubs",
 ] as const;
-
-export const visionWorldwideExperiences = [
-  {
-    title: "French Riviera & Tennis Experience",
-    date: "May 12–19, 2027",
-    status: "More info coming",
-  },
-  {
-    title: "Lake Como Italy & Tennis Experience",
-    date: "July 7–14, 2027",
-    status: "More info coming",
-  },
-  {
-    title: "Sicily Italy & Tennis Experience",
-    date: "November 3–10, 2027",
-    status: "More info coming",
-  },
-] as const;
