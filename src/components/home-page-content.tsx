@@ -651,14 +651,6 @@ export function HomePageContent() {
                       {contactDetails.email}
                     </p>
                   </div>
-                  <div className="rounded-[14px] border border-white/10 bg-[#273244]/78 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#DCC9A0]">
-                      Phone
-                    </p>
-                    <p className="mt-2 text-[0.98rem] font-medium text-white/88">
-                      {contactDetails.phone}
-                    </p>
-                  </div>
                 </div>
                 <p className="mt-6 text-sm leading-7 text-[#C9C5BC]">
                   Want to start organizing early? Reach out and PTL will keep you

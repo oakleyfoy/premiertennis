@@ -51,7 +51,7 @@ export default function ContactPage() {
               start the conversation.
             </p>
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <div className="mt-8 grid gap-3 sm:max-w-[18rem] lg:max-w-none lg:grid-cols-1 xl:max-w-[18rem]">
               <div className="rounded-[14px] border border-white/10 bg-white/[0.045] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#DCC9A0]">
                   Email
@@ -61,17 +61,6 @@ export default function ContactPage() {
                   className="mt-2 block text-[1rem] font-semibold text-white transition hover:text-[#93D0FF]"
                 >
                   {contactDetails.email}
-                </a>
-              </div>
-              <div className="rounded-[14px] border border-white/10 bg-white/[0.045] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#DCC9A0]">
-                  Phone
-                </p>
-                <a
-                  href={`tel:${contactDetails.phone}`}
-                  className="mt-2 block text-[1rem] font-semibold text-white transition hover:text-[#DCC9A0]"
-                >
-                  {contactDetails.phone}
                 </a>
               </div>
             </div>

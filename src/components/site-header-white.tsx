@@ -7,18 +7,6 @@ import { useEffect, useState } from "react";
 
 import { contactDetails, navLinks } from "@/lib/site-content";
 
-function PhoneIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 20 20"
-      className="h-3 w-3 shrink-0 fill-current"
-    >
-      <path d="M5.4 2.5c.4-.4 1-.6 1.6-.4l1.8.6c.7.2 1.1.9 1 1.6l-.3 1.8c0 .4.1.8.4 1.1l2.6 2.6c.3.3.7.4 1.1.4l1.8-.3c.7-.1 1.4.3 1.6 1l.6 1.8c.2.6 0 1.2-.4 1.6l-1.2 1.2c-.8.8-1.9 1.2-3.1 1-2.6-.4-5.2-1.9-7.5-4.2C4.5 10.3 3 7.7 2.6 5.1c-.2-1.2.2-2.3 1-3.1l1.2-1.2Z" />
-    </svg>
-  );
-}
-
 function MailIcon() {
   return (
     <svg
@@ -76,13 +64,6 @@ export function SiteHeaderWhite() {
             </Link>
             <div className="hidden min-w-0 lg:block">
               <div className="flex items-center gap-4 text-[9px] font-medium uppercase leading-none tracking-[0.2em] text-[#5c6570]">
-                <a
-                  href={`tel:${contactDetails.phone}`}
-                  className="inline-flex items-center gap-1 transition hover:text-[#111827]"
-                >
-                  <PhoneIcon />
-                  <span>{contactDetails.phone}</span>
-                </a>
                 <a
                   href={`mailto:${contactDetails.email}`}
                   className="inline-flex max-w-[210px] items-center gap-1 truncate transition hover:text-[#111827] xl:max-w-none"

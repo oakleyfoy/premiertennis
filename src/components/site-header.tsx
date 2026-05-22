@@ -3,18 +3,6 @@ import Link from "next/link";
 
 import { contactDetails, navLinks } from "@/lib/site-content";
 
-function PhoneIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 20 20"
-      className="h-3.5 w-3.5 fill-current"
-    >
-      <path d="M5.4 2.5c.4-.4 1-.6 1.6-.4l1.8.6c.7.2 1.1.9 1 1.6l-.3 1.8c0 .4.1.8.4 1.1l2.6 2.6c.3.3.7.4 1.1.4l1.8-.3c.7-.1 1.4.3 1.6 1l.6 1.8c.2.6 0 1.2-.4 1.6l-1.2 1.2c-.8.8-1.9 1.2-3.1 1-2.6-.4-5.2-1.9-7.5-4.2C4.5 10.3 3 7.7 2.6 5.1c-.2-1.2.2-2.3 1-3.1l1.2-1.2Z" />
-    </svg>
-  );
-}
-
 function MailIcon() {
   return (
     <svg
@@ -44,13 +32,6 @@ export function SiteHeader() {
           </Link>
           <div className="hidden min-w-0 lg:block">
             <div className="flex items-center gap-6 text-[11px] font-medium uppercase tracking-[0.14em] text-white/58">
-              <a
-                href={`tel:${contactDetails.phone}`}
-                className="inline-flex items-center gap-2 transition hover:text-[#C8A96A]"
-              >
-                <PhoneIcon />
-                <span>{contactDetails.phone}</span>
-              </a>
               <a
                 href={`mailto:${contactDetails.email}`}
                 className="inline-flex max-w-[220px] items-center gap-2 truncate transition hover:text-[#93D0FF] xl:max-w-none"

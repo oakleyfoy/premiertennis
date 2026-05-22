@@ -87,19 +87,6 @@ export function SiteFooter() {
                     </a>
                   </p>
                 </div>
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/34">
-                    Phone
-                  </p>
-                  <p className="mt-2">
-                    <a
-                      href={`tel:${contactDetails.phone}`}
-                      className="transition hover:text-[#DCC9A0]"
-                    >
-                      {contactDetails.phone}
-                    </a>
-                  </p>
-                </div>
                 <p className="pt-2 text-white/45">Launching in select U.S. cities</p>
               </div>
             </div>

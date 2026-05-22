@@ -302,7 +302,6 @@ export const partnerTypes = [
 
 export const contactDetails = {
   email: "info@tennispl.com",
-  phone: "+1-800-997-0150",
   launchNote: "Launching this fall in pilot cities to be announced.",
 };
 
