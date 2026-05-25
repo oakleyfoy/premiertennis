@@ -558,8 +558,8 @@ export function HomePageContent() {
                   <Link href="/vision" className="btn-ptl-primary">
                     Read PTL Vision
                   </Link>
-                  <Link href="/about" className="btn-ptl-secondary">
-                    Why PTL Exists
+                  <Link href="/league-structure" className="btn-ptl-secondary">
+                    View League Structure
                   </Link>
                 </div>
               </div>

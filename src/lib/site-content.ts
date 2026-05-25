@@ -3,7 +3,6 @@ export const navLinks = [
   { href: "/play", label: "Play" },
   { href: "/cities", label: "Cities" },
   { href: "/captains-corner", label: "Captain's Corner" },
-  { href: "/about", label: "About" },
   { href: "/vision", label: "PTL Vision" },
 ];
 

@@ -297,8 +297,8 @@ export default function VisionPage() {
                   <Link href="/contact" className="btn-ptl-primary">
                     Start a Team
                   </Link>
-                  <Link href="/about" className="btn-ptl-secondary">
-                    Read About PTL
+                  <Link href="/league-structure" className="btn-ptl-secondary">
+                    View League Structure
                   </Link>
                 </div>
               </div>

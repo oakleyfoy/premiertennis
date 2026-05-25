@@ -102,7 +102,7 @@ export default function LeagueStructurePage() {
         </div>
 
         <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
+          <div className="mx-auto max-w-[68rem] text-center">
             <div className="flex justify-center">
               <EditorialRule surface="light" align="start" />
             </div>
@@ -117,7 +117,7 @@ export default function LeagueStructurePage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-16 max-w-[72rem] space-y-10 sm:mt-18 lg:mt-20">
+          <div className="mx-auto mt-16 max-w-[68rem] space-y-10 sm:mt-18 lg:mt-20">
             <div className="grid gap-4 sm:grid-cols-3">
               {[
                 "Fixed Divisions",
