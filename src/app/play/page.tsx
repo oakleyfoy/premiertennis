@@ -3,12 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { EditorialRule } from "@/components/editorial-rule";
-import { howItWorks, leaguePillars } from "@/lib/site-content";
+import { leaguePillars } from "@/lib/site-content";
 
 export const metadata: Metadata = {
   title: "Play",
   description:
-    "Learn how play works in Premier Tennis League, from team formation and weekly matches to standings and earned movement.",
+    "Learn how play works in the PTL Founding Season, from evaluation-based entry and division assignment to weekly matches, standings, and earned movement.",
 };
 
 const playHighlights = [
@@ -17,7 +17,7 @@ const playHighlights = [
   {
     title: "Weekly Team Matches",
     description:
-      "Teams play a fixed weekly schedule inside a defined season. There is no casual drop-in model and no flexible reshuffling week to week.",
+      "Teams play a fixed weekly schedule inside a defined season after evaluation and division assignment are complete. There is no casual drop-in model and no flexible reshuffling week to week.",
   },
   {
     title: "Meaningful Standings",
@@ -25,6 +25,41 @@ const playHighlights = [
       "Wins, losses, and ties shape the table over time. Every line matters, and every result contributes to where your team finishes.",
   },
 ];
+
+const foundingSeasonAssignment = [
+  "Captains apply during the application window",
+  "Teams participate in Evaluation Weekends (Aug 1 - 9)",
+  "PTL evaluates performance and structure",
+  "Divisions are assigned after evaluation completes",
+  "Season begins only after assignments are finalized",
+] as const;
+
+const playSeasonFlow = [
+  {
+    step: "01",
+    title: "Apply + Evaluation Participation",
+    description:
+      "Captains apply to enter the Founding Season, and teams are evaluated and finalized during Founding Season evaluation weekends before division assignment.",
+  },
+  {
+    step: "02",
+    title: "Division Assignment",
+    description:
+      "PTL reviews evaluation results and assigns final divisions. Teams are not placed into final divisions at signup.",
+  },
+  {
+    step: "03",
+    title: "Play the Season",
+    description:
+      "Once assignments are finalized, teams enter the fixed 14-week competitive schedule and play weekly matches inside their division.",
+  },
+  {
+    step: "04",
+    title: "Standings Drive Movement",
+    description:
+      "Wins, losses, and ties shape the table over the season. Promotion and relegation are earned through results on the court.",
+  },
+] as const;
 
 export default function PlayPage() {
   return (
@@ -54,8 +89,8 @@ export default function PlayPage() {
             played as a real season.
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-[1.02rem] leading-[1.72] text-[#1F2933]/78 sm:text-[1.12rem]">
-            Weekly matches. Defined standings. Earned movement through
-            performance.
+            Evaluation-based entry. Division assignment before play. A fixed
+            14-week season earned through performance.
           </p>
         </div>
 
@@ -65,19 +100,25 @@ export default function PlayPage() {
               How Play Works
             </p>
             <h2 className="mt-5 max-w-[20rem] font-display text-[2rem] leading-[1.08] text-white sm:text-[2.3rem] lg:text-[2.6rem]">
-              Teams form, play the schedule, and earn movement through results.
+              Teams enter a structured Founding Season system where placement is
+              determined through evaluation before the season begins, followed by
+              a fixed 14-week competitive schedule.
             </h2>
             <p className="mt-6 max-w-[38rem] text-[1rem] leading-8 text-white/84 sm:text-[1.03rem]">
-              Premier Tennis League is a structured, team-based tennis league
-              built on results, not ratings. Captains build teams, weekly
-              matches are fixed in advance, standings stay transparent, and the
-              table decides what comes next.
+              PTL Founding Season uses evaluation weekends to determine initial
+              division placement before the season begins. Teams are finalized
+              only after this process.
+            </p>
+            <p className="mt-5 max-w-[38rem] rounded-[16px] border border-white/12 bg-white/[0.05] px-4 py-4 text-[0.95rem] leading-7 text-white/88 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
+              Captains apply to enter Founding Season, team composition is
+              validated during evaluation weekends, and final divisions are
+              assigned after evaluation results are reviewed.
             </p>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {[
-                "Team-built, not rating-built",
-                "Weekly scheduled matches",
+                "Evaluation before placement",
+                "14-week fixed schedule",
                 "Standings shape movement",
               ].map((item) => (
                 <div
@@ -109,6 +150,38 @@ export default function PlayPage() {
           </section>
         </div>
 
+        <section className="mt-10 rounded-[24px] border border-[#E5E1D8] bg-white px-6 py-8 shadow-[0_10px_34px_rgba(17,24,39,0.07),0_2px_10px_rgba(17,24,39,0.04)] sm:px-8 sm:py-9 lg:px-10 lg:py-10">
+          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A8894A]">
+                How Teams Are Assigned in Founding Season
+              </p>
+              <h2 className="mt-4 font-display text-[2rem] leading-[1.08] text-[#111827] sm:text-[2.25rem]">
+                Evaluation determines placement before the season begins.
+              </h2>
+            </div>
+            <p className="max-w-[22rem] text-sm leading-7 text-[#1F2933]/72 sm:text-right">
+              Teams are not finalized into divisions at signup.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-4 lg:grid-cols-5 lg:gap-4">
+            {foundingSeasonAssignment.map((item, index) => (
+              <section
+                key={item}
+                className="rounded-[18px] border border-[#E5E1D8] bg-[linear-gradient(180deg,#fffefb_0%,#faf7f0_100%)] px-5 py-6 shadow-[0_6px_20px_rgba(17,24,39,0.06),0_1px_3px_rgba(17,24,39,0.04)]"
+              >
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#A8894A]">
+                  Step {String(index + 1).padStart(2, "0")}
+                </p>
+                <p className="mt-4 text-[0.98rem] leading-[1.72] text-[#1F2933]/88">
+                  {item}
+                </p>
+              </section>
+            ))}
+          </div>
+        </section>
+
         <section className="mt-10 rounded-[24px] border border-[#E5E1D8] bg-[linear-gradient(180deg,#fffefb_0%,#faf7f0_100%)] px-6 py-8 shadow-[0_10px_34px_rgba(17,24,39,0.07),0_2px_10px_rgba(17,24,39,0.04)] sm:px-8 sm:py-9 lg:px-10 lg:py-10">
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -116,18 +189,19 @@ export default function PlayPage() {
                 Season Flow
               </p>
               <h2 className="mt-4 font-display text-[2rem] leading-[1.08] text-[#111827] sm:text-[2.25rem]">
-                A four-stage path from team formation to earned movement.
+                A four-stage path from Founding Season entry to earned movement.
               </h2>
             </div>
             <p className="max-w-[20rem] text-sm leading-7 text-[#1F2933]/72 sm:text-right">
-              Every stage builds on the last. The system is simple on purpose.
+              Every stage builds on the last, beginning with evaluation-based
+              entry before season play starts.
             </p>
           </div>
 
           <div className="mt-10 grid gap-5 lg:grid-cols-4 lg:gap-4">
-            {howItWorks.map((item, index) => (
+            {playSeasonFlow.map((item, index) => (
               <div key={item.step} className="relative">
-                {index < howItWorks.length - 1 ? (
+                {index < playSeasonFlow.length - 1 ? (
                   <div
                     className="pointer-events-none absolute top-4 right-0 hidden h-px w-[calc(100%-2.5rem)] translate-x-1/2 bg-gradient-to-r from-[#C8A96A]/45 to-transparent lg:block"
                     aria-hidden
@@ -159,11 +233,11 @@ export default function PlayPage() {
             Competitive Standard
           </p>
           <h2 className="mt-4 font-display text-[2rem] leading-tight text-[#111827] sm:text-[2.35rem]">
-            Play with your team. Earn your place.
+            Enter through evaluation. Earn your place through results.
           </h2>
           <div className="mt-7">
             <Link href="/contact" className="btn-ptl-primary px-8 py-3">
-              Start a Team
+              Apply for Founding Season
             </Link>
           </div>
         </section>

@@ -8,13 +8,14 @@ import { contactDetails } from "@/lib/site-content";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Premier Tennis League to ask about launch markets, future teams, and partnership opportunities.",
+    "Connect with PTL Founding Season operations and submit interest for evaluation-based participation, team ownership, or partnership intake.",
 };
 
 const contactReasons = [
-  "Start organizing a team for a future pilot city",
-  "Ask about launch timing and upcoming market announcements",
-  "Discuss partnerships, facilities, or local interest",
+  "Apply or express interest as a PTL Team Owner (Captain)",
+  "Ask about Founding Season timeline and evaluation weekends",
+  "Explore facility or market participation opportunities",
+  "Discuss regional demand or market activation interest",
 ];
 
 export default function ContactPage() {
@@ -43,12 +44,15 @@ export default function ContactPage() {
               Contact
             </p>
             <h1 className="mt-6 max-w-[24rem] font-display text-[2.35rem] leading-[1.04] tracking-[-0.02em] text-white sm:text-[2.85rem] lg:text-[3.2rem]">
-              Reach out if you want to help shape PTL&apos;s launch.
+              Connect with PTL Founding Season operations or submit interest in
+              becoming a team owner.
             </h1>
             <p className="mt-6 max-w-[36rem] text-[1rem] leading-8 text-white/84 sm:text-[1.04rem]">
-              The league is still in its pre-launch phase. If you are interested
-              as a captain, player, partner, or facility, this is the place to
-              start the conversation.
+              PTL is currently in its Founding Season intake phase, preparing
+              for structured evaluation weekends and division assignment. If you
+              are interested as a team owner, player, partner, or market
+              participant, this is the entry point for team owners, players,
+              and partners to be evaluated for Founding Season participation.
             </p>
 
             <div className="mt-8 grid gap-3 sm:max-w-[18rem] lg:max-w-none lg:grid-cols-1 xl:max-w-[18rem]">
@@ -94,12 +98,12 @@ export default function ContactPage() {
                 Interest Form
               </p>
               <h2 className="mt-4 font-display text-[2.2rem] leading-[1.08] text-[#111827] sm:text-[2.65rem]">
-                Submit your interest and keep your team or market on PTL&apos;s
-                radar.
+                Submit your interest for PTL Founding Season evaluation and team
+                ownership consideration.
               </h2>
               <p className="mt-5 max-w-[42rem] text-base leading-8 text-[#1F2933]/85">
-                Tell PTL a little about your interest, your city, or the kind of
-                team or partnership you want to build.
+                Submit your details for consideration in the PTL Founding Season
+                evaluation and onboarding process.
               </p>
             </div>
 

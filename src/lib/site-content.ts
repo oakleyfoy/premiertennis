@@ -238,26 +238,28 @@ export const leagueStructure = [
       "Weekly matches on a fixed schedule",
       "Full calendar published two weeks before the season begins",
       "All matches scheduled in advance",
+      "Season play begins only after evaluation weekends and division assignment are complete.",
     ],
   },
   {
-    title: "Opening Weekend Evaluation (Inaugural Season Only)",
+    title: "Teams & Divisions (Founding Season Baseline)",
     points: [
       "16 teams total",
-      "2 divisions of 8 teams",
-      "Teams compete only within their division",
-      "Each team plays every opponent twice (home and away)",
+      "2 divisions of 8 teams after evaluation is complete",
+      "Teams are not pre-assigned to divisions at signup",
+      "Division placement is determined after Founding Season evaluation weekends",
+      "Once assigned, teams compete only within their division",
       "Unlimited team rosters",
     ],
   },
   {
-    title: "Division Placement",
+    title: "Founding Season Evaluation Weekends",
     points: [
-      "All teams participate",
-      "Results determine initial division placement only",
-      "No ratings, algorithms, or historical carryover",
-      "Once divisions are set, season results alone determine standings",
-      "Future teams enter at the bottom and earn advancement through results",
+      "Evaluation Weekends occur before the season starts",
+      "All teams participate before any divisions are assigned",
+      "Founding Season Evaluation Weekends determine all initial division placement",
+      "No pre-assigned divisions exist before evaluation completion",
+      "This one-time system is used only for the Founding Season",
     ],
   },
   {
@@ -334,10 +336,10 @@ export const captainSteps = [
 ];
 
 export const pilotCityDetails = [
-  "Pilot cities are still to be announced",
-  "This phase is focused on information and early interest",
-  "Teams and local players can signal demand before launch",
-  "City selection will follow actual traction and rollout readiness",
+  "PTL operates through 8 Founding Season markets",
+  "4 Florida regions and 4 national regions make up the launch structure",
+  "Markets are activated through captain selection and evaluation weekends",
+  "Activation follows the Founding Season rollout process, not open-ended city selection",
 ];
 
 export const partnerTypes = [

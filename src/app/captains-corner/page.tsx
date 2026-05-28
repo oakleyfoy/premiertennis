@@ -3,20 +3,43 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { EditorialRule } from "@/components/editorial-rule";
-import { captainSteps } from "@/lib/site-content";
 
 export const metadata: Metadata = {
   title: "Captain's Corner",
   description:
-    "Guidance for captains preparing to build a team and lead it through Premier Tennis League.",
+    "Guidance for PTL team owners entering the Founding Season through a structured evaluation-based system.",
 };
 
 const captainChecklist = [
-  "Identify the most dependable core of your roster",
-  "Look for players who buy into a team-first model",
-  "Plan for a fixed schedule and weekly availability",
-  "Start organizing before launch markets are announced",
-];
+  "Build and manage the roster",
+  "Ensure team readiness for evaluation weekends",
+  "Maintain competitive participation across the season",
+  "Coordinate weekly match availability",
+  "Operate the team within PTL structure",
+] as const;
+
+const foundingSeasonEntry = [
+  "Apply (June 1 - July 10)",
+  "Vetting (July 12 - 16)",
+  "Captain Selection (July 17)",
+  "Evaluation Weekends (Aug 1 - 9)",
+  "Division Assignment (Aug 10 - 13)",
+  "Season Begins (Aug 24 - 30)",
+] as const;
+
+const teamOwnerResponsibilities = [
+  "Captains are designated as team owners within PTL",
+  "They are responsible for roster construction and season participation",
+  "Teams are not finalized until after evaluation weekends",
+  "Ownership is operational responsibility, not casual participation",
+] as const;
+
+const commitmentPoints = [
+  "Captains are committing to a full structured season",
+  "Entry requires participation in evaluation weekends",
+  "Division placement is determined after evaluation performance",
+  "Season schedule is fixed once released",
+] as const;
 
 export default function CaptainsCornerPage() {
   return (
@@ -49,13 +72,13 @@ export default function CaptainsCornerPage() {
               Earn your place.
             </h1>
             <p className="mt-6 max-w-[36rem] text-[1rem] leading-8 text-white/82 sm:text-[1.04rem]">
-              Captains are the people who give PTL its structure. They shape the
-              roster, set expectations, build reliability, and lead a team
-              through a season where results have real consequence.
+              Captains operate as team owners within PTL. They are responsible
+              for building, managing, and leading a competitive franchise
+              through a structured Founding Season system.
             </p>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
-              {["Roster", "Reliability", "Culture"].map((item) => (
+              {["Ownership", "Evaluation", "Commitment"].map((item) => (
                 <div
                   key={item}
                   className="rounded-[14px] border border-white/10 bg-white/[0.045] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]"
@@ -73,10 +96,10 @@ export default function CaptainsCornerPage() {
 
           <section className="rounded-[24px] border border-[#E5E1D8] bg-white px-6 py-7 shadow-[0_10px_34px_rgba(17,24,39,0.07),0_2px_10px_rgba(17,24,39,0.04)] sm:px-8 sm:py-8">
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A8894A]">
-              The Captain&apos;s Role
+              The Team Owner Role
             </p>
             <h2 className="mt-4 font-display text-[2rem] leading-[1.08] text-[#111827] sm:text-[2.2rem]">
-              Strong captains turn interest into a real team.
+              Team owners are accountable for readiness before PTL entry begins.
             </h2>
             <div className="mt-7 space-y-4">
               {captainChecklist.map((item) => (
@@ -103,32 +126,89 @@ export default function CaptainsCornerPage() {
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A8894A]">
-                Captain Sequence
+                PTL Team Owners
               </p>
               <h2 className="mt-4 font-display text-[2rem] leading-[1.08] text-[#111827] sm:text-[2.25rem]">
-                The three responsibilities every captain carries.
+                Team ownership is an operating role inside a competitive system.
               </h2>
             </div>
-            <p className="max-w-[20rem] text-sm leading-7 text-[#1F2933]/72 sm:text-right">
-              Each stage builds trust before the first official match is ever
-              played.
+            <p className="max-w-[24rem] text-sm leading-7 text-[#1F2933]/72 sm:text-right">
+              PTL captains function as team owners within a structured
+              competitive system.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 lg:grid-cols-3 lg:gap-4">
-            {captainSteps.map((step) => (
+          <div className="mt-10 grid gap-4 lg:grid-cols-2">
+            {teamOwnerResponsibilities.map((item) => (
               <section
-                key={step.title}
+                key={item}
                 className="rounded-[18px] border border-[#E5E1D8] bg-white px-5 py-6 shadow-[0_6px_20px_rgba(17,24,39,0.06),0_1px_3px_rgba(17,24,39,0.04)]"
               >
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#A8894A]">
-                  {step.title}
+                <p className="text-[0.98rem] leading-[1.72] text-[#1F2933]/88">
+                  {item}
                 </p>
-                <h3 className="mt-4 font-display text-[1.55rem] leading-[1.12] text-[#111827]">
-                  {step.subtitle}
-                </h3>
-                <p className="mt-4 text-[0.96rem] leading-[1.74] text-[#1F2933]/86">
-                  {step.description}
+              </section>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-10 rounded-[24px] border border-[#E5E1D8] bg-white px-6 py-8 shadow-[0_10px_34px_rgba(17,24,39,0.07),0_2px_10px_rgba(17,24,39,0.04)] sm:px-8 sm:py-9 lg:px-10 lg:py-10">
+          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A8894A]">
+                How Entry Works in Founding Season
+              </p>
+              <h2 className="mt-4 font-display text-[2rem] leading-[1.08] text-[#111827] sm:text-[2.25rem]">
+                Entry is structured, time-bound, and evaluation-based.
+              </h2>
+            </div>
+            <p className="max-w-[24rem] text-sm leading-7 text-[#1F2933]/72 sm:text-right">
+              Teams are not finalized until after Evaluation Weekends are
+              completed.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-4 lg:grid-cols-3">
+            {foundingSeasonEntry.map((item, index) => (
+              <section
+                key={item}
+                className="rounded-[18px] border border-[#E5E1D8] bg-[linear-gradient(180deg,#fffefb_0%,#faf7f0_100%)] px-5 py-6 shadow-[0_6px_20px_rgba(17,24,39,0.06),0_1px_3px_rgba(17,24,39,0.04)]"
+              >
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#A8894A]">
+                  Step {String(index + 1).padStart(2, "0")}
+                </p>
+                <p className="mt-4 text-[0.98rem] leading-[1.72] text-[#1F2933]/88">
+                  {item}
+                </p>
+              </section>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-10 rounded-[24px] border border-[#E5E1D8] bg-[linear-gradient(180deg,#fffefb_0%,#faf7f0_100%)] px-6 py-8 shadow-[0_10px_34px_rgba(17,24,39,0.07),0_2px_10px_rgba(17,24,39,0.04)] sm:px-8 sm:py-9 lg:px-10 lg:py-10">
+          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A8894A]">
+                Captain Responsibilities
+              </p>
+              <h2 className="mt-4 font-display text-[2rem] leading-[1.08] text-[#111827] sm:text-[2.25rem]">
+                Team owners are responsible for operating their franchise inside
+                the PTL structure.
+              </h2>
+            </div>
+            <p className="max-w-[20rem] text-sm leading-7 text-[#1F2933]/72 sm:text-right">
+              The role is operational, competitive, and season-long.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
+            {captainChecklist.map((item) => (
+              <section
+                key={item}
+                className="rounded-[18px] border border-[#E5E1D8] bg-white px-5 py-6 shadow-[0_6px_20px_rgba(17,24,39,0.06),0_1px_3px_rgba(17,24,39,0.04)]"
+              >
+                <p className="text-[0.98rem] leading-[1.72] text-[#1F2933]/88">
+                  {item}
                 </p>
               </section>
             ))}
@@ -137,14 +217,40 @@ export default function CaptainsCornerPage() {
 
         <section className="mt-10 rounded-[24px] border border-[#243043] bg-[#111827] px-6 py-8 text-center shadow-[0_16px_46px_rgba(0,0,0,0.24)] sm:px-8 sm:py-9">
           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#DCC9A0]">
-            Captain Standard
+            Founding Season Commitment
           </p>
           <h2 className="mt-4 font-display text-[2rem] leading-tight text-white sm:text-[2.35rem]">
-            Great captains organize early.
+            Entry requires commitment before participation begins.
           </h2>
-          <div className="mt-7">
+          <div className="mt-7 mx-auto grid max-w-4xl gap-3 text-left sm:grid-cols-2">
+            {commitmentPoints.map((item) => (
+              <div
+                key={item}
+                className="rounded-[14px] border border-white/10 bg-white/[0.045] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]"
+              >
+                <p className="text-[0.96rem] leading-7 text-white/86">{item}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-10 rounded-[24px] border border-[#E5E1D8] bg-white px-6 py-7 text-center shadow-[0_10px_34px_rgba(17,24,39,0.07),0_2px_10px_rgba(17,24,39,0.04)] sm:px-8 sm:py-8">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A8894A]">
+            Team Owner Entry
+          </p>
+          <h2 className="mt-4 font-display text-[2rem] leading-tight text-[#111827] sm:text-[2.35rem]">
+            Apply for team ownership, enter the evaluation-based system, and be
+            assigned through competitive evaluation.
+          </h2>
+          <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
             <Link href="/contact" className="btn-ptl-primary px-8 py-3">
-              Contact PTL as a Captain
+              Apply as a Team Owner
+            </Link>
+            <Link href="/#founding-season-timeline" className="btn-ptl-secondary px-8 py-3">
+              View Founding Season Timeline
+            </Link>
+            <Link href="/#evaluation-system" className="btn-ptl-secondary px-8 py-3">
+              Learn Evaluation-Based Entry System
             </Link>
           </div>
         </section>

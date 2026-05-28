@@ -8,7 +8,7 @@ import { leagueStructure } from "@/lib/site-content";
 export const metadata: Metadata = {
   title: "League Structure",
   description:
-    "See how Premier Tennis League is structured, from season length and format to standings, scoring, and promotion and relegation.",
+    "See how the PTL Founding Season is structured, from evaluation-based placement and division assignment to season format, scoring, and movement.",
 };
 
 function DownCircleIcon() {
@@ -110,17 +110,19 @@ export default function LeagueStructurePage() {
               League Structure
             </p>
             <h1 className="mt-6 font-display text-[2.45rem] leading-[1.04] tracking-[-0.02em] text-[#111827] sm:text-[3.1rem] lg:text-[3.6rem]">
-              Inaugural Season
+              PTL Founding Season Structure (Fall 2026)
             </h1>
-            <p className="mt-5 text-[1rem] font-medium uppercase tracking-[0.16em] text-[#1F2933]/68 sm:text-[1.08rem]">
-              Fixed Divisions. Full Season. Earned Movement.
+            <p className="mt-5 max-w-4xl mx-auto text-[1rem] leading-[1.75] text-[#1F2933]/78 sm:text-[1.08rem]">
+              This structure applies only to the Founding Season. Future PTL
+              seasons will operate without evaluation-based placement.
             </p>
           </div>
 
           <div className="mx-auto mt-16 max-w-[68rem] space-y-10 sm:mt-18 lg:mt-20">
             <div className="grid gap-4 sm:grid-cols-3">
               {[
-                "Fixed Divisions",
+                "Founding Season Only",
+                "Evaluation Before Placement",
                 "Full 14-Week Season",
                 "Earned Promotion & Relegation",
               ].map((item) => (
@@ -144,21 +146,24 @@ export default function LeagueStructurePage() {
                   Season Format Overview
                 </p>
                 <h2 className="mt-4 font-display text-[2rem] leading-[1.08] text-[#111827] sm:text-[2.25rem]">
-                  A fixed season built around teams, standings, and earned
-                  movement.
+                  A Founding Season structure built around evaluation, placement,
+                  and earned movement.
                 </h2>
                 <p className="mt-5 max-w-[42rem] text-[1rem] leading-[1.75] text-[#1F2933]/86 sm:text-[1.03rem]">
-                  Premier Tennis League operates on a fixed, season-based
-                  structure with defined teams, match formats, standings, and
-                  promotion and relegation earned through results.
+                  PTL uses a 2026 Founding Season structure with
+                  evaluation-based
+                  placement, defined teams, fixed scheduling, and promotion and
+                  relegation earned through results.
                 </p>
               </div>
               <div className="rounded-[18px] border border-[#E3DDD1] bg-white px-5 py-5 shadow-[0_4px_18px_rgba(17,24,39,0.045)] sm:px-6">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#A8894A]">
-                  Core Standard
+                  Founding Season Note
                 </p>
                 <p className="mt-3 font-display text-[1.45rem] leading-[1.22] text-[#111827]">
-                  Every team enters a real season, not a casual ladder.
+                  PTL uses a one-time evaluation system in 2026 to establish
+                  competitive divisions. This ensures balanced league structure
+                  from the Founding Season onward.
                 </p>
               </div>
             </section>
@@ -169,7 +174,7 @@ export default function LeagueStructurePage() {
                 points={seasonLength.points}
               />
               <StructureCard
-                title="Teams & Divisions (Year One)"
+                title="Teams & Divisions (Founding Season Baseline)"
                 points={teamsAndDivisions.points}
               />
             </div>
@@ -192,10 +197,11 @@ export default function LeagueStructurePage() {
                     Opening Weekend Evaluation
                   </p>
                   <h2 className="mt-4 font-display text-[2rem] leading-[1.08] text-[#111827] sm:text-[2.25rem]">
-                    Initial placement only. No ratings, no carryover.
+                    Founding Season Evaluation Weekends determine all initial
+                    division placement.
                   </h2>
                   <div className="mt-6">
-                    <StructureList points={openingWeekend.points.slice(0, 4)} />
+                    <StructureList points={openingWeekend.points} />
                   </div>
                 </div>
 
@@ -204,9 +210,9 @@ export default function LeagueStructurePage() {
                     <DownCircleIcon />
                   </div>
                   <p className="mt-5 text-[0.98rem] leading-[1.74] text-[#1F2933]/86 sm:text-[1.02rem]">
-                    This applies only during the inaugural season. All future
-                    teams enter at the bottom and earn advancement through
-                    results.
+                    Evaluation Weekends occur before season start, teams are
+                    assigned only after results are reviewed, and this one-time
+                    placement system is used only for the Founding Season.
                   </p>
                 </div>
               </div>
@@ -240,7 +246,7 @@ export default function LeagueStructurePage() {
 
             <section className="pt-2 text-center">
               <Link href="/contact" className="btn-ptl-primary px-8 py-3">
-                Start a Team
+                Apply for Founding Season
               </Link>
             </section>
           </div>

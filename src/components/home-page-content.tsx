@@ -50,9 +50,14 @@ export function HomePageContent() {
             <h2 className="font-display mt-4 text-[1.35rem] leading-snug tracking-[0.02em] text-white sm:text-[1.55rem] lg:text-[1.85rem] [text-shadow:0_2px_14px_rgba(0,0,0,0.4),0_1px_1px_rgba(0,0,0,0.28)]">
               Founding Season. Evaluation-Based Entry. Fall 2026.
             </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-[0.76rem] font-semibold uppercase tracking-[0.18em] text-[#E8E4DC]/88 sm:text-[0.82rem]">
+              PTL Founding Season 2026 - A structured, time-locked competitive
+              launch season
+            </p>
             <p className="mx-auto mt-7 max-w-xl font-sans text-[0.8125rem] font-normal leading-[1.65] tracking-[0.03em] text-white/88 sm:mt-8 sm:text-sm lg:text-[0.9375rem] [text-shadow:0_1px_10px_rgba(0,0,0,0.4)]">
-              The Founding Season uses a one-time evaluation-based entry system
-              before the 14-week structured season begins in late August.
+              The Founding Season 2026 uses a one-time evaluation-based entry
+              system before division assignment is completed and the 14-week
+              structured season begins in late August.
             </p>
 
             <div className="mt-10 flex justify-center sm:mt-11">
@@ -600,16 +605,20 @@ export function HomePageContent() {
                     Bigger than a local league.
                   </h2>
                   <p className="mt-6 max-w-[30rem] text-[1rem] leading-8 text-white/84">
-                    PTL is being built as a long-term team tennis ecosystem with
-                    real identity, real rivalries, and a structure players can
-                    stay invested in for years.
+                    PTL Founding Season 2026 establishes a structured, time-locked
+                    competitive launch season with real identity, rivalries, and
+                    a format that can support future competition structures.
+                  </p>
+                  <p className="mt-5 max-w-[30rem] text-[0.98rem] leading-8 text-white/78">
+                    The Founding Season establishes the foundation for all future
+                    PTL competition structures.
                   </p>
 
                   <div className="mt-8 grid max-w-[28rem] grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-1">
                     {[
-                      "Real teams and lasting club identity",
-                      "Promotion races and historical continuity",
-                      "A future path to destination Premier events",
+                      "Real teams and defined launch-market identity",
+                      "Structured seasonal competition with defined cycles",
+                      "A foundation for future PTL competition formats",
                     ].map((item) => (
                       <div
                         key={item}
@@ -630,15 +639,15 @@ export function HomePageContent() {
                   {[
                     {
                       title: "Beyond weekly play",
-                      text: "The vision lays out where PTL can go over time, not just how the format works today.",
+                      text: "The vision ties the Founding Season launch to a larger competition model, not just a single set of weekly matches.",
                     },
                     {
-                      title: "A deeper sports experience",
-                      text: "Standings, rivalries, records, streaks, and team history become part of the league story.",
+                      title: "Structured competition story",
+                      text: "Structured seasonal competition uses defined cycles, standings, and progression systems instead of open-ended play.",
                     },
                     {
-                      title: "A longer horizon",
-                      text: "It frames PTL as something clubs, captains, players, and cities can help shape from the start.",
+                      title: "Launch season foundation",
+                      text: "It frames Founding Season 2026 as the starting point for the formats, markets, and progression systems PTL can build from.",
                     },
                   ].map((item) => (
                     <article

@@ -8,19 +8,29 @@ import { pilotCityDetails } from "@/lib/site-content";
 export const metadata: Metadata = {
   title: "Cities",
   description:
-    "Learn how Premier Tennis League is approaching city rollout and what makes a market launch-ready.",
+    "Learn how PTL activates Founding Season markets through captain selection, evaluation weekends, and structured rollout readiness.",
 };
 
 const cityReadiness = [
-  "Committed captains and teams, not just casual inquiries",
-  "Facilities or courts that can support a structured weekly schedule",
-  "Enough local interest to create a credible competitive environment",
+  "Committed captains in the region who can lead Founding Season teams",
+  "Validated player pools that can support competitive team depth",
+  "Facility readiness for a fixed weekly season schedule",
+  "Evaluation weekend participation capacity before season start",
 ];
 
 const nextSteps = [
-  "Raise interest early if you want PTL in your city",
-  "Identify players who would commit to a team-based season",
-  "Help show that local demand is real and sustainable",
+  "Identify captains ready to apply during the June 1 - July 10 window",
+  "Confirm players who can participate in Evaluation Weekends (Aug 1 - 9)",
+  "Show that facilities and team infrastructure are ready for activation",
+];
+
+const marketActivationSteps = [
+  "Applications open (June 1 - July 10)",
+  "Captain vetting (July 12 - 16)",
+  "Captain selection (July 17)",
+  "Evaluation weekends (Aug 1 - 9)",
+  "Division assignment (Aug 10 - 13)",
+  "Market activation (Aug 24 - 30 season start)",
 ];
 
 export default function CitiesPage() {
@@ -46,13 +56,13 @@ export default function CitiesPage() {
             Cities
           </p>
           <h1 className="mt-6 font-display text-[2.55rem] leading-[1.03] tracking-[-0.02em] text-[#111827] sm:text-[3.1rem] lg:text-[3.55rem]">
-            Launch markets are driven
-            <br />
-            by real local traction.
+            PTL launch markets are activated through real demand and structured
+            evaluation.
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-[1.02rem] leading-[1.72] text-[#1F2933]/78 sm:text-[1.1rem]">
-            PTL is not selecting cities by guesswork. Markets will launch where
-            demand, committed teams, and rollout readiness are clearly present.
+            PTL operates through 8 Founding Season markets: 4 Florida regions
+            and 4 national regions. These markets are activated through
+            evaluation weekends and captain selection.
           </p>
         </div>
 
@@ -62,7 +72,7 @@ export default function CitiesPage() {
               Pilot City Rollout
             </p>
             <h2 className="mt-5 max-w-[24rem] font-display text-[2rem] leading-[1.08] text-white sm:text-[2.3rem] lg:text-[2.6rem]">
-              Cities are still being finalized, but the signal matters now.
+              Founding Season markets follow a fixed activation model.
             </h2>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {pilotCityDetails.map((item) => (
@@ -81,14 +91,49 @@ export default function CitiesPage() {
               Market Signal
             </p>
             <h2 className="mt-4 font-display text-[2rem] leading-[1.08] text-[#111827] sm:text-[2.2rem]">
-              City selection follows real demand and rollout readiness.
+              Market activation follows structured evaluation and captain
+              selection.
             </h2>
             <p className="mt-5 text-[1rem] leading-[1.75] text-[#1F2933]/84">
-              PTL is looking for the markets that can sustain weekly team
-              competition, not just casual interest.
+              Founding Season markets are pre-defined. Activation depends on
+              demand, captain participation, and evaluation weekend
+              performance.
             </p>
           </section>
         </div>
+
+        <section className="mt-10 rounded-[24px] border border-[#E5E1D8] bg-[linear-gradient(180deg,#fffefb_0%,#faf7f0_100%)] px-6 py-8 shadow-[0_10px_34px_rgba(17,24,39,0.07),0_2px_10px_rgba(17,24,39,0.04)] sm:px-8 sm:py-9 lg:px-10 lg:py-10">
+          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A8894A]">
+                How PTL Markets Are Activated
+              </p>
+              <h2 className="mt-4 font-display text-[2rem] leading-[1.08] text-[#111827] sm:text-[2.25rem]">
+                Markets move through a fixed Founding Season rollout pipeline.
+              </h2>
+            </div>
+            <p className="max-w-[26rem] text-sm leading-7 text-[#1F2933]/72 sm:text-right">
+              Markets are not chosen by interest alone. They are activated
+              through structured evaluation and team formation.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-4 lg:grid-cols-3">
+            {marketActivationSteps.map((item, index) => (
+              <section
+                key={item}
+                className="rounded-[18px] border border-[#E5E1D8] bg-white px-5 py-6 shadow-[0_6px_20px_rgba(17,24,39,0.06),0_1px_3px_rgba(17,24,39,0.04)]"
+              >
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#A8894A]">
+                  Step {String(index + 1).padStart(2, "0")}
+                </p>
+                <p className="mt-4 text-[0.98rem] leading-[1.72] text-[#1F2933]/88">
+                  {item}
+                </p>
+              </section>
+            ))}
+          </div>
+        </section>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:items-stretch">
           <section className="rounded-[22px] border border-[#E5E1D8] bg-white px-6 py-7 shadow-[0_8px_28px_rgba(17,24,39,0.07),0_2px_8px_rgba(17,24,39,0.04)] sm:px-8 sm:py-8">
@@ -128,7 +173,7 @@ export default function CitiesPage() {
               What to Do Now
             </p>
             <h2 className="mt-4 font-display text-[1.9rem] leading-[1.08] text-[#111827] sm:text-[2.1rem]">
-              How to help bring PTL to your city
+              How to support market activation in your region
             </h2>
             <div className="mt-7 space-y-4">
               {nextSteps.map((item) => (
@@ -151,11 +196,12 @@ export default function CitiesPage() {
             Rollout Principle
           </p>
           <h2 className="mt-4 font-display text-[2rem] leading-tight text-[#111827] sm:text-[2.35rem]">
-            PTL will launch where organized demand is real.
+            Founding Season markets are defined. Activation follows structured
+            evaluation and captain selection.
           </h2>
           <div className="mt-7">
             <Link href="/contact" className="btn-ptl-primary px-8 py-3">
-              Raise Interest for Your City
+              Apply for Founding Season
             </Link>
           </div>
         </section>

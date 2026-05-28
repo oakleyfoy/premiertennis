@@ -177,10 +177,10 @@ export function InterestForm({ recaptchaSiteKey = "" }: InterestFormProps) {
             className="w-full rounded-xl border border-[#E5E1D8] bg-white px-4 py-3 text-[#111827] outline-none transition focus:border-[#C8A96A] focus:ring-1 focus:ring-[#C8A96A]/35"
           >
             <option value="">Select one</option>
-            <option value="captain">Captain</option>
+            <option value="team-owner">Team Owner (Captain)</option>
             <option value="player">Player</option>
-            <option value="facility">Facility or club</option>
-            <option value="partner">Partner or sponsor</option>
+            <option value="facility-partner">Facility / Partner</option>
+            <option value="market-representative">Market Representative</option>
             <option value="other">Other</option>
           </select>
         </label>
@@ -194,10 +194,10 @@ export function InterestForm({ recaptchaSiteKey = "" }: InterestFormProps) {
             className="w-full rounded-xl border border-[#E5E1D8] bg-white px-4 py-3 text-[#111827] outline-none transition focus:border-[#C8A96A] focus:ring-1 focus:ring-[#C8A96A]/35"
           >
             <option value="">Select one</option>
-            <option value="start-team">Start a team</option>
-            <option value="pilot-city">Pilot city interest</option>
-            <option value="captain-info">Captain questions</option>
-            <option value="facility-partnership">Facility or partnership</option>
+            <option value="team-owner-application">Team owner application</option>
+            <option value="founding-season-timeline">Founding Season timeline</option>
+            <option value="evaluation-entry">Evaluation-based entry system</option>
+            <option value="facility-market-participation">Facility or market participation</option>
             <option value="general">General inquiry</option>
           </select>
         </label>
@@ -210,7 +210,7 @@ export function InterestForm({ recaptchaSiteKey = "" }: InterestFormProps) {
             value={form.message}
             onChange={(event) => updateField("message", event.target.value)}
             className="w-full rounded-xl border border-[#E5E1D8] bg-white px-4 py-3 text-[#111827] outline-none transition placeholder:text-slate-400 focus:border-[#C8A96A] focus:ring-1 focus:ring-[#C8A96A]/35"
-            placeholder="Tell PTL a little about your interest, city, team, or partnership idea."
+            placeholder="Submit your details for consideration in the PTL Founding Season evaluation and onboarding process."
           />
         </label>
 
