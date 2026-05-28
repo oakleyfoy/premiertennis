@@ -88,16 +88,15 @@ export default function CitiesPage() {
 
           <section className="rounded-[24px] border border-[#E5E1D8] bg-white px-6 py-7 shadow-[0_10px_34px_rgba(17,24,39,0.07),0_2px_10px_rgba(17,24,39,0.04)] sm:px-8 sm:py-8">
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A8894A]">
-              Market Signal
+              8-Market Structure
             </p>
             <h2 className="mt-4 font-display text-[2rem] leading-[1.08] text-[#111827] sm:text-[2.2rem]">
-              Market activation follows structured evaluation and captain
-              selection.
+              Four Florida regions and four national regions make up the
+              Founding Season footprint.
             </h2>
             <p className="mt-5 text-[1rem] leading-[1.75] text-[#1F2933]/84">
-              Founding Season markets are pre-defined. Activation depends on
-              demand, captain participation, and evaluation weekend
-              performance.
+              Activation is decided inside that defined footprint through the
+              captain selection and evaluation process.
             </p>
           </section>
         </div>
@@ -191,20 +190,11 @@ export default function CitiesPage() {
           </section>
         </div>
 
-        <section className="mt-10 rounded-[24px] border border-[#E5E1D8] bg-white px-6 py-7 text-center shadow-[0_10px_34px_rgba(17,24,39,0.07),0_2px_10px_rgba(17,24,39,0.04)] sm:px-8 sm:py-8">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A8894A]">
-            Rollout Principle
-          </p>
-          <h2 className="mt-4 font-display text-[2rem] leading-tight text-[#111827] sm:text-[2.35rem]">
-            Founding Season markets are defined. Activation follows structured
-            evaluation and captain selection.
-          </h2>
-          <div className="mt-7">
-            <Link href="/contact" className="btn-ptl-primary px-8 py-3">
-              Apply for Founding Season
-            </Link>
-          </div>
-        </section>
+        <div className="mt-10 text-center">
+          <Link href="/contact" className="btn-ptl-primary px-8 py-3">
+            Apply for Founding Season
+          </Link>
+        </div>
       </div>
     </section>
   );

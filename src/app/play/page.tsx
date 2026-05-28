@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { EditorialRule } from "@/components/editorial-rule";
-import { leaguePillars } from "@/lib/site-content";
 
 export const metadata: Metadata = {
   title: "Play",
@@ -12,27 +11,22 @@ export const metadata: Metadata = {
 };
 
 const playHighlights = [
-  leaguePillars[0],
-  leaguePillars[1],
   {
     title: "Weekly Team Matches",
     description:
       "Teams play a fixed weekly schedule inside a defined season after evaluation and division assignment are complete. There is no casual drop-in model and no flexible reshuffling week to week.",
   },
   {
-    title: "Meaningful Standings",
+    title: "Match Format",
     description:
-      "Wins, losses, and ties shape the table over time. Every line matters, and every result contributes to where your team finishes.",
+      "Team competition is built around defined weekly matchups, published schedules, and a season that operates on the calendar it releases.",
+  },
+  {
+    title: "Standings",
+    description:
+      "Wins, losses, and ties shape the table over the course of the season so each week clearly affects where teams finish.",
   },
 ];
-
-const foundingSeasonAssignment = [
-  "Captains apply during the application window",
-  "Teams participate in Evaluation Weekends (Aug 1 - 9)",
-  "PTL evaluates performance and structure",
-  "Divisions are assigned after evaluation completes",
-  "Season begins only after assignments are finalized",
-] as const;
 
 const playSeasonFlow = [
   {
@@ -109,11 +103,6 @@ export default function PlayPage() {
               division placement before the season begins. Teams are finalized
               only after this process.
             </p>
-            <p className="mt-5 max-w-[38rem] rounded-[16px] border border-white/12 bg-white/[0.05] px-4 py-4 text-[0.95rem] leading-7 text-white/88 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
-              Captains apply to enter Founding Season, team composition is
-              validated during evaluation weekends, and final divisions are
-              assigned after evaluation results are reviewed.
-            </p>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {[
@@ -149,38 +138,6 @@ export default function PlayPage() {
             </div>
           </section>
         </div>
-
-        <section className="mt-10 rounded-[24px] border border-[#E5E1D8] bg-white px-6 py-8 shadow-[0_10px_34px_rgba(17,24,39,0.07),0_2px_10px_rgba(17,24,39,0.04)] sm:px-8 sm:py-9 lg:px-10 lg:py-10">
-          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A8894A]">
-                How Teams Are Assigned in Founding Season
-              </p>
-              <h2 className="mt-4 font-display text-[2rem] leading-[1.08] text-[#111827] sm:text-[2.25rem]">
-                Evaluation determines placement before the season begins.
-              </h2>
-            </div>
-            <p className="max-w-[22rem] text-sm leading-7 text-[#1F2933]/72 sm:text-right">
-              Teams are not finalized into divisions at signup.
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-4 lg:grid-cols-5 lg:gap-4">
-            {foundingSeasonAssignment.map((item, index) => (
-              <section
-                key={item}
-                className="rounded-[18px] border border-[#E5E1D8] bg-[linear-gradient(180deg,#fffefb_0%,#faf7f0_100%)] px-5 py-6 shadow-[0_6px_20px_rgba(17,24,39,0.06),0_1px_3px_rgba(17,24,39,0.04)]"
-              >
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#A8894A]">
-                  Step {String(index + 1).padStart(2, "0")}
-                </p>
-                <p className="mt-4 text-[0.98rem] leading-[1.72] text-[#1F2933]/88">
-                  {item}
-                </p>
-              </section>
-            ))}
-          </div>
-        </section>
 
         <section className="mt-10 rounded-[24px] border border-[#E5E1D8] bg-[linear-gradient(180deg,#fffefb_0%,#faf7f0_100%)] px-6 py-8 shadow-[0_10px_34px_rgba(17,24,39,0.07),0_2px_10px_rgba(17,24,39,0.04)] sm:px-8 sm:py-9 lg:px-10 lg:py-10">
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">

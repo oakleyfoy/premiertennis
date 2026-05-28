@@ -2,17 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { EditorialRule } from "@/components/editorial-rule";
-import { SectionHeading } from "@/components/section-heading";
 import {
-  contactDetails,
-  evaluationWeekendPoints,
   foundingSeasonSteps,
   foundingSeasonTimeline,
   heroBullets,
   homeCorePrincipleCards,
-  teamFit,
-  teamNotFit,
-  whoPtlIsForCards,
 } from "@/lib/site-content";
 
 export function HomePageContent() {
@@ -71,7 +65,7 @@ export function HomePageContent() {
               <Link href="#founding-season-timeline" className="btn-ptl-hero-secondary w-full sm:w-auto sm:min-w-[210px]">
                 View Season Timeline
               </Link>
-              <Link href="#evaluation-system" className="btn-ptl-hero-secondary w-full sm:w-auto sm:min-w-[220px]">
+              <Link href="/play" className="btn-ptl-hero-secondary w-full sm:w-auto sm:min-w-[220px]">
                 Learn Evaluation System
               </Link>
             </div>
@@ -113,7 +107,7 @@ export function HomePageContent() {
                 <div className="mt-8 space-y-5 text-left text-[1.02rem] leading-[1.58] text-[#1F2933]/94 sm:text-[1.055rem] lg:space-y-4 lg:text-[1.075rem] lg:leading-[1.55]">
                   <p>Most leagues rely on ratings, guesswork, and artificial balance.</p>
                   <p>Premier Tennis League removes that.</p>
-                  <p>Teams compete, results matter, and movement is earned.</p>
+                  <p>It gives amateur tennis a clearer competitive identity from day one.</p>
                 </div>
               </div>
 
@@ -140,7 +134,7 @@ export function HomePageContent() {
                 <Link href="#founding-season-timeline" className="btn-ptl-secondary px-6 py-2.5 text-[12.5px]">
                   View Season Timeline
                 </Link>
-                <Link href="#evaluation-system" className="btn-ptl-secondary px-6 py-2.5 text-[12.5px]">
+                <Link href="/play" className="btn-ptl-secondary px-6 py-2.5 text-[12.5px]">
                   Learn Evaluation System
                 </Link>
               </div>
@@ -229,8 +223,8 @@ export function HomePageContent() {
                 What Makes Premier Tennis League Different
               </h2>
               <p className="mx-auto mt-5 max-w-[28rem] text-[0.98rem] font-normal leading-[1.64] text-[#5c5c5c] sm:text-[1.02rem]">
-                A competitive structure built on teams, results, and earned
-                movement.
+                A team-based format that removes ratings and lets competition
+                sort itself on court.
               </p>
 
               <div className="mt-8 flex justify-center">
@@ -299,6 +293,10 @@ export function HomePageContent() {
                 determine placement, and divisions are assigned before the season
                 begins.
               </p>
+              <p className="mt-5 max-w-[31rem] rounded-[16px] border border-[#E5E1D8] bg-white/75 px-4 py-4 text-[0.95rem] leading-7 text-[#1F2933]/86 shadow-[0_3px_12px_rgba(17,24,39,0.03)]">
+                Evaluation Weekends are used only for Founding Season 2026, then
+                regular seasonal competition takes over.
+              </p>
 
               <div className="mt-8 grid grid-cols-2 gap-3 sm:max-w-[24rem]">
                 <div className="rounded-[14px] border border-[#E5E1D8] bg-white/90 px-4 py-3 text-center shadow-[0_3px_14px_rgba(17,24,39,0.04)]">
@@ -342,7 +340,7 @@ export function HomePageContent() {
                 <Link href="#founding-season-timeline" className="btn-ptl-secondary w-full sm:w-auto">
                   View Season Timeline
                 </Link>
-                <Link href="#evaluation-system" className="btn-ptl-secondary w-full sm:w-auto">
+                <Link href="/play" className="btn-ptl-secondary w-full sm:w-auto">
                   Learn Evaluation System
                 </Link>
               </div>
@@ -387,389 +385,32 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section
-        id="evaluation-system"
-        className="ptl-section-border scroll-mt-32 bg-white py-[5.25rem] sm:py-[7rem] lg:py-[8.25rem]"
-      >
-        <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="overflow-hidden rounded-[22px] border border-[#E5E1D8] bg-[linear-gradient(180deg,#fffefb_0%,#faf7f0_100%)] p-4 shadow-[0_10px_34px_rgba(17,24,39,0.06),0_2px_10px_rgba(17,24,39,0.035)] sm:p-5 lg:p-6">
-            <div className="grid grid-cols-1 gap-8 rounded-[18px] border border-[#E7E2D8] bg-white p-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:p-8">
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A8894A]">
-                  What Are Evaluation Weekends?
-                </p>
-                <h2 className="mt-4 font-display text-[2rem] leading-[1.08] text-[#111827] sm:text-[2.25rem]">
-                  A Founding Season-only system used to place teams correctly.
-                </h2>
-                <p className="mt-5 max-w-[34rem] text-[0.98rem] leading-[1.74] text-[#1F2933]/86">
-                  Evaluation Weekends happen before the season begins so every
-                  team can be placed into the right division for Fall 2026.
-                </p>
-                <p className="mt-5 text-[1rem] font-semibold leading-8 text-[#111827]">
-                  Future PTL seasons do NOT use evaluation weekends.
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                {evaluationWeekendPoints.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-[14px] border border-[#E7E2D8] bg-[#FBF8F1] px-4 py-4 shadow-[0_3px_12px_rgba(17,24,39,0.03)] sm:px-5"
-                  >
-                    <div className="flex items-start gap-3">
-                      <div
-                        className="mt-[0.55rem] h-[6px] w-[6px] shrink-0 rounded-full bg-[#C8A96A]"
-                        aria-hidden
-                      />
-                      <p className="text-[0.95rem] leading-[1.68] text-[#1F2933]/88">
-                        {item}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="ptl-section-border bg-white py-[5.25rem] sm:py-[7rem] lg:py-[8.25rem]">
-        <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="flex justify-center">
-              <EditorialRule surface="light" align="start" />
-            </div>
-            <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#C6A86B] sm:mt-6 sm:text-[11px] sm:tracking-[0.3em]">
-              Who Premier Tennis League Is For
-            </p>
-            <h2 className="mt-6 font-display text-[2rem] font-semibold leading-[1.06] tracking-[-0.02em] text-[#111111] sm:mt-7 sm:text-[2.35rem] lg:text-[2.7rem] lg:leading-[1.03]">
-              Built for players who want more than casual tennis.
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-[1.02rem] leading-[1.65] text-[#5c5c5c] sm:text-[1.055rem]">
-              This league is designed for competitors who value structure, team
-              play, and real outcomes.
-            </p>
-          </div>
-
-          <div className="mt-16 rounded-[22px] border border-[#E5E1D8] bg-[linear-gradient(180deg,#fffefb_0%,#faf7f0_100%)] p-4 shadow-[0_10px_34px_rgba(17,24,39,0.06),0_2px_10px_rgba(17,24,39,0.035)] sm:mt-18 sm:p-5 lg:mt-20 lg:p-6">
-            <div className="grid grid-cols-1 overflow-hidden rounded-[18px] border border-[#E7E2D8] bg-white lg:grid-cols-3">
-              {whoPtlIsForCards.map((card, idx) => (
-                <article
-                  key={card.title}
-                  className={`px-5 py-6 sm:px-6 sm:py-7 ${idx < whoPtlIsForCards.length - 1 ? "border-b border-[#EAE5DC] lg:border-b-0 lg:border-r" : ""}`}
-                >
-                  <div
-                    className="h-px w-11 bg-gradient-to-r from-[#C6A86B]/7 via-[#C6A86B]/65 to-transparent"
-                    aria-hidden
-                  />
-                  <h3 className="mt-4 font-display text-[1.28rem] font-semibold leading-[1.14] text-[#111] sm:text-[1.38rem]">
-                    {card.title}
-                  </h3>
-                  <p className="mt-4 text-[0.9rem] leading-[1.72] text-[#555] sm:text-[0.96rem]">
-                    {card.text}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-
-          <div className="mx-auto mt-8 max-w-4xl rounded-[18px] border border-[#E5E1D8] bg-[#FBF8F1] px-5 py-5 text-center shadow-[0_5px_18px_rgba(17,24,39,0.04)] sm:mt-10 sm:px-6 sm:py-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#A8894A]">
-              The Fit
-            </p>
-            <p className="mt-3 font-display text-[1.4rem] leading-[1.22] text-[#111827] sm:text-[1.58rem]">
-              If you want structure, competition, and team-based tennis,
-              you&apos;ll fit here.
-            </p>
-            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-              <Link href="/contact" className="btn-ptl-primary w-full sm:w-auto">
-                Apply for Founding Season
-              </Link>
-              <Link href="#founding-season-timeline" className="btn-ptl-secondary w-full sm:w-auto">
-                View Season Timeline
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="ptl-section-border bg-[#FAFAF8] py-[4.75rem] sm:py-[6.5rem] lg:py-[7.75rem]">
-        <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Who Will Thrive in Premier Tennis League"
-            title="A competitive team league built for players who value structure, accountability, and earned outcomes."
-            description="PTL is not for everyone, and that is intentional."
-            theme="light"
-            align="center"
-          />
-
-          <div className="mt-14">
-            <div className="relative mx-auto aspect-[16/9] w-full max-w-5xl overflow-hidden rounded-[1.25rem] border border-[#D4CFC4] shadow-[0_10px_40px_rgba(17,24,39,0.12),0_2px_8px_rgba(17,24,39,0.05)] sm:aspect-[16/6] lg:rounded-[1.375rem]">
-              <Image
-                src="/assets/home-team-huddle.png"
-                alt="Tennis team huddling together before a match"
-                fill
-                className="object-cover object-center"
-              />
-              <div
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(8,12,20,0.18)] via-transparent to-[rgba(8,12,20,0.02)]"
-                aria-hidden
-              />
-              <div className="absolute inset-x-0 bottom-0 border-t border-white/15 bg-[rgba(15,20,30,0.62)] px-5 py-4 backdrop-blur-[2px] sm:px-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#DCC9A0]">
-                  Team Standard
-                </p>
-                <p className="mt-2 max-w-3xl text-sm leading-6 text-white/90 sm:text-[0.95rem]">
-                  PTL is built for players who want to commit, compete, and let
-                  results decide what comes next.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-14 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-8">
-            <article className="rounded-[1.375rem] border border-[#D9D4CA] bg-[linear-gradient(180deg,#fffefb_0%,#faf7f1_100%)] p-6 shadow-[0_8px_28px_rgba(17,24,39,0.08),0_2px_8px_rgba(17,24,39,0.04)] sm:p-8">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#A8894A]">
-                This League Is For
-              </p>
-              <h2 className="mt-4 font-display text-[2rem] font-semibold leading-[1.08] text-[#0d1219] sm:text-[2.25rem]">
-                Players and teams who want earned competition.
-              </h2>
-              <div className="mt-8 space-y-3">
-                {teamFit.slice(0, 4).map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-[1rem] border border-[#DED8CD] bg-white/92 px-4 py-4 shadow-[0_2px_12px_rgba(17,24,39,0.04)] sm:px-5"
-                  >
-                    <div className="flex items-start gap-3">
-                      <div
-                        className="mt-[0.4rem] h-[7px] w-[7px] shrink-0 rounded-full bg-[#C6A86B]"
-                        aria-hidden
-                      />
-                      <p className="text-sm leading-7 text-[#1F2933]/92 sm:text-[0.98rem]">
-                        {item}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </article>
-
-            <article className="rounded-[1.375rem] border border-[#273243] bg-[#111827] p-6 shadow-[0_10px_34px_rgba(0,0,0,0.2),0_2px_10px_rgba(0,0,0,0.14)] sm:p-8">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#DCC9A0]">
-                This League Is Not For
-              </p>
-              <h2 className="mt-4 font-display text-[2rem] font-semibold leading-[1.08] text-white sm:text-[2.25rem]">
-                Players looking for flexibility without consequence.
-              </h2>
-              <div className="mt-8 space-y-3">
-                {teamNotFit.slice(0, 4).map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-[1rem] border border-white/12 bg-white/5 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] sm:px-5"
-                  >
-                    <div className="flex items-start gap-3">
-                      <div
-                        className="mt-[0.4rem] h-[7px] w-[7px] shrink-0 rounded-full bg-[#DCC9A0]"
-                        aria-hidden
-                      />
-                      <p className="text-sm leading-7 text-white/84 sm:text-[0.98rem]">
-                        {item}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-[#D7CFBF] bg-[linear-gradient(180deg,#f7f2e8_0%,#efe8dc_100%)] py-[4.75rem] sm:py-[6.5rem]">
-        <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="overflow-hidden rounded-[1.5rem] border border-[#D9D0C0] bg-[#111827] shadow-[0_18px_56px_rgba(17,24,39,0.2),0_4px_14px_rgba(17,24,39,0.08)]">
-            <div className="lg:grid lg:grid-cols-[minmax(0,0.96fr)_minmax(0,1.04fr)]">
-              <div className="relative overflow-hidden px-6 py-8 text-white sm:px-8 sm:py-10 lg:px-10 lg:py-12">
-                <div
-                  className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(220,201,160,0.2),transparent_34%),linear-gradient(180deg,#182131_0%,#101722_100%)]"
-                  aria-hidden
-                />
-                <div className="relative">
-                  <div className="flex justify-start">
-                    <EditorialRule surface="dark" align="start" />
-                  </div>
-                  <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#DCC9A0]">
-                    PTL Vision
-                  </p>
-                  <h2 className="mt-6 max-w-[12ch] font-display text-[2.2rem] font-semibold leading-[1.02] tracking-[-0.025em] text-white sm:text-[2.7rem] lg:text-[3.1rem]">
-                    Bigger than a local league.
-                  </h2>
-                  <p className="mt-6 max-w-[30rem] text-[1rem] leading-8 text-white/84">
-                    PTL Founding Season 2026 establishes a structured, time-locked
-                    competitive launch season with real identity, rivalries, and
-                    a format that can support future competition structures.
-                  </p>
-                  <p className="mt-5 max-w-[30rem] text-[0.98rem] leading-8 text-white/78">
-                    The Founding Season establishes the foundation for all future
-                    PTL competition structures.
-                  </p>
-
-                  <div className="mt-8 grid max-w-[28rem] grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-1">
-                    {[
-                      "Real teams and defined launch-market identity",
-                      "Structured seasonal competition with defined cycles",
-                      "A foundation for future PTL competition formats",
-                    ].map((item) => (
-                      <div
-                        key={item}
-                        className="rounded-[15px] border border-white/10 bg-white/[0.05] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]"
-                      >
-                        <p className="text-sm leading-6 text-white/88">{item}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="border-t border-white/10 bg-[linear-gradient(180deg,#fbf8f1_0%,#f4ecdf_100%)] px-6 py-8 sm:px-8 sm:py-10 lg:border-l lg:border-t-0 lg:px-10 lg:py-12">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A8894A]">
-                  What The Vision Adds
-                </p>
-                <div className="mt-6 space-y-4">
-                  {[
-                    {
-                      title: "Beyond weekly play",
-                      text: "The vision ties the Founding Season launch to a larger competition model, not just a single set of weekly matches.",
-                    },
-                    {
-                      title: "Structured competition story",
-                      text: "Structured seasonal competition uses defined cycles, standings, and progression systems instead of open-ended play.",
-                    },
-                    {
-                      title: "Launch season foundation",
-                      text: "It frames Founding Season 2026 as the starting point for the formats, markets, and progression systems PTL can build from.",
-                    },
-                  ].map((item) => (
-                    <article
-                      key={item.title}
-                      className="rounded-[17px] border border-[#E6DECF] bg-white px-5 py-5 shadow-[0_6px_18px_rgba(17,24,39,0.05),0_2px_8px_rgba(17,24,39,0.03)]"
-                    >
-                      <div
-                        className="h-px w-11 bg-gradient-to-r from-[#C6A86B]/70 to-transparent"
-                        aria-hidden
-                      />
-                      <h3 className="mt-4 font-display text-[1.35rem] font-semibold leading-[1.14] text-[#111827]">
-                        {item.title}
-                      </h3>
-                      <p className="mt-3 max-w-[28rem] text-[0.95rem] leading-7 text-[#1F2933]/82">
-                        {item.text}
-                      </p>
-                    </article>
-                  ))}
-                </div>
-
-                <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-                  <Link href="/vision" className="btn-ptl-primary">
-                    Read PTL Vision
-                  </Link>
-                  <Link href="/league-structure" className="btn-ptl-secondary">
-                    View League Structure
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="border-t border-[#2a3344] bg-[#111827] py-[4.75rem] text-white sm:py-[6.5rem]">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="overflow-hidden rounded-[1.4rem] border border-white/12 bg-[linear-gradient(180deg,#1a2332_0%,#141c29_100%)] shadow-[0_18px_60px_rgba(0,0,0,0.34)]">
-            <div className="lg:grid lg:grid-cols-[minmax(0,1.28fr)_minmax(0,0.72fr)]">
-              <div className="px-6 py-10 sm:px-10 sm:py-12 lg:px-12 lg:py-14">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
-                  Founding Season Applications
-                </p>
-                <div className="mt-4">
-                  <EditorialRule surface="dark" align="start" />
-                </div>
-                <h2 className="mt-6 max-w-[24rem] font-display text-[2rem] font-semibold leading-[1.08] text-white sm:text-[2.3rem] lg:max-w-[28rem] lg:text-[2.65rem]">
-                  Ready to apply for the Founding Season?
-                </h2>
-                <p className="mt-6 max-w-[38rem] text-[1rem] leading-8 text-[#E8E4DC]/92 sm:text-[1.05rem]">
-                  Teams enter through a Founding Season application process,
-                  complete launch-only evaluation weekends, and receive division
-                  placement before the fixed season begins.
-                </p>
-
-                <div className="mt-8 grid max-w-[28rem] grid-cols-1 gap-3 sm:grid-cols-2">
-                  <div className="rounded-[14px] border border-white/10 bg-white/[0.045] px-4 py-4">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#DCC9A0]">
-                      Evaluation-Based Entry
-                    </p>
-                    <p className="mt-2 text-sm leading-6 text-white/88">
-                      Division assignment happens after the Aug 1 - 9 evaluation weekends.
-                    </p>
-                  </div>
-                  <div className="rounded-[14px] border border-white/10 bg-white/[0.045] px-4 py-4">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#DCC9A0]">
-                      Fixed Season Calendar
-                    </p>
-                    <p className="mt-2 text-sm leading-6 text-white/88">
-                      Applications, placement, schedule release, and season start all follow set dates.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-9 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-                  <Link
-                    href="/contact"
-                    className="inline-flex min-h-10 min-w-[148px] items-center justify-center rounded-[12px] border border-[#F7F5F0]/90 px-[1.45rem] py-2.5 text-center text-[13px] font-semibold tracking-[0.02em] shadow-[0_6px_18px_rgba(0,0,0,0.18)] transition hover:-translate-y-0.5"
-                    style={{ backgroundColor: "#F7F5F0", color: "#111827" }}
-                  >
-                    <span style={{ color: "#111827" }}>Apply for Founding Season</span>
-                  </Link>
-                  <Link
-                    href="#founding-season-timeline"
-                    className="inline-flex min-h-10 items-center justify-center rounded-[12px] border border-white/28 bg-transparent px-[1.45rem] py-2.5 text-center text-[13px] font-medium tracking-[0.02em] text-white shadow-[0_2px_12px_rgba(0,0,0,0.12)] transition hover:border-white/55 hover:bg-white/8"
-                  >
-                    View Season Timeline
-                  </Link>
-                  <Link
-                    href="#evaluation-system"
-                    className="inline-flex min-h-10 items-center justify-center rounded-[12px] border border-white/16 bg-white/[0.045] px-[1.45rem] py-2.5 text-center text-[13px] font-medium tracking-[0.02em] text-white/92 transition hover:bg-white/[0.08]"
-                  >
-                    Learn Evaluation System
-                  </Link>
-                </div>
-              </div>
-
-              <div className="border-t border-white/10 bg-white/[0.035] px-6 py-8 sm:px-10 sm:py-10 lg:border-l lg:border-t-0 lg:px-8 xl:px-10">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
-                  Founding Season Entry
-                </p>
-                <div className="mt-4">
-                  <EditorialRule surface="dark" align="start" />
-                </div>
-                <div className="mt-6 space-y-4">
-                  <div className="rounded-[14px] border border-white/10 bg-[#273244]/78 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#DCC9A0]">
-                      Email
-                    </p>
-                    <p className="mt-2 text-[1rem] font-semibold text-white sm:text-[1.05rem]">
-                      {contactDetails.email}
-                    </p>
-                  </div>
-                </div>
-                <p className="mt-6 text-sm leading-7 text-[#C9C5BC]">
-                  Use the application process to get your team into the Founding
-                  Season pipeline and receive evaluation instructions before
-                  division assignment.
-                </p>
-                <Link href="/contact" className="btn-ptl-primary mt-8 w-full">
-                  Apply for Founding Season
-                </Link>
-              </div>
+          <div className="rounded-[1.4rem] border border-white/12 bg-[linear-gradient(180deg,#1a2332_0%,#141c29_100%)] px-6 py-10 text-center shadow-[0_18px_60px_rgba(0,0,0,0.34)] sm:px-10 sm:py-12 lg:px-12 lg:py-14">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
+              Founding Season Applications
+            </p>
+            <div className="mt-4 flex justify-center">
+              <EditorialRule surface="dark" align="start" />
+            </div>
+            <h2 className="mx-auto mt-6 max-w-[24rem] font-display text-[2rem] font-semibold leading-[1.08] text-white sm:max-w-[30rem] sm:text-[2.3rem] lg:text-[2.65rem]">
+              Ready to enter PTL Founding Season 2026?
+            </h2>
+            <p className="mx-auto mt-6 max-w-[42rem] text-[1rem] leading-8 text-[#E8E4DC]/92 sm:text-[1.05rem]">
+              Review the timeline, understand the entry process, and submit your
+              application when you are ready to join the launch season.
+            </p>
+            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+              <Link href="/contact" className="btn-ptl-primary">
+                Apply for Founding Season
+              </Link>
+              <Link href="#founding-season-timeline" className="btn-ptl-secondary">
+                View Season Timeline
+              </Link>
+              <Link href="/vision" className="btn-ptl-secondary">
+                Read PTL Vision
+              </Link>
             </div>
           </div>
         </div>

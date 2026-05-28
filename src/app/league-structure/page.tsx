@@ -150,10 +150,8 @@ export default function LeagueStructurePage() {
                   and earned movement.
                 </h2>
                 <p className="mt-5 max-w-[42rem] text-[1rem] leading-[1.75] text-[#1F2933]/86 sm:text-[1.03rem]">
-                  PTL uses a 2026 Founding Season structure with
-                  evaluation-based
-                  placement, defined teams, fixed scheduling, and promotion and
-                  relegation earned through results.
+                  This page covers the operating format for Fall 2026: team and
+                  division setup, match rules, scoring, standings, and movement.
                 </p>
               </div>
               <div className="rounded-[18px] border border-[#E3DDD1] bg-white px-5 py-5 shadow-[0_4px_18px_rgba(17,24,39,0.045)] sm:px-6">
@@ -234,15 +232,6 @@ export default function LeagueStructurePage() {
                 summary="Movement is earned only through season performance."
               />
             </div>
-
-            <section className="rounded-[24px] border border-[#E5E1D8] bg-white px-6 py-7 text-center shadow-[0_10px_34px_rgba(17,24,39,0.07),0_2px_10px_rgba(17,24,39,0.04)] sm:px-8 sm:py-8">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A8894A]">
-                Competitive Principle
-              </p>
-              <h2 className="mt-4 font-display text-[2rem] leading-tight text-[#111827] sm:text-[2.35rem]">
-                Every line matters. Every set matters.
-              </h2>
-            </section>
 
             <section className="pt-2 text-center">
               <Link href="/contact" className="btn-ptl-primary px-8 py-3">

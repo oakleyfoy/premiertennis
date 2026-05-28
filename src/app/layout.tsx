@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | Premier Tennis League",
   },
   description:
-    "Premier Tennis League is a structured, team-based tennis league built around results, seasons, and earned movement.",
+    "Premier Tennis League is launching Fall 2026 through a defined Founding Season with evaluation-based entry and structured team competition.",
 };
 
 export default function RootLayout({

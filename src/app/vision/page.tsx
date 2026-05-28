@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "PTL Vision",
   description:
-    "Read the long-term vision for Premier Tennis League: a connected team tennis ecosystem built around identity, earned movement, and lasting competitive culture.",
+    "Read the long-term vision for Premier Tennis League and how Founding Season 2026 establishes the base for future PTL competition.",
 };
 
 export default function VisionPage() {
@@ -50,7 +50,7 @@ export default function VisionPage() {
 
               <div className="mt-9 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                 <Link href="/contact" className="btn-ptl-primary">
-                  Start a Team
+                  Apply for Founding Season
                 </Link>
                 <Link
                   href="/league-structure"
@@ -94,6 +94,10 @@ export default function VisionPage() {
               teams can eventually earn opportunities to qualify for regional,
               national, and destination-based Premier events held around the
               world.
+            </p>
+            <p className="mt-5 max-w-[32rem] text-[0.98rem] leading-8 text-[#1F2933]/74">
+              The Founding Season establishes the foundation for all future PTL
+              competition structures.
             </p>
           </div>
 
@@ -182,13 +186,12 @@ export default function VisionPage() {
               The Sports Layer
             </p>
             <h2 className="mt-5 max-w-[12ch] font-display text-[2.25rem] leading-[1.02] tracking-[-0.025em] text-white sm:text-[2.85rem] lg:text-[3.35rem]">
-              More than matches. An ongoing competitive story.
+              More than matches. A deeper competitive culture.
             </h2>
             <p className="mt-6 max-w-[30rem] text-[1rem] leading-8 text-white/82">
-              PTL is being designed to bring the deeper sports experience into
-              recreational tennis, so players do not simply show up and leave.
-              They follow the table, defend position, chase titles, and build
-              team legacy over time.
+              PTL is designed to give recreational team tennis the kind of
+              identity, stakes, and memory that make a competition worth
+              following beyond a single matchday.
             </p>
           </div>
 
@@ -266,10 +269,9 @@ export default function VisionPage() {
                   This is only the beginning.
                 </h2>
                 <p className="mt-6 max-w-[38rem] text-[1rem] leading-8 text-[#1F2933]/84">
-                  The founding players, captains, clubs, and cities involved in
-                  the early years of PTL will help shape the culture, structure,
-                  and history of what Premier Tennis League becomes for decades
-                  to come.
+                  Founding Season 2026 is the first competitive layer of the PTL
+                  vision, establishing the culture, identity, and standards the
+                  league will build from over time.
                 </p>
               </div>
 
@@ -279,9 +281,9 @@ export default function VisionPage() {
                 </p>
                 <div className="mt-5 space-y-3">
                   {[
-                    "Build a founding team",
-                    "Track pilot-city momentum",
-                    "Help define early league culture",
+                    "Enter during the founding window",
+                    "Follow the first competitive cycle",
+                    "Help establish early PTL identity",
                   ].map((item) => (
                     <div
                       key={item}

@@ -185,36 +185,6 @@ export default function CaptainsCornerPage() {
           </div>
         </section>
 
-        <section className="mt-10 rounded-[24px] border border-[#E5E1D8] bg-[linear-gradient(180deg,#fffefb_0%,#faf7f0_100%)] px-6 py-8 shadow-[0_10px_34px_rgba(17,24,39,0.07),0_2px_10px_rgba(17,24,39,0.04)] sm:px-8 sm:py-9 lg:px-10 lg:py-10">
-          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A8894A]">
-                Captain Responsibilities
-              </p>
-              <h2 className="mt-4 font-display text-[2rem] leading-[1.08] text-[#111827] sm:text-[2.25rem]">
-                Team owners are responsible for operating their franchise inside
-                the PTL structure.
-              </h2>
-            </div>
-            <p className="max-w-[20rem] text-sm leading-7 text-[#1F2933]/72 sm:text-right">
-              The role is operational, competitive, and season-long.
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
-            {captainChecklist.map((item) => (
-              <section
-                key={item}
-                className="rounded-[18px] border border-[#E5E1D8] bg-white px-5 py-6 shadow-[0_6px_20px_rgba(17,24,39,0.06),0_1px_3px_rgba(17,24,39,0.04)]"
-              >
-                <p className="text-[0.98rem] leading-[1.72] text-[#1F2933]/88">
-                  {item}
-                </p>
-              </section>
-            ))}
-          </div>
-        </section>
-
         <section className="mt-10 rounded-[24px] border border-[#243043] bg-[#111827] px-6 py-8 text-center shadow-[0_16px_46px_rgba(0,0,0,0.24)] sm:px-8 sm:py-9">
           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#DCC9A0]">
             Founding Season Commitment
