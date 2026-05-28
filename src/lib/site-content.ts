@@ -25,11 +25,70 @@ export const footerPlayerLinks = [
 ];
 
 export const heroBullets = [
-  "Eliminate ratings and subjective placement",
-  "Teams compete, advance, and fall together",
-  "Real stakes through promotion and relegation",
-  "Turn amateur tennis into a true league system",
+  "Founding Season applications open June 1 - July 10",
+  "Evaluation-based entry system for Fall 2026 only",
+  "Division assignment happens after August evaluation weekends",
+  "14-week structured season begins Aug 24 - 30",
 ];
+
+export const foundingSeasonTimeline = [
+  { date: "June 1 - July 10", label: "Applications Open" },
+  { date: "July 12 - July 16", label: "Captain Vetting" },
+  { date: "July 17", label: "Captains Selected" },
+  { date: "Aug 1 - 2", label: "Evaluation Weekend 1" },
+  { date: "Aug 8 - 9", label: "Evaluation Weekend 2" },
+  { date: "Aug 10 - 13", label: "Division Assignment" },
+  { date: "Aug 14", label: "Schedule Release" },
+  { date: "Aug 24 - 30", label: "Season Start" },
+  { date: "Nov 23 - 29", label: "No Matches (Thanksgiving Break)" },
+  { date: "Dec 12 - 13", label: "Playoffs" },
+] as const;
+
+export const foundingSeasonSteps = [
+  {
+    step: "01",
+    title: "Apply (June 1 - July 10)",
+    description:
+      "Teams enter through the Founding Season application process rather than immediate league entry.",
+  },
+  {
+    step: "02",
+    title: "Captain Vetting (July 12 - 16)",
+    description:
+      "PTL reviews captain applications before any team is accepted into the Founding Season process.",
+  },
+  {
+    step: "03",
+    title: "Captains Selected (July 17)",
+    description:
+      "Approved captains move forward into the evaluation-based entry system for Fall 2026.",
+  },
+  {
+    step: "04",
+    title: "Evaluation Weekends (Aug 1 - 9)",
+    description:
+      "All teams participate in launch-only evaluation weekends before divisions are assigned.",
+  },
+  {
+    step: "05",
+    title: "Division Assignment (Aug 10 - 13)",
+    description:
+      "Divisions are determined after evaluation results are reviewed. Teams do not self-select divisions.",
+  },
+  {
+    step: "06",
+    title: "Season Begins (Aug 24 - 30)",
+    description:
+      "The 14-week structured season begins once placement is finalized and the fixed schedule is released.",
+  },
+] as const;
+
+export const evaluationWeekendPoints = [
+  "Evaluation Weekends occur only during the Founding Season.",
+  "Their purpose is competitive evaluation before regular-season play begins.",
+  "They are used to determine initial division placement.",
+  "All teams participate before the season starts.",
+] as const;
 
 export const leaguePillars = [
   {

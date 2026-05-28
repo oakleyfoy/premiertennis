@@ -5,9 +5,11 @@ import { EditorialRule } from "@/components/editorial-rule";
 import { SectionHeading } from "@/components/section-heading";
 import {
   contactDetails,
+  evaluationWeekendPoints,
+  foundingSeasonSteps,
+  foundingSeasonTimeline,
   heroBullets,
   homeCorePrincipleCards,
-  howItWorks,
   teamFit,
   teamNotFit,
   whoPtlIsForCards,
@@ -46,11 +48,11 @@ export function HomePageContent() {
               Premier Tennis League
             </h1>
             <h2 className="font-display mt-4 text-[1.35rem] leading-snug tracking-[0.02em] text-white sm:text-[1.55rem] lg:text-[1.85rem] [text-shadow:0_2px_14px_rgba(0,0,0,0.4),0_1px_1px_rgba(0,0,0,0.28)]">
-              Teams. Seasons. Promotion and Relegation.
+              Founding Season. Evaluation-Based Entry. Fall 2026.
             </h2>
             <p className="mx-auto mt-7 max-w-xl font-sans text-[0.8125rem] font-normal leading-[1.65] tracking-[0.03em] text-white/88 sm:mt-8 sm:text-sm lg:text-[0.9375rem] [text-shadow:0_1px_10px_rgba(0,0,0,0.4)]">
-              A structured, team-based tennis league built around results, not
-              ratings.
+              The Founding Season uses a one-time evaluation-based entry system
+              before the 14-week structured season begins in late August.
             </p>
 
             <div className="mt-10 flex justify-center sm:mt-11">
@@ -58,14 +60,14 @@ export function HomePageContent() {
             </div>
 
             <div className="mt-9 flex w-full flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
-              <Link href="/league-structure" className="btn-ptl-hero-primary w-full sm:w-auto sm:min-w-[200px]">
-                View League Structure
+              <Link href="/contact" className="btn-ptl-hero-primary w-full sm:w-auto sm:min-w-[220px]">
+                Apply for Founding Season
               </Link>
-              <Link href="/play" className="btn-ptl-hero-secondary w-full sm:w-auto sm:min-w-[180px]">
-                Explore Formats
+              <Link href="#founding-season-timeline" className="btn-ptl-hero-secondary w-full sm:w-auto sm:min-w-[210px]">
+                View Season Timeline
               </Link>
-              <Link href="/vision" className="btn-ptl-hero-secondary w-full sm:w-auto sm:min-w-[180px]">
-                PTL Vision
+              <Link href="#evaluation-system" className="btn-ptl-hero-secondary w-full sm:w-auto sm:min-w-[220px]">
+                Learn Evaluation System
               </Link>
             </div>
           </div>
@@ -125,16 +127,69 @@ export function HomePageContent() {
 
               <div className="mt-9 flex flex-col items-start gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
                 <Link
-                  href="/league-structure"
+                  href="/contact"
                   className="btn-ptl-primary px-6 py-2.5 text-[12.5px] font-semibold tracking-[0.04em] shadow-[0_6px_22px_rgba(8,12,20,0.38)] transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#1a2330] hover:shadow-[0_10px_30px_rgba(8,12,20,0.48)]"
                 >
-                  View League Structure
+                  Apply for Founding Season
                 </Link>
-                <Link href="/vision" className="btn-ptl-secondary px-6 py-2.5 text-[12.5px]">
-                  Read PTL Vision
+                <Link href="#founding-season-timeline" className="btn-ptl-secondary px-6 py-2.5 text-[12.5px]">
+                  View Season Timeline
+                </Link>
+                <Link href="#evaluation-system" className="btn-ptl-secondary px-6 py-2.5 text-[12.5px]">
+                  Learn Evaluation System
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="founding-season-timeline"
+        className="ptl-section-border scroll-mt-32 bg-[#F7F4EE] py-[5.25rem] sm:py-[7rem] lg:py-[8.25rem]"
+      >
+        <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="flex justify-center">
+              <EditorialRule surface="light" align="start" />
+            </div>
+            <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#C6A86B] sm:mt-6 sm:text-[11px] sm:tracking-[0.3em]">
+              Founding Season Timeline
+            </p>
+            <h2 className="mt-6 font-display text-[2rem] font-semibold leading-[1.06] tracking-[-0.02em] text-[#111111] sm:mt-7 sm:text-[2.35rem] lg:text-[2.7rem] lg:leading-[1.03]">
+              PTL Founding Season Timeline (Fall 2026)
+            </h2>
+            <p className="mx-auto mt-6 max-w-3xl text-[1.02rem] leading-[1.65] text-[#5c5c5c] sm:text-[1.055rem]">
+              The Founding Season follows a fixed launch calendar from
+              applications through playoffs.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+            {foundingSeasonTimeline.map((item, index) => (
+              <article
+                key={`${item.date}-${item.label}`}
+                className="rounded-[18px] border border-[#E5E1D8] bg-white px-5 py-5 shadow-[0_8px_24px_rgba(17,24,39,0.06),0_2px_8px_rgba(17,24,39,0.04)]"
+              >
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#A8894A]">
+                  Step {String(index + 1).padStart(2, "0")}
+                </p>
+                <p className="mt-3 font-display text-[1.2rem] leading-[1.16] text-[#111827]">
+                  {item.date}
+                </p>
+                <p className="mt-3 text-[0.94rem] leading-7 text-[#1F2933]/88">
+                  {item.label}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mx-auto mt-8 max-w-5xl rounded-[18px] border border-[#E5E1D8] bg-[#FBF8F1] px-5 py-5 text-center shadow-[0_5px_18px_rgba(17,24,39,0.04)] sm:px-6 sm:py-6">
+            <p className="text-[1rem] font-medium leading-8 text-[#111827] sm:text-[1.05rem]">
+              Evaluation Weekends are a FOUNDING SEASON ONLY mechanism used to
+              determine initial division placement. This system will not exist in
+              future PTL seasons.
+            </p>
           </div>
         </div>
       </section>
@@ -231,12 +286,13 @@ export function HomePageContent() {
                 <EditorialRule surface="light" align="start" />
               </div>
               <h2 className="mt-6 font-display text-[2.2rem] font-semibold leading-[1.06] tracking-[-0.02em] text-[#111827] sm:mt-7 sm:text-[2.55rem] lg:text-[2.85rem] lg:leading-[1.05]">
-                A structured season built around teams, standings, and earned
-                movement.
+                The Founding Season application process follows a fixed launch
+                calendar.
               </h2>
               <p className="mt-6 max-w-[30rem] text-base leading-[1.65] text-[#1F2933]/95 sm:mt-7 sm:text-lg sm:leading-[1.62]">
-                The model is meant to be easy to understand and meaningful to
-                compete in.
+                Teams apply first, captains are vetted, evaluation weekends
+                determine placement, and divisions are assigned before the season
+                begins.
               </p>
 
               <div className="mt-8 grid grid-cols-2 gap-3 sm:max-w-[24rem]">
@@ -245,7 +301,7 @@ export function HomePageContent() {
                     Phase 1
                   </p>
                   <p className="mt-2 font-display text-[1.15rem] leading-none text-[#111827]">
-                    Form
+                    Apply
                   </p>
                 </div>
                 <div className="rounded-[14px] border border-[#E5E1D8] bg-white/90 px-4 py-3 text-center shadow-[0_3px_14px_rgba(17,24,39,0.04)]">
@@ -253,7 +309,7 @@ export function HomePageContent() {
                     Phase 2
                   </p>
                   <p className="mt-2 font-display text-[1.15rem] leading-none text-[#111827]">
-                    Play
+                    Vet
                   </p>
                 </div>
                 <div className="rounded-[14px] border border-[#E5E1D8] bg-white/90 px-4 py-3 text-center shadow-[0_3px_14px_rgba(17,24,39,0.04)]">
@@ -261,7 +317,7 @@ export function HomePageContent() {
                     Phase 3
                   </p>
                   <p className="mt-2 font-display text-[1.15rem] leading-none text-[#111827]">
-                    Standings
+                    Evaluate
                   </p>
                 </div>
                 <div className="rounded-[14px] border border-[#E5E1D8] bg-white/90 px-4 py-3 text-center shadow-[0_3px_14px_rgba(17,24,39,0.04)]">
@@ -269,17 +325,20 @@ export function HomePageContent() {
                     Phase 4
                   </p>
                   <p className="mt-2 font-display text-[1.15rem] leading-none text-[#111827]">
-                    Movement
+                    Assign
                   </p>
                 </div>
               </div>
 
               <div className="mt-10 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                 <Link href="/contact" className="btn-ptl-primary w-full sm:w-auto">
-                  Start a Team
+                  Apply for Founding Season
                 </Link>
-                <Link href="/league-structure" className="btn-ptl-secondary w-full sm:w-auto">
-                  View League Structure
+                <Link href="#founding-season-timeline" className="btn-ptl-secondary w-full sm:w-auto">
+                  View Season Timeline
+                </Link>
+                <Link href="#evaluation-system" className="btn-ptl-secondary w-full sm:w-auto">
+                  Learn Evaluation System
                 </Link>
               </div>
             </div>
@@ -290,7 +349,7 @@ export function HomePageContent() {
                 aria-hidden
               />
               <div className="space-y-4 sm:space-y-5">
-                {howItWorks.map((item) => (
+                {foundingSeasonSteps.map((item) => (
                   <article
                     key={item.step}
                     className="relative rounded-[18px] border border-[#E5E1D8] bg-white px-5 py-5 shadow-[0_5px_22px_rgba(17,24,39,0.075),0_1px_3px_rgba(17,24,39,0.05)] transition duration-[250ms] ease-out hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(17,24,39,0.11),0_4px_10px_rgba(17,24,39,0.05)] sm:pl-[4.75rem] sm:pr-6 sm:py-6"
@@ -316,6 +375,52 @@ export function HomePageContent() {
                       </p>
                     </div>
                   </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="evaluation-system"
+        className="ptl-section-border scroll-mt-32 bg-white py-[5.25rem] sm:py-[7rem] lg:py-[8.25rem]"
+      >
+        <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div className="overflow-hidden rounded-[22px] border border-[#E5E1D8] bg-[linear-gradient(180deg,#fffefb_0%,#faf7f0_100%)] p-4 shadow-[0_10px_34px_rgba(17,24,39,0.06),0_2px_10px_rgba(17,24,39,0.035)] sm:p-5 lg:p-6">
+            <div className="grid grid-cols-1 gap-8 rounded-[18px] border border-[#E7E2D8] bg-white p-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:p-8">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A8894A]">
+                  What Are Evaluation Weekends?
+                </p>
+                <h2 className="mt-4 font-display text-[2rem] leading-[1.08] text-[#111827] sm:text-[2.25rem]">
+                  A Founding Season-only system used to place teams correctly.
+                </h2>
+                <p className="mt-5 max-w-[34rem] text-[0.98rem] leading-[1.74] text-[#1F2933]/86">
+                  Evaluation Weekends happen before the season begins so every
+                  team can be placed into the right division for Fall 2026.
+                </p>
+                <p className="mt-5 text-[1rem] font-semibold leading-8 text-[#111827]">
+                  Future PTL seasons do NOT use evaluation weekends.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                {evaluationWeekendPoints.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-[14px] border border-[#E7E2D8] bg-[#FBF8F1] px-4 py-4 shadow-[0_3px_12px_rgba(17,24,39,0.03)] sm:px-5"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div
+                        className="mt-[0.55rem] h-[6px] w-[6px] shrink-0 rounded-full bg-[#C8A96A]"
+                        aria-hidden
+                      />
+                      <p className="text-[0.95rem] leading-[1.68] text-[#1F2933]/88">
+                        {item}
+                      </p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -373,10 +478,10 @@ export function HomePageContent() {
             </p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
               <Link href="/contact" className="btn-ptl-primary w-full sm:w-auto">
-                Start a Team
+                Apply for Founding Season
               </Link>
-              <Link href="/cities" className="btn-ptl-secondary w-full sm:w-auto">
-                Find a League Near You
+              <Link href="#founding-season-timeline" className="btn-ptl-secondary w-full sm:w-auto">
+                View Season Timeline
               </Link>
             </div>
           </div>
@@ -574,34 +679,35 @@ export function HomePageContent() {
             <div className="lg:grid lg:grid-cols-[minmax(0,1.28fr)_minmax(0,0.72fr)]">
               <div className="px-6 py-10 sm:px-10 sm:py-12 lg:px-12 lg:py-14">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
-                  Ready to Register a Team?
+                  Founding Season Applications
                 </p>
                 <div className="mt-4">
                   <EditorialRule surface="dark" align="start" />
                 </div>
                 <h2 className="mt-6 max-w-[24rem] font-display text-[2rem] font-semibold leading-[1.08] text-white sm:text-[2.3rem] lg:max-w-[28rem] lg:text-[2.65rem]">
-                  Ready to learn more or start organizing a team?
+                  Ready to apply for the Founding Season?
                 </h2>
                 <p className="mt-6 max-w-[38rem] text-[1rem] leading-8 text-[#E8E4DC]/92 sm:text-[1.05rem]">
-                  Explore the format, learn the structure, and reach out if you
-                  want to organize a team or bring PTL to your city.
+                  Teams enter through a Founding Season application process,
+                  complete launch-only evaluation weekends, and receive division
+                  placement before the fixed season begins.
                 </p>
 
                 <div className="mt-8 grid max-w-[28rem] grid-cols-1 gap-3 sm:grid-cols-2">
                   <div className="rounded-[14px] border border-white/10 bg-white/[0.045] px-4 py-4">
                     <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#DCC9A0]">
-                      League Format
+                      Evaluation-Based Entry
                     </p>
                     <p className="mt-2 text-sm leading-6 text-white/88">
-                      Teams, standings, and earned movement.
+                      Division assignment happens after the Aug 1 - 9 evaluation weekends.
                     </p>
                   </div>
                   <div className="rounded-[14px] border border-white/10 bg-white/[0.045] px-4 py-4">
                     <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#DCC9A0]">
-                      Launch Timing
+                      Fixed Season Calendar
                     </p>
                     <p className="mt-2 text-sm leading-6 text-white/88">
-                      Early outreach helps organize before pilot markets open.
+                      Applications, placement, schedule release, and season start all follow set dates.
                     </p>
                   </div>
                 </div>
@@ -612,32 +718,26 @@ export function HomePageContent() {
                     className="inline-flex min-h-10 min-w-[148px] items-center justify-center rounded-[12px] border border-[#F7F5F0]/90 px-[1.45rem] py-2.5 text-center text-[13px] font-semibold tracking-[0.02em] shadow-[0_6px_18px_rgba(0,0,0,0.18)] transition hover:-translate-y-0.5"
                     style={{ backgroundColor: "#F7F5F0", color: "#111827" }}
                   >
-                    <span style={{ color: "#111827" }}>Start a Team</span>
+                    <span style={{ color: "#111827" }}>Apply for Founding Season</span>
                   </Link>
                   <Link
-                    href="/captains-corner"
+                    href="#founding-season-timeline"
                     className="inline-flex min-h-10 items-center justify-center rounded-[12px] border border-white/28 bg-transparent px-[1.45rem] py-2.5 text-center text-[13px] font-medium tracking-[0.02em] text-white shadow-[0_2px_12px_rgba(0,0,0,0.12)] transition hover:border-white/55 hover:bg-white/8"
                   >
-                    Captain&apos;s Corner
+                    View Season Timeline
                   </Link>
                   <Link
-                    href="/vision"
+                    href="#evaluation-system"
                     className="inline-flex min-h-10 items-center justify-center rounded-[12px] border border-white/16 bg-white/[0.045] px-[1.45rem] py-2.5 text-center text-[13px] font-medium tracking-[0.02em] text-white/92 transition hover:bg-white/[0.08]"
                   >
-                    PTL Vision
-                  </Link>
-                  <Link
-                    href="/league-structure"
-                    className="inline-flex min-h-10 items-center justify-center rounded-[12px] border border-white/16 bg-white/[0.045] px-[1.45rem] py-2.5 text-center text-[13px] font-medium tracking-[0.02em] text-white/92 transition hover:bg-white/[0.08]"
-                  >
-                    View League Structure
+                    Learn Evaluation System
                   </Link>
                 </div>
               </div>
 
               <div className="border-t border-white/10 bg-white/[0.035] px-6 py-8 sm:px-10 sm:py-10 lg:border-l lg:border-t-0 lg:px-8 xl:px-10">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
-                  Start a Team
+                  Founding Season Entry
                 </p>
                 <div className="mt-4">
                   <EditorialRule surface="dark" align="start" />
@@ -653,11 +753,12 @@ export function HomePageContent() {
                   </div>
                 </div>
                 <p className="mt-6 text-sm leading-7 text-[#C9C5BC]">
-                  Want to start organizing early? Reach out and PTL will keep you
-                  updated as launch markets are announced.
+                  Use the application process to get your team into the Founding
+                  Season pipeline and receive evaluation instructions before
+                  division assignment.
                 </p>
                 <Link href="/contact" className="btn-ptl-primary mt-8 w-full">
-                  Start a Team
+                  Apply for Founding Season
                 </Link>
               </div>
             </div>
