@@ -664,11 +664,32 @@ export default function RulesPage() {
             Official PTL competition governance.
           </h2>
           <p className="mt-5 max-w-[46rem] text-[0.98rem] leading-[1.76] text-[#1F2933]/84">
-            This page is the authoritative rules layer for PTL. Use the quick
-            navigation for fast scanning, then open the full rulebook reference
-            at the bottom for the complete governing text from `PTL
-            Rulebook.docx`.
+            This page defines how PTL competition is administered in practice,
+            from enforcement and match validity to scheduling control and
+            dispute review.
           </p>
+          <div className="mt-7 grid gap-4 lg:grid-cols-3">
+            {[
+              "PTL enforces lineup, eligibility, substitution, and procedural rules through the rule framework on this page.",
+              "Match results are recognized only when PTL start, completion, default, and validity conditions are satisfied.",
+              "Scheduling conflicts, reschedule requests, and post-match disputes are governed by PTL deadlines, authority, and review procedures.",
+            ].map((item) => (
+              <div
+                key={item}
+                className="rounded-[16px] border border-[#E7E2D8] bg-white px-4 py-4 shadow-[0_3px_12px_rgba(17,24,39,0.03)] sm:px-5"
+              >
+                <div className="flex items-start gap-3">
+                  <div
+                    className="mt-[0.55rem] h-[6px] w-[6px] shrink-0 rounded-full bg-[#C8A96A]"
+                    aria-hidden
+                  />
+                  <p className="text-[0.95rem] leading-[1.72] text-[#1F2933]/88">
+                    {item}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section className="mt-8 rounded-[24px] border border-[#E5E1D8] bg-white/90 px-6 py-6 shadow-[0_8px_28px_rgba(17,24,39,0.05),0_2px_8px_rgba(17,24,39,0.03)] sm:px-8 sm:py-7">
@@ -745,6 +766,15 @@ export default function RulesPage() {
             Expand the full verbatim rulebook below for the complete reference
             text from `PTL Rulebook.docx`.
           </p>
+          <div className="mt-7 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap">
+            <a
+              href="/PTL_Rulebook.pdf"
+              download
+              className="btn-ptl-secondary px-8 py-3"
+            >
+              Download PTL Rulebook PDF
+            </a>
+          </div>
 
           <details className="mt-7 rounded-[20px] border border-[#E7E2D8] bg-[#FBF8F1] px-5 py-5 shadow-[0_3px_12px_rgba(17,24,39,0.03)] sm:px-6">
             <summary className="cursor-pointer list-none text-[0.98rem] font-medium leading-7 text-[#111827]">

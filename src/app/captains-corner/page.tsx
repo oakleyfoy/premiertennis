@@ -123,9 +123,18 @@ export default function CaptainsCornerPage() {
               ))}
             </div>
             <div className="mt-7">
-              <Link href="/rules#lineup-rules" className="btn-ptl-secondary">
-                View Team Ownership Rules
-              </Link>
+              <div className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap">
+                <Link href="/rules#lineup-rules" className="btn-ptl-secondary">
+                  View Team Ownership Rules
+                </Link>
+                <a
+                  href="/PTL_Rulebook.pdf"
+                  download
+                  className="btn-ptl-secondary"
+                >
+                  Download Rulebook PDF
+                </a>
+              </div>
             </div>
           </section>
         </div>
