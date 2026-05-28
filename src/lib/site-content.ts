@@ -1,5 +1,6 @@
 export const navLinks = [
   { href: "/league-structure", label: "League Structure" },
+  { href: "/rules", label: "Rules" },
   { href: "/play", label: "Play" },
   { href: "/cities", label: "Cities" },
   { href: "/captains-corner", label: "Captain's Corner" },
@@ -8,10 +9,11 @@ export const navLinks = [
 
 export const footerLeagueLinks = [
   { href: "/league-structure", label: "League Structure" },
+  { href: "/rules", label: "Rules" },
   { href: "/play", label: "Play" },
   { href: "/vision", label: "PTL Vision" },
-  { href: "/league-structure", label: "Scoring & Standings" },
-  { href: "/league-structure", label: "Promotion & Relegation" },
+  { href: "/rules#match-format-rules", label: "Competition Format" },
+  { href: "/rules#promotion-relegation-rules", label: "Promotion & Relegation" },
   { href: "/faq", label: "FAQ" },
 ];
 
@@ -206,27 +208,27 @@ export const faqItems = [
   {
     question: "What is the team match format?",
     answer:
-      "Each team match consists of four lines of doubles. Captains submit pairings before match start. Once play begins, no substitutions are allowed.",
+      "See the PTL Official Rules for the full match format, lineup lock procedure, and substitution policy.",
   },
   {
     question: "How does scoring work?",
     answer:
-      "Each line plays three full sets with standard scoring. There are no short sets or modified formats. Ties are allowed at the team match level. Every line and every set matters.",
+      "Scoring, set format, and match validity are governed by the PTL Official Rules.",
   },
   {
     question: "How many players can be on a team?",
     answer:
-      "There is no roster limit. Teams may carry unlimited players to account for availability, injuries, or scheduling conflicts. However, only registered players may compete in matches.",
+      "Roster and eligibility rules are governed by the PTL Official Rules.",
   },
   {
     question: "Can teams reschedule matches?",
     answer:
-      "No. This is a fixed-schedule league. Matches are scheduled in advance and played weekly. Teams are expected to manage availability through roster depth rather than rescheduling.",
+      "Scheduling, rescheduling exceptions, and PTL override authority are defined in the PTL Official Rules.",
   },
   {
     question: "Which cities are launching first?",
     answer:
-      "Pilot cities are still being finalized. This version of the site is focused on explaining the model and gathering interest ahead of the fall launch.",
+      "Founding Season markets follow PTL's defined activation model. See the Cities page for market rollout and activation context.",
   },
 ];
 
@@ -260,40 +262,6 @@ export const leagueStructure = [
       "Founding Season Evaluation Weekends determine all initial division placement",
       "No pre-assigned divisions exist before evaluation completion",
       "This one-time system is used only for the Founding Season",
-    ],
-  },
-  {
-    title: "Match Format",
-    points: [
-      "4 lines of doubles",
-      "Captains submit pairings before match start",
-      "No substitutions once play begins",
-    ],
-  },
-  {
-    title: "Scoring",
-    points: [
-      "3 full sets per line",
-      "Standard scoring (no short sets)",
-      "Ties are allowed at the team-match level",
-      "Every line matters. Every set matters.",
-    ],
-  },
-  {
-    title: "Standings & Results",
-    points: [
-      "Wins, losses, and ties all count",
-      "Standings are updated as soon as scores are entered",
-      "No manipulation, resets, or point inflation",
-    ],
-  },
-  {
-    title: "Promotion & Relegation",
-    points: [
-      "Top teams earn promotion",
-      "Bottom teams face relegation",
-      "Teams move together, not individually",
-      "Movement is earned only through season performance",
     ],
   },
 ];

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const cityReadiness = [
   "Committed captains in the region who can lead Founding Season teams",
   "Validated player pools that can support competitive team depth",
-  "Facility readiness for a fixed weekly season schedule",
+  "Facility readiness for PTL match operations",
   "Evaluation weekend participation capacity before season start",
 ];
 
@@ -98,6 +98,11 @@ export default function CitiesPage() {
               Activation is decided inside that defined footprint through the
               captain selection and evaluation process.
             </p>
+            <div className="mt-7">
+              <Link href="/rules#scheduling-rules" className="btn-ptl-secondary">
+                Market Activation Rules
+              </Link>
+            </div>
           </section>
         </div>
 
@@ -191,9 +196,17 @@ export default function CitiesPage() {
         </div>
 
         <div className="mt-10 text-center">
-          <Link href="/contact" className="btn-ptl-primary px-8 py-3">
-            Apply for Founding Season
-          </Link>
+          <p className="mx-auto max-w-3xl text-[0.98rem] leading-[1.74] text-[#1F2933]/82">
+            Market operations follow PTL Rules &amp; Competition Format.
+          </p>
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
+            <Link href="/contact" className="btn-ptl-primary px-8 py-3">
+              Apply for Founding Season
+            </Link>
+            <Link href="/rules#scheduling-rules" className="btn-ptl-secondary px-8 py-3">
+              Market Activation Rules
+            </Link>
+          </div>
         </div>
       </div>
     </section>

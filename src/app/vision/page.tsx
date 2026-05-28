@@ -99,6 +99,9 @@ export default function VisionPage() {
               The Founding Season establishes the foundation for all future PTL
               competition structures.
             </p>
+              <p className="mt-5 max-w-[32rem] text-[0.98rem] leading-8 text-[#1F2933]/74">
+                Rules ensure competitive integrity across all PTL seasons.
+              </p>
           </div>
 
           <div className="overflow-hidden rounded-[26px] border border-[#D7CFBE] bg-white shadow-[0_18px_50px_rgba(17,24,39,0.08),0_3px_14px_rgba(17,24,39,0.04)]">

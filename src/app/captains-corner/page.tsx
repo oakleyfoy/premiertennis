@@ -101,6 +101,9 @@ export default function CaptainsCornerPage() {
             <h2 className="mt-4 font-display text-[2rem] leading-[1.08] text-[#111827] sm:text-[2.2rem]">
               Team owners are accountable for readiness before PTL entry begins.
             </h2>
+            <p className="mt-5 max-w-[34rem] text-[0.98rem] leading-[1.74] text-[#1F2933]/82">
+              Captain responsibilities are governed by PTL Rulebook.
+            </p>
             <div className="mt-7 space-y-4">
               {captainChecklist.map((item) => (
                 <div
@@ -118,6 +121,11 @@ export default function CaptainsCornerPage() {
                   </div>
                 </div>
               ))}
+            </div>
+            <div className="mt-7">
+              <Link href="/rules#lineup-rules" className="btn-ptl-secondary">
+                View Team Ownership Rules
+              </Link>
             </div>
           </section>
         </div>
@@ -219,8 +227,8 @@ export default function CaptainsCornerPage() {
             <Link href="/#founding-season-timeline" className="btn-ptl-secondary px-8 py-3">
               View Founding Season Timeline
             </Link>
-            <Link href="/#evaluation-system" className="btn-ptl-secondary px-8 py-3">
-              Learn Evaluation-Based Entry System
+            <Link href="/rules#lineup-rules" className="btn-ptl-secondary px-8 py-3">
+              View Team Ownership Rules
             </Link>
           </div>
         </section>

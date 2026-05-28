@@ -39,9 +39,9 @@ export default function FaqPage() {
             captains and players ask first.
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-[1.02rem] leading-[1.72] text-[#1F2933]/78 sm:text-[1.08rem]">
-            This launch-phase site is focused on clarity. These answers explain
-            what PTL is, how the format works, and what prospective teams should
-            expect ahead of launch.
+            These answers cover the most common PTL questions. Full competition
+            mechanics now live in the PTL Rulebook so the site does not repeat
+            rule logic in multiple places.
           </p>
         </div>
 
@@ -54,13 +54,13 @@ export default function FaqPage() {
               What most people need to understand before launch.
             </h2>
             <p className="mt-6 max-w-[34rem] text-[1rem] leading-8 text-white/84">
-              PTL is a fixed, team-based league built around results, not
-              ratings. Most early questions come back to three things: team
-              formation, season structure, and earned movement.
+              Use this page for high-level clarity, then move to the PTL
+              Rulebook for official match, lineup, scheduling, playoff, and
+              movement rules.
             </p>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              {["No ratings", "Fixed season", "Earned movement"].map((item) => (
+              {["No ratings", "Fixed season", "Official rules"].map((item) => (
                 <div
                   key={item}
                   className="rounded-[14px] border border-white/10 bg-white/[0.045] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]"
@@ -68,6 +68,11 @@ export default function FaqPage() {
                   <p className="text-sm leading-6 text-white/88">{item}</p>
                 </div>
               ))}
+            </div>
+            <div className="mt-7">
+              <Link href="/rules" className="btn-ptl-secondary">
+                View PTL Official Rules
+              </Link>
             </div>
           </aside>
 
@@ -105,7 +110,10 @@ export default function FaqPage() {
           <h2 className="mt-4 font-display text-[2rem] leading-tight text-[#111827] sm:text-[2.35rem]">
             Need an answer that is not covered here?
           </h2>
-          <div className="mt-7">
+          <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
+            <Link href="/rules" className="btn-ptl-secondary px-8 py-3">
+              View PTL Official Rules
+            </Link>
             <Link href="/contact" className="btn-ptl-primary px-8 py-3">
               Contact PTL
             </Link>

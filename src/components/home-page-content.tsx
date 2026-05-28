@@ -336,6 +336,14 @@ export function HomePageContent() {
                   Learn Evaluation System
                 </Link>
               </div>
+              <div className="mt-5">
+                <Link
+                  href="/rules"
+                  className="text-[0.95rem] font-medium text-[#1F2933] underline-offset-4 transition hover:text-[#0d1219] hover:underline"
+                >
+                  View Official PTL Rules
+                </Link>
+              </div>
             </div>
 
             <div className="relative">

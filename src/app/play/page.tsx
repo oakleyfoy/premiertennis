@@ -14,17 +14,17 @@ const playHighlights = [
   {
     title: "Weekly Team Matches",
     description:
-      "Teams play a fixed weekly schedule inside a defined season after evaluation and division assignment are complete. There is no casual drop-in model and no flexible reshuffling week to week.",
+      "Teams play one official match each week inside the PTL calendar once divisions are assigned.",
   },
   {
     title: "Match Format",
     description:
-      "Team competition is built around defined weekly matchups, published schedules, and a season that operates on the calendar it releases.",
+      "Match format follows PTL Official Rules.",
   },
   {
     title: "Standings",
     description:
-      "Wins, losses, and ties shape the table over the course of the season so each week clearly affects where teams finish.",
+      "Lineup, scheduling, standings, and movement are governed by the PTL Rulebook.",
   },
 ];
 
@@ -108,7 +108,7 @@ export default function PlayPage() {
               {[
                 "Evaluation before placement",
                 "14-week fixed schedule",
-                "Standings shape movement",
+                "Rules govern competition",
               ].map((item) => (
                 <div
                   key={item}
@@ -135,6 +135,11 @@ export default function PlayPage() {
                   </p>
                 </article>
               ))}
+            </div>
+            <div className="mt-7">
+              <Link href="/rules#match-format-rules" className="btn-ptl-secondary">
+                View Official Rules
+              </Link>
             </div>
           </section>
         </div>
@@ -190,9 +195,12 @@ export default function PlayPage() {
             Competitive Standard
           </p>
           <h2 className="mt-4 font-display text-[2rem] leading-tight text-[#111827] sm:text-[2.35rem]">
-            Enter through evaluation. Earn your place through results.
+            Match format follows PTL Official Rules.
           </h2>
-          <div className="mt-7">
+          <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
+            <Link href="/rules#match-format-rules" className="btn-ptl-secondary px-8 py-3">
+              View Official Rules
+            </Link>
             <Link href="/contact" className="btn-ptl-primary px-8 py-3">
               Apply for Founding Season
             </Link>

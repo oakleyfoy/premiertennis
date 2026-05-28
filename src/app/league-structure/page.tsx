@@ -82,10 +82,6 @@ export default function LeagueStructurePage() {
   const seasonLength = leagueStructure[0];
   const teamsAndDivisions = leagueStructure[1];
   const openingWeekend = leagueStructure[2];
-  const matchFormat = leagueStructure[3];
-  const scoring = leagueStructure[4];
-  const standings = leagueStructure[5];
-  const promotion = leagueStructure[6];
 
   return (
     <>
@@ -150,8 +146,8 @@ export default function LeagueStructurePage() {
                   and earned movement.
                 </h2>
                 <p className="mt-5 max-w-[42rem] text-[1rem] leading-[1.75] text-[#1F2933]/86 sm:text-[1.03rem]">
-                  This page covers the operating format for Fall 2026: team and
-                  division setup, match rules, scoring, standings, and movement.
+                  This page covers the season-level operating format for Fall
+                  2026. Official competition mechanics live in the PTL Rulebook.
                 </p>
               </div>
               <div className="rounded-[18px] border border-[#E3DDD1] bg-white px-5 py-5 shadow-[0_4px_18px_rgba(17,24,39,0.045)] sm:px-6">
@@ -216,27 +212,30 @@ export default function LeagueStructurePage() {
               </div>
             </section>
 
-            <div className="grid gap-6 lg:grid-cols-2">
-              <StructureCard
-                title={matchFormat.title}
-                points={matchFormat.points}
-              />
-              <StructureCard
-                title={standings.title}
-                points={standings.points}
-              />
-              <StructureCard title={scoring.title} points={scoring.points} />
-              <StructureCard
-                title="Promotion & Relegation"
-                points={promotion.points.slice(0, 3)}
-                summary="Movement is earned only through season performance."
-              />
-            </div>
+            <section className="rounded-[24px] border border-[#E5E1D8] bg-white px-6 py-7 text-center shadow-[0_10px_34px_rgba(17,24,39,0.07),0_2px_10px_rgba(17,24,39,0.04)] sm:px-8 sm:py-8">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A8894A]">
+                Competition Rules
+              </p>
+              <h2 className="mt-4 font-display text-[2rem] leading-tight text-[#111827] sm:text-[2.35rem]">
+                Match format, scoring, scheduling, playoffs, and movement all
+                follow the PTL Rulebook.
+              </h2>
+              <div className="mt-7">
+                <Link href="/rules" className="btn-ptl-secondary px-8 py-3">
+                  Competition Rules
+                </Link>
+              </div>
+            </section>
 
             <section className="pt-2 text-center">
-              <Link href="/contact" className="btn-ptl-primary px-8 py-3">
-                Apply for Founding Season
-              </Link>
+              <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
+                <Link href="/contact" className="btn-ptl-primary px-8 py-3">
+                  Apply for Founding Season
+                </Link>
+                <Link href="/rules" className="btn-ptl-secondary px-8 py-3">
+                  Competition Rules
+                </Link>
+              </div>
             </section>
           </div>
         </div>
