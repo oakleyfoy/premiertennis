@@ -33,7 +33,7 @@ export function HomePageContent() {
 
         <div className="relative z-10 mx-auto flex min-h-[76vh] w-full max-w-7xl flex-col items-center justify-center px-5 py-24 text-center sm:px-8 sm:py-28 lg:py-36">
           <div
-            className="w-full max-w-[700px] rounded-[18px] border border-[rgba(255,255,255,0.18)] bg-[rgba(15,20,30,0.55)] px-6 py-12 shadow-[0_20px_60px_rgba(0,0,0,0.25)] sm:max-w-[760px] sm:rounded-[20px] sm:px-[50px] sm:py-[60px] lg:max-w-[820px] lg:rounded-[22px] lg:px-[60px] lg:py-[80px]"
+            className="w-full max-w-[680px] rounded-[18px] border border-[rgba(255,255,255,0.18)] bg-[rgba(15,20,30,0.55)] px-6 py-12 shadow-[0_20px_60px_rgba(0,0,0,0.25)] sm:max-w-[740px] sm:rounded-[20px] sm:px-[52px] sm:py-[64px] lg:max-w-[780px] lg:rounded-[22px] lg:px-[64px] lg:py-[84px]"
           >
             <div className="mb-7 flex justify-center sm:mb-8">
               <EditorialRule surface="dark" />
@@ -41,20 +41,16 @@ export function HomePageContent() {
             <h1 className="font-display text-[2.35rem] font-semibold uppercase leading-[1.06] tracking-[0.1em] text-white sm:text-[2.85rem] lg:text-[3.25rem] [text-shadow:0_2px_18px_rgba(0,0,0,0.45),0_1px_2px_rgba(0,0,0,0.35)]">
               Premier Tennis League
             </h1>
-            <h2 className="font-display mt-4 text-[1.35rem] leading-snug tracking-[0.02em] text-white sm:text-[1.55rem] lg:text-[1.85rem] [text-shadow:0_2px_14px_rgba(0,0,0,0.4),0_1px_1px_rgba(0,0,0,0.28)]">
+            <h2 className="mt-6 font-display text-[1.3rem] leading-snug tracking-[0.02em] text-white/92 sm:mt-7 sm:text-[1.5rem] lg:mt-8 lg:text-[1.78rem] [text-shadow:0_2px_14px_rgba(0,0,0,0.4),0_1px_1px_rgba(0,0,0,0.28)]">
               Founding Season 2026. Evaluation-Based Entry. Fall 2026.
             </h2>
-            <p className="mx-auto mt-7 max-w-xl font-sans text-[0.8125rem] font-normal leading-[1.65] tracking-[0.03em] text-white/88 sm:mt-8 sm:text-sm lg:text-[0.9375rem] [text-shadow:0_1px_10px_rgba(0,0,0,0.4)]">
+            <p className="mx-auto mt-5 max-w-[38rem] font-sans text-[0.8125rem] font-normal leading-[1.7] tracking-[0.03em] text-white/80 sm:mt-6 sm:text-sm lg:mt-6 lg:text-[0.9375rem] [text-shadow:0_1px_10px_rgba(0,0,0,0.4)]">
               PTL is a structured, time-locked competitive league built around a
               one-time evaluation system that determines division placement
               before a fixed 14-week season begins in late August.
             </p>
 
-            <div className="mt-10 flex justify-center sm:mt-11">
-              <EditorialRule surface="dark" />
-            </div>
-
-            <div className="mt-9 flex w-full flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
+            <div className="mt-10 flex w-full flex-col items-center justify-center gap-3.5 sm:mt-12 sm:flex-row sm:gap-4.5 lg:mt-14">
               <Link href="/contact" className="btn-ptl-hero-primary w-full sm:w-auto sm:min-w-[220px]">
                 Apply for Founding Season
               </Link>
