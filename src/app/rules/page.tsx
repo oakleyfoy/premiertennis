@@ -781,7 +781,7 @@ export default function RulesPage() {
               Expand Full Rulebook
             </summary>
             <div className="mt-5 max-h-[36rem] overflow-y-auto rounded-[16px] border border-[#E5E1D8] bg-white p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
-              <pre className="whitespace-pre-wrap font-mono text-[12.5px] leading-[1.72] text-[#1F2933]/86">
+              <pre className="whitespace-pre-wrap font-sans text-[13.5px] leading-[1.88] tracking-[0.01em] text-[#1F2933]/88 sm:text-[14px]">
                 {fullRulebookText}
               </pre>
             </div>

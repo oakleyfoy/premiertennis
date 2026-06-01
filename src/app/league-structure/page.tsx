@@ -115,27 +115,6 @@ export default function LeagueStructurePage() {
           </div>
 
           <div className="mx-auto mt-16 max-w-[68rem] space-y-10 sm:mt-18 lg:mt-20">
-            <div className="grid gap-4 sm:grid-cols-3">
-              {[
-                "Founding Season Only",
-                "Evaluation Before Placement",
-                "Full 14-Week Season",
-                "Earned Promotion & Relegation",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-[16px] border border-[#E5E1D8] bg-white/85 px-5 py-4 text-center shadow-[0_3px_14px_rgba(17,24,39,0.04)]"
-                >
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#A8894A]">
-                    Structure
-                  </p>
-                  <p className="mt-2 font-display text-[1.28rem] leading-tight text-[#111827]">
-                    {item}
-                  </p>
-                </div>
-              ))}
-            </div>
-
             <section className="grid gap-6 rounded-[24px] border border-[#E5E1D8] bg-[linear-gradient(180deg,#fffefb_0%,#faf7f0_100%)] px-6 py-7 shadow-[0_10px_34px_rgba(17,24,39,0.07),0_2px_10px_rgba(17,24,39,0.04)] sm:px-8 sm:py-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:px-10">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A8894A]">

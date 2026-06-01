@@ -1,10 +1,10 @@
 export const navLinks = [
+  { href: "/vision", label: "PTL Vision" },
   { href: "/league-structure", label: "League Structure" },
   { href: "/rules", label: "Rules" },
   { href: "/play", label: "Play" },
   { href: "/cities", label: "Cities" },
   { href: "/captains-corner", label: "Captain's Corner" },
-  { href: "/vision", label: "PTL Vision" },
 ];
 
 export const footerLeagueLinks = [
