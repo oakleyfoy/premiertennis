@@ -176,9 +176,9 @@ export default function LeagueStructurePage() {
             <section className="rounded-[24px] border border-[#E5E1D8] bg-white px-6 py-7 shadow-[0_10px_34px_rgba(17,24,39,0.07),0_2px_10px_rgba(17,24,39,0.04)] sm:px-8 sm:py-8 lg:px-10">
               <div className="grid gap-8 lg:grid-cols-[auto_minmax(0,1.15fr)_minmax(0,0.92fr)] lg:items-center">
                 <div className="flex justify-center lg:justify-start">
-                  <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[18px] border border-[#E5E1D8] bg-[#F8F4EC] p-2 shadow-[0_4px_16px_rgba(17,24,39,0.04)]">
+                  <div className="relative h-20 w-32 shrink-0 overflow-hidden rounded-[18px] border border-[#E5E1D8] bg-[#F8F4EC] p-2 shadow-[0_4px_16px_rgba(17,24,39,0.04)]">
                     <Image
-                      src="/assets/ptl-crest-transparent.png"
+                      src="/assets/ptl-logo-primary.png"
                       alt="Premier Tennis League crest"
                       fill
                       className="object-contain p-2"

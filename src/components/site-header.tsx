@@ -22,11 +22,11 @@ export function SiteHeader() {
         <div className="flex min-w-0 items-center gap-3 lg:gap-5">
           <Link href="/" className="flex shrink-0 items-center">
             <Image
-              src="/assets/ptl-crest-transparent.png"
+              src="/assets/ptl-logo-primary.png"
               alt="Premier Tennis League logo"
-              width={96}
-              height={96}
-              className="h-14 w-auto opacity-95 lg:h-[4.25rem]"
+              width={180}
+              height={114}
+              className="h-14 w-auto opacity-95 lg:h-[4.5rem]"
               priority
             />
           </Link>

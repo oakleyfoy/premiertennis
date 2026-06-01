@@ -54,11 +54,11 @@ export function SiteHeaderWhite() {
           <div className="flex min-w-0 items-center gap-2.5 lg:gap-3.5">
             <Link href="/" className="flex shrink-0 items-center">
               <Image
-                src="/assets/ptl-crest-transparent.png"
+                src="/assets/ptl-logo-primary.png"
                 alt="Premier Tennis League logo"
-                width={96}
-                height={96}
-                className="h-[3.85rem] w-auto lg:h-[4.85rem]"
+                width={180}
+                height={114}
+                className="h-[3.85rem] w-auto lg:h-[5rem]"
                 priority
               />
             </Link>

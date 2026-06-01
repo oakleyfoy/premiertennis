@@ -20,10 +20,10 @@ export function SiteFooter() {
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.9fr)_minmax(0,0.95fr)_minmax(0,0.95fr)] lg:gap-x-10">
             <div className="rounded-[1.1rem] border border-white/8 bg-white/[0.03] px-5 py-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] sm:px-6 sm:py-7">
               <Image
-                src="/assets/ptl-crest-transparent.png"
+                src="/assets/ptl-logo-primary.png"
                 alt="Premier Tennis League logo"
-                width={88}
-                height={88}
+                width={180}
+                height={114}
                 className="h-[4.5rem] w-auto opacity-[0.96]"
               />
               <p className="mt-5 max-w-md text-sm leading-7 text-white/68">
