@@ -6,7 +6,9 @@ import nodemailer from "nodemailer";
 export type InterestSubmission = {
   name: string;
   email: string;
+  phone: string;
   city: string;
+  state: string;
   role: string;
   interestType: string;
   message: string;
@@ -139,7 +141,9 @@ function buildInternalEmailText(submission: InterestSubmission) {
     `Submitted: ${submission.submittedAt}`,
     `Name: ${submission.name}`,
     `Email: ${submission.email}`,
+    `Cellphone: ${submission.phone}`,
     `City: ${submission.city || "Not provided"}`,
+    `State: ${submission.state || "Not provided"}`,
     `Role: ${submission.role || "Not provided"}`,
     `Interest Type: ${submission.interestType}`,
     "",
@@ -162,7 +166,9 @@ function buildInternalEmailHtml(submission: InterestSubmission) {
     ["Submitted", submission.submittedAt],
     ["Name", submission.name],
     ["Email", submission.email],
+    ["Cellphone", submission.phone],
     ["City", submission.city || "Not provided"],
+    ["State", submission.state || "Not provided"],
     ["Role", submission.role || "Not provided"],
     ["Interest Type", submission.interestType],
   ];
@@ -206,7 +212,9 @@ function buildAutoReplyText(submission: InterestSubmission) {
     "This is an automatic confirmation that your inquiry was received. PTL will review your message and follow up as launch details, team-building opportunities, and market information develop.",
     "",
     `Interest Type: ${submission.interestType}`,
+    `Cellphone: ${submission.phone}`,
     `City: ${submission.city || "Not provided"}`,
+    `State: ${submission.state || "Not provided"}`,
     "",
     "If you need to add anything else, reply to this email and it will go straight to the PTL inbox.",
     "",
@@ -225,7 +233,9 @@ function buildAutoReplyHtml(submission: InterestSubmission) {
       <div style="margin: 20px 0; padding: 16px; border: 1px solid #dbe3ee; background: #f8fafc; max-width: 640px;">
         <p style="margin: 0 0 8px; font-weight: 700;">What we received</p>
         <p style="margin: 0; line-height: 1.7;">Interest Type: ${escapeHtml(submission.interestType)}</p>
+        <p style="margin: 0; line-height: 1.7;">Cellphone: ${escapeHtml(submission.phone)}</p>
         <p style="margin: 0; line-height: 1.7;">City: ${escapeHtml(submission.city || "Not provided")}</p>
+        <p style="margin: 0; line-height: 1.7;">State: ${escapeHtml(submission.state || "Not provided")}</p>
       </div>
       <p style="margin: 0; line-height: 1.7;">
         If you need to add anything else, simply reply to this email and it will go straight to the PTL inbox.

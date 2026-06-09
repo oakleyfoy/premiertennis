@@ -6,7 +6,9 @@ import { useState } from "react";
 type FormPayload = {
   name: string;
   email: string;
+  phone: string;
   city: string;
+  state: string;
   role: string;
   interestType: string;
   message: string;
@@ -17,7 +19,9 @@ type FormPayload = {
 const initialState: FormPayload = {
   name: "",
   email: "",
+  phone: "",
   city: "",
+  state: "",
   role: "",
   interestType: "",
   message: "",
@@ -69,6 +73,59 @@ async function getRecaptchaToken(siteKey: string) {
     });
   });
 }
+
+const states = [
+  "Alabama",
+  "Alaska",
+  "Arizona",
+  "Arkansas",
+  "California",
+  "Colorado",
+  "Connecticut",
+  "Delaware",
+  "Florida",
+  "Georgia",
+  "Hawaii",
+  "Idaho",
+  "Illinois",
+  "Indiana",
+  "Iowa",
+  "Kansas",
+  "Kentucky",
+  "Louisiana",
+  "Maine",
+  "Maryland",
+  "Massachusetts",
+  "Michigan",
+  "Minnesota",
+  "Mississippi",
+  "Missouri",
+  "Montana",
+  "Nebraska",
+  "Nevada",
+  "New Hampshire",
+  "New Jersey",
+  "New Mexico",
+  "New York",
+  "North Carolina",
+  "North Dakota",
+  "Ohio",
+  "Oklahoma",
+  "Oregon",
+  "Pennsylvania",
+  "Rhode Island",
+  "South Carolina",
+  "South Dakota",
+  "Tennessee",
+  "Texas",
+  "Utah",
+  "Vermont",
+  "Virginia",
+  "Washington",
+  "West Virginia",
+  "Wisconsin",
+  "Wyoming",
+] as const;
 
 export function InterestForm({ recaptchaSiteKey = "" }: InterestFormProps) {
   const [form, setForm] = useState<FormPayload>(initialState);
@@ -157,6 +214,35 @@ export function InterestForm({ recaptchaSiteKey = "" }: InterestFormProps) {
             className="w-full rounded-xl border border-[#E5E1D8] bg-white px-4 py-3 text-[#111827] outline-none transition placeholder:text-slate-400 focus:border-[#C8A96A] focus:ring-1 focus:ring-[#C8A96A]/35"
             placeholder="you@example.com"
           />
+        </label>
+
+        <label className="space-y-2">
+          <span className="text-sm font-medium text-slate-700">Cellphone #</span>
+          <input
+            required
+            type="tel"
+            value={form.phone}
+            onChange={(event) => updateField("phone", event.target.value)}
+            className="w-full rounded-xl border border-[#E5E1D8] bg-white px-4 py-3 text-[#111827] outline-none transition placeholder:text-slate-400 focus:border-[#C8A96A] focus:ring-1 focus:ring-[#C8A96A]/35"
+            placeholder="(555) 555-5555"
+          />
+        </label>
+
+        <label className="space-y-2">
+          <span className="text-sm font-medium text-slate-700">State</span>
+          <select
+            required
+            value={form.state}
+            onChange={(event) => updateField("state", event.target.value)}
+            className="w-full rounded-xl border border-[#E5E1D8] bg-white px-4 py-3 text-[#111827] outline-none transition focus:border-[#C8A96A] focus:ring-1 focus:ring-[#C8A96A]/35"
+          >
+            <option value="">Select one</option>
+            {states.map((state) => (
+              <option key={state} value={state}>
+                {state}
+              </option>
+            ))}
+          </select>
         </label>
 
         <label className="space-y-2">

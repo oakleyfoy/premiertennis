@@ -87,7 +87,9 @@ export async function POST(request: Request) {
     const submission = {
       name: clean(body.name),
       email: clean(body.email),
+      phone: clean(body.phone),
       city: clean(body.city),
+      state: clean(body.state),
       role: clean(body.role),
       interestType: clean(body.interestType),
       message: clean(body.message),
@@ -105,6 +107,20 @@ export async function POST(request: Request) {
     if (!submission.email || !isValidEmail(submission.email)) {
       return NextResponse.json(
         { ok: false, error: "Please enter a valid email address." },
+        { status: 400 },
+      );
+    }
+
+    if (!submission.phone) {
+      return NextResponse.json(
+        { ok: false, error: "Please enter your cellphone number." },
+        { status: 400 },
+      );
+    }
+
+    if (!submission.state) {
+      return NextResponse.json(
+        { ok: false, error: "Please select your state." },
         { status: 400 },
       );
     }
