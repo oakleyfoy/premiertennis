@@ -106,7 +106,7 @@ export default function LeagueStructurePage() {
               League Structure
             </p>
             <h1 className="mt-6 font-display text-[2.45rem] leading-[1.04] tracking-[-0.02em] text-[#111827] sm:text-[3.1rem] lg:text-[3.6rem]">
-              PTL Founding Season Structure (Fall 2026)
+              PTL Founding Season Structure (Fall 2027)
             </h1>
             <p className="mt-5 max-w-4xl mx-auto text-[1rem] leading-[1.75] text-[#1F2933]/78 sm:text-[1.08rem]">
               This structure applies only to the Founding Season. Future PTL
@@ -126,7 +126,7 @@ export default function LeagueStructurePage() {
                 </h2>
                 <p className="mt-5 max-w-[42rem] text-[1rem] leading-[1.75] text-[#1F2933]/86 sm:text-[1.03rem]">
                   This page covers the season-level operating format for Fall
-                  2026. Official competition mechanics live in the PTL Rulebook.
+                  2027. Official competition mechanics live in the PTL Rulebook.
                 </p>
               </div>
               <div className="rounded-[18px] border border-[#E3DDD1] bg-white px-5 py-5 shadow-[0_4px_18px_rgba(17,24,39,0.045)] sm:px-6">
@@ -134,7 +134,7 @@ export default function LeagueStructurePage() {
                   Founding Season Note
                 </p>
                 <p className="mt-3 font-display text-[1.45rem] leading-[1.22] text-[#111827]">
-                  PTL uses a one-time evaluation system in 2026 to establish
+                  PTL uses a one-time evaluation system in 2027 to establish
                   competitive divisions. This ensures balanced league structure
                   from the Founding Season onward.
                 </p>

@@ -42,7 +42,7 @@ export function HomePageContent() {
               Premier Tennis League
             </h1>
             <h2 className="mt-6 font-display text-[1.3rem] leading-snug tracking-[0.02em] text-white/92 sm:mt-7 sm:text-[1.5rem] lg:mt-8 lg:text-[1.78rem] [text-shadow:0_2px_14px_rgba(0,0,0,0.4),0_1px_1px_rgba(0,0,0,0.28)]">
-              Founding Season 2026. Evaluation-Based Entry. Fall 2026.
+              Founding Season 2027. Evaluation-Based Entry. Fall 2027.
             </h2>
             <p className="mx-auto mt-5 max-w-[38rem] font-sans text-[0.8125rem] font-normal leading-[1.7] tracking-[0.03em] text-white/80 sm:mt-6 sm:text-sm lg:mt-6 lg:text-[0.9375rem] [text-shadow:0_1px_10px_rgba(0,0,0,0.4)]">
               PTL is a structured, time-locked competitive league built around a
@@ -148,7 +148,7 @@ export function HomePageContent() {
               Founding Season Timeline
             </p>
             <h2 className="mt-6 font-display text-[2rem] font-semibold leading-[1.06] tracking-[-0.02em] text-[#111111] sm:mt-7 sm:text-[2.35rem] lg:text-[2.7rem] lg:leading-[1.03]">
-              PTL Founding Season Timeline (Fall 2026)
+              PTL Founding Season Timeline (Fall 2027)
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-[1.02rem] leading-[1.65] text-[#5c5c5c] sm:text-[1.055rem]">
               The Founding Season follows a fixed launch calendar from
@@ -286,7 +286,7 @@ export function HomePageContent() {
                 begins.
               </p>
               <p className="mt-5 max-w-[31rem] rounded-[16px] border border-[#E5E1D8] bg-white/75 px-4 py-4 text-[0.95rem] leading-7 text-[#1F2933]/86 shadow-[0_3px_12px_rgba(17,24,39,0.03)]">
-                Evaluation Weekends are used only for Founding Season 2026, then
+                Evaluation Weekends are used only for Founding Season 2027, then
                 regular seasonal competition takes over.
               </p>
 
@@ -395,7 +395,7 @@ export function HomePageContent() {
               <EditorialRule surface="dark" align="start" />
             </div>
             <h2 className="mx-auto mt-6 max-w-[24rem] font-display text-[2rem] font-semibold leading-[1.08] text-white sm:max-w-[30rem] sm:text-[2.3rem] lg:text-[2.65rem]">
-              Ready to enter PTL Founding Season 2026?
+              Ready to enter PTL Founding Season 2027?
             </h2>
             <p className="mx-auto mt-6 max-w-[42rem] text-[1rem] leading-8 text-[#E8E4DC]/92 sm:text-[1.05rem]">
               Review the timeline, understand the entry process, and submit your

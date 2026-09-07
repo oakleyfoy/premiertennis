@@ -28,7 +28,7 @@ export const footerPlayerLinks = [
 
 export const heroBullets = [
   "Founding Season applications open June 1 - July 10",
-  "Evaluation-based entry system for Fall 2026 only",
+  "Evaluation-based entry system for Fall 2027 only",
   "Division assignment happens after August evaluation weekends",
   "14-week structured season begins Aug 24 - 30",
 ];
@@ -63,7 +63,7 @@ export const foundingSeasonSteps = [
     step: "03",
     title: "Captains Selected (July 17)",
     description:
-      "Approved captains move forward into the evaluation-based entry system for Fall 2026.",
+      "Approved captains move forward into the evaluation-based entry system for Fall 2027.",
   },
   {
     step: "04",

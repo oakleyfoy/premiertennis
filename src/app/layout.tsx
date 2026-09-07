@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | Premier Tennis League",
   },
   description:
-    "Premier Tennis League is launching Fall 2026 through a defined Founding Season with evaluation-based entry and structured team competition.",
+    "Premier Tennis League is launching Fall 2027 through a defined Founding Season with evaluation-based entry and structured team competition.",
 };
 
 export default function RootLayout({

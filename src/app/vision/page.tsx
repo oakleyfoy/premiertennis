@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "PTL Vision",
   description:
-    "Read the long-term vision for Premier Tennis League and how Founding Season 2026 establishes the base for future PTL competition.",
+    "Read the long-term vision for Premier Tennis League and how Founding Season 2027 establishes the base for future PTL competition.",
 };
 
 export default function VisionPage() {
@@ -272,7 +272,7 @@ export default function VisionPage() {
                   This is only the beginning.
                 </h2>
                 <p className="mt-6 max-w-[38rem] text-[1rem] leading-8 text-[#1F2933]/84">
-                  Founding Season 2026 is the first competitive layer of the PTL
+                  Founding Season 2027 is the first competitive layer of the PTL
                   vision, establishing the culture, identity, and standards the
                   league will build from over time.
                 </p>
